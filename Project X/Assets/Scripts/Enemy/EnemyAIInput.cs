@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-//public class EnemyAIInput : IInput
-//{
-//    public float Vertical { get; private set; }
-//    public float Horizontal { get; private set; }
-
-//    public void ReadInput()
-//    {
-//    }
-//}
+public class EnemyAIInput : IInput
+{
+    public Vector2 Movement { get { return new Vector2(1, 1); }}
+}
