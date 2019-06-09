@@ -9,13 +9,13 @@ public class Character : MonoBehaviour
     private Engine engine;
 
 
-    private void Awake()
+    protected  virtual void Awake()
     {
         movement = GetComponent<IInput>();
         engine = GetComponent<Engine>();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         engine.Move();
     }

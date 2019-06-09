@@ -5,7 +5,15 @@ using System.Linq;
 
 public abstract class Bullet : MonoBehaviour, IMovement
 {
-    [SerializeField] protected MoveSettings moveSettings;
+    [SerializeField] protected float speed = 10;
 
-    public virtual void Move() { }
+    private void Update()
+    {
+        Move();
+    }
+
+    public virtual void Move()
+    {
+        transform.position += (Vector3)(Vector2.up * speed * Time.deltaTime);
+    }
 }

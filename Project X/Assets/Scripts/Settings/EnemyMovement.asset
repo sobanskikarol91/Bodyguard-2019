@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d8d57249894fc4f833d90cd343ef36, type: 3}
   m_Name: EnemyMovement
   m_EditorClassIdentifier: 
-  horizontalSpeed: 10
-  verticalSpeed: 10
+  horizontalSpeed: 9
+  verticalSpeed: 9
