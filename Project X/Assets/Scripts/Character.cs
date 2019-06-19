@@ -5,13 +5,13 @@ using System.Linq;
 
 public class Character : MonoBehaviour
 {
-    private IInput movement;
+    private IMovementInput movement;
     private Engine engine;
 
 
     protected  virtual void Awake()
     {
-        movement = GetComponent<IInput>();
+        movement = GetComponent<IMovementInput>();
         engine = GetComponent<Engine>();
     }
 

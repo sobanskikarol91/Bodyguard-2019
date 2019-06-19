@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Engine : MonoBehaviour, IMovement
 {
-    private IInput input;
+    private IMovementInput input;
     [SerializeField] MoveSettings moveSettings;
 
     public void Move()
@@ -15,6 +15,6 @@ public class Engine : MonoBehaviour, IMovement
 
     private void Awake()
     {
-        input = GetComponent<IInput>();
+        input = GetComponent<IMovementInput>();
     }
 }

@@ -7,6 +7,6 @@ public class SimpleBullet : Bullet
 {
     public override void Move()
     {
-        transform.position += (Vector3)(Vector2.up * speed * Time.deltaTime);
+        transform.position += (Vector3)(Vector2.right * speed * Time.deltaTime);
     }
 }

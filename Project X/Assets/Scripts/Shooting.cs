@@ -6,10 +6,14 @@ using System.Linq;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] float refireRate;
-
+    IShootingInput input;
 
     private float leftTimeToShot;
 
+    private void Awake()
+    {
+        input = GetComponent<IShootingInput>();
+    }
 
     public void TryShoot()
     {
@@ -25,6 +29,7 @@ public class Shooting : MonoBehaviour
     private IEnumerator DecreaseTimeToFire()
     {
         leftTimeToShot = refireRate;
+
         while (leftTimeToShot > 0)
         {
             leftTimeToShot -= Time.deltaTime;
@@ -33,12 +38,14 @@ public class Shooting : MonoBehaviour
             if (leftTimeToShot < 0)
                 break;
         }
+
         leftTimeToShot = 0;
     }
 
     private void ShotEffect()
     {
         Transform bullet = SimpleBulletPool.instance.Get().transform;
+        bullet.rotation = input.GetShootDirection();
         bullet.transform.position = transform.position;
         StartCoroutine(DecreaseTimeToFire());
     }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IInput
+public interface IMovementInput
 {
     Vector2 Movement { get; }
 }
