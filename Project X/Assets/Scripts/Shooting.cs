@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] float refireRate;
+    [SerializeField] float refireRate = 1f;
     IShootingInput input;
 
     private float leftTimeToShot;
@@ -45,7 +45,7 @@ public class Shooting : MonoBehaviour
     private void ShotEffect()
     {
         Transform bullet = SimpleBulletPool.instance.Get().transform;
-        bullet.rotation = input.GetShootDirection();
+        bullet.rotation = transform.rotation;
         bullet.transform.position = transform.position;
         StartCoroutine(DecreaseTimeToFire());
     }
