@@ -9,7 +9,6 @@ public class DamageOnCollision : Damage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("c");
         hitObject = collision.gameObject.GetComponent<InteractiveObject>();
 
         if (hitObject == null) return;

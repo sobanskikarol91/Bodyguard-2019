@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour, IMovement
 {
     [SerializeField] protected float speed = 10;
 
-
     private void Update()
     {
         Move();
