@@ -14,6 +14,6 @@ public abstract class Bullet : MonoBehaviour, IMovement
 
     public virtual void Move()
     {
-        transform.position += (Vector3)(Vector2.up * speed * Time.deltaTime);
+        
     }
 }
