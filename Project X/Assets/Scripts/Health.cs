@@ -8,7 +8,8 @@ public class Health : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] GameObject deathEffect;
 
-    [SerializeField] float currentHealth;
+    private float currentHealth;
+
 
     private void Awake()
     {

@@ -38,3 +38,4 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
         gameobjects.Enqueue(gameobject);
     }
 }
+

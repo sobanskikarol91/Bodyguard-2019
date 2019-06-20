@@ -11,7 +11,6 @@ public class Damage : MonoBehaviour
 
     protected bool IsHitTargetOnDamageObjectsCollection(InteractiveObject target)
     {
-        Debug.Log("check collection");
         return damageObjects.Contains(target.Type);
     }
 }

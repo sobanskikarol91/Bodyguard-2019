@@ -8,5 +8,5 @@ public class InteractiveObject : MonoBehaviour
 {
     public ObjectType Type { get { return type; } }
 
-    [SerializeField] ObjectType type;
+    [SerializeField] protected ObjectType type;
 }
