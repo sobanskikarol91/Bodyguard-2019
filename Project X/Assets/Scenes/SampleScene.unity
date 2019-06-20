@@ -132,12 +132,34 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1452791551237578302}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1049342375}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a14bc2ee3148cf34584617ea92785246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1049342375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452791550347159300, guid: f2db758b65dc8a441ac13da258254bf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452791551237578302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1049342382
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049342375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &1411421081620802146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,7 +170,7 @@ PrefabInstance:
     - target: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: m_Name
-      value: SimpleEnemy
+      value: EnemySimple
       objectReference: {fileID: 0}
     - target: {fileID: 1411421080463516404, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}

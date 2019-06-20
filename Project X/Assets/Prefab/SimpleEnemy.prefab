@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1411421080463516411}
   - component: {fileID: 1411421080463516410}
   - component: {fileID: 3514574158007475091}
+  - component: {fileID: 9138853683149229620}
   m_Layer: 0
   m_Name: SimpleEnemy
   m_TagString: Untagged
@@ -110,7 +111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc6c916776880534995b448f63b6bd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!114 &1411421080463516411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   deathEffect: {fileID: 0}
-  currentHealth: 0
 --- !u!61 &1411421080463516410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -165,3 +164,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+--- !u!114 &9138853683149229620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421080463516400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjects: 00000000
+  effect: {fileID: 0}
+  damage: 1
