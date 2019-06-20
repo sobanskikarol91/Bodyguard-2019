@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-class SimpleBulletPool : ObjectPool<SimpleBullet>
+class SimpleBulletPool : ObjectPool<Bullet>
 {
 
 }

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public abstract class Bullet : MonoBehaviour, IMovement
+public class Bullet : MonoBehaviour, IMovement
 {
     [SerializeField] protected float speed = 10;
+
 
     private void Update()
     {
@@ -14,6 +15,6 @@ public abstract class Bullet : MonoBehaviour, IMovement
 
     public virtual void Move()
     {
-        
+        transform.position += transform.right * Time.deltaTime * speed;
     }
 }

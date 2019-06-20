@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Character : MonoBehaviour
+public class Character : InteractiveObject
 {
     private IMovementInput movement;
     private Engine engine;
