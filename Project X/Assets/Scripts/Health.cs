@@ -7,9 +7,10 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float health;
     [SerializeField] GameObject deathEffect;
+    [SerializeField] bool godMode;
 
     private float currentHealth;
-
+    
 
     private void Awake()
     {
@@ -18,6 +19,8 @@ public class Health : MonoBehaviour
 
     public void DoDamage(float damage)
     {
+        if (godMode) return;
+
         health -= damage;
 
         if (health <= 0)
