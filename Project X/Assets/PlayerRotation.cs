@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class PlayerRotation : Rotation
 {
-    protected override Vector2 Direction()
+    IRotationInput input;
+
+    private void Start()
     {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        input = GetComponent<IRotationInput>();
+    }
+
+    protected override Vector2 RotateDirection()
+    {
+        Debug.Log((Vector3)input.Rotate() - transform.position);
+        return (Vector3)input.Rotate() - transform.position;
     }
 }

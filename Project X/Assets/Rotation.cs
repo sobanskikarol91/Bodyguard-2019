@@ -8,11 +8,11 @@ public abstract class Rotation : MonoBehaviour
 
     protected void Update()
     {
-        Vector2 direction = Direction();
+        Vector2 direction = RotateDirection();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
     }
 
-    protected abstract Vector2 Direction();
+    protected abstract Vector2 RotateDirection();
 }

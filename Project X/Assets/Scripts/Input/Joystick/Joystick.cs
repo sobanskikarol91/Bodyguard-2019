@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour
+public abstract class Joystick : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] Transform circle;
     [SerializeField] Transform innerCircle;
 
-    private Vector2 pressPos;
-    private Vector2 currentFingerPos;
+    private Vector2 pressPos, currentFingerPos;
     private new Camera camera;
     private bool isPressed;
+    private Transform player;
 
+    protected Vector2 MoveDirection { get; private set; }
 
     private void Awake()
     {
+        player = GameManager.instance.Player.transform;
         camera = Camera.main;
     }
 
@@ -32,11 +32,11 @@ public class Joystick : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && IsTouchConditionMet())
             OnMouseButtonDown();
-        else if (Input.GetMouseButton(0))
+        else if (Input.GetMouseButton(0) && IsTouchConditionMet())
             OnDrag();
-        else if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0) && IsTouchConditionMet())
             OnMouseButtonUp();
     }
 
@@ -56,10 +56,15 @@ public class Joystick : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isPressed) return;
-
-        Vector2 direction = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
-        player.Translate(direction * 5 * Time.deltaTime);
-        innerCircle.transform.position = pressPos + direction;
+        if (isPressed)
+            UpdateJoystickPosition();
     }
+
+    private void UpdateJoystickPosition()
+    {
+        MoveDirection = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
+        innerCircle.transform.position = pressPos + MoveDirection;
+    }
+
+    protected abstract bool IsTouchConditionMet();
 }
