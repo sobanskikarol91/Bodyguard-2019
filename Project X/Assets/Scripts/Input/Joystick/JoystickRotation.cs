@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JoystickShooting : Joystick, IShootingInput
+public class JoystickRotation : Joystick, IRotateInput
 {
     protected override bool IsTouchConditionMet()
     {

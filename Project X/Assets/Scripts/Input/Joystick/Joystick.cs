@@ -1,29 +1,38 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Joystick : TouchInput, IDirectionInput
+public abstract class Joystick : MonoBehaviour, IDirectionInput
 {
     [SerializeField] Transform circle;
     [SerializeField] Transform innerCircle;
 
     private Vector2 pressPos, currentFingerPos;
     private new Camera camera;
-    private bool isPressed;
     private Transform player;
 
+    public event Action OnUse = delegate { };
     public Vector2 Direction { get; private set; }
 
 
-    private void Awake()
+    private void Start()
     {
+        SetInputDependsOnPlatform();
         player = GameManager.instance.Player.transform;
         camera = Camera.main;
     }
 
-    private void OnDrag()
+    private void SetInputDependsOnPlatform()
     {
+
+    }
+
+    private void OnMouseButtonPressing()
+    {
+        UpdateJoystickPosition();
         currentFingerPos = GetWorldMousePos();
+        OnUse();
     }
 
     private Vector3 GetWorldMousePos()
@@ -33,17 +42,20 @@ public abstract class Joystick : TouchInput, IDirectionInput
 
     private void Update()
     {
+#if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0) && IsTouchConditionMet())
             OnMouseButtonDown();
         else if (Input.GetMouseButton(0) && IsTouchConditionMet())
-            OnDrag();
+            OnMouseButtonPressing();
         else if (Input.GetMouseButtonUp(0) && IsTouchConditionMet())
             OnMouseButtonUp();
+#endif
+#if UNITY_ANDROID
+
     }
 
     private void OnMouseButtonDown()
     {
-        isPressed = true;
         pressPos = GetWorldMousePos();
         circle.transform.position = pressPos;
         circle.gameObject.SetActive(true);
@@ -51,14 +63,7 @@ public abstract class Joystick : TouchInput, IDirectionInput
 
     private void OnMouseButtonUp()
     {
-        isPressed = false;
         circle.gameObject.SetActive(false);
-    }
-
-    private void FixedUpdate()
-    {
-        if (isPressed)
-            UpdateJoystickPosition();
     }
 
     private void UpdateJoystickPosition()

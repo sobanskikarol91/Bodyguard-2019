@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     private float timeLeftToSpawn;
 
 
-    private void Awake()
+    private void Start()
     {
         player = GameManager.instance.Player;
         ResetSpawnTime();

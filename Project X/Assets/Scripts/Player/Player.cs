@@ -1,6 +1,6 @@
 ﻿public class Player : Character
 {
-    Shooting shooting;
+    private Shooting shooting;
 
     protected override void Awake()
     {

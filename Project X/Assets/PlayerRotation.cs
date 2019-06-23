@@ -6,16 +6,11 @@ public class PlayerRotation : Rotation
 {
     IRotateInput input;
 
+    protected override Vector2 Direction { get => (Vector3)input.Direction; }
+
     private void Start()
     {
         input = GetComponent<IRotateInput>();
-    }
-
-    protected override Vector2 RotateDirection()
-    {
-        if (input.Direction != Vector2.zero)
-            return (Vector3)input.Direction - transform.position;
-        else
-            return Vector2.zero;
+        input.OnUse += Rotate;
     }
 }

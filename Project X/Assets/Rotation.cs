@@ -6,13 +6,12 @@ public abstract class Rotation : MonoBehaviour
 {
     [SerializeField] protected float speed = 5f;
 
-    protected void Update()
+    protected abstract Vector2 Direction { get; }
+
+    protected void Rotate()
     {
-        Vector2 direction = RotateDirection();
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, transform.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
     }
-
-    protected abstract Vector2 RotateDirection();
 }

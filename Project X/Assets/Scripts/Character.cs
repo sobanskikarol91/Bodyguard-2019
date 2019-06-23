@@ -7,14 +7,8 @@ public class Character : InteractiveObject
 {
     private Engine engine;
     
-
     protected  virtual void Awake()
     {
         engine = GetComponent<Engine>();
-    }
-
-    protected virtual void Update()
-    {
-        engine.Move();
     }
 }

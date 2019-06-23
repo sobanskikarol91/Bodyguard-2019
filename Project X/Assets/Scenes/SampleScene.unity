@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 264336642}
   - component: {fileID: 264336641}
   m_Layer: 0
-  m_Name: JoystickShooting
+  m_Name: RightJoystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 517450919}
   - component: {fileID: 517450918}
   m_Layer: 0
-  m_Name: JoystickMovement
+  m_Name: LeftJoystick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,18 +368,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1452791551237578302}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &991295806 stripped
+--- !u!1 &1049342375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452791550347159300, guid: f2db758b65dc8a441ac13da258254bf1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452791551237578302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1049342376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049342375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96fba92dc290e6c4b87ffce1b15e17b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 264336642}
+  innerCircle: {fileID: 522680270}
+--- !u!114 &1049342378 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1452791550347159296, guid: f2db758b65dc8a441ac13da258254bf1,
     type: 3}
   m_PrefabInstance: {fileID: 1452791551237578302}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1049342375}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a14bc2ee3148cf34584617ea92785246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1049342386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049342375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cec662fd1bc464f992d1938fc20423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refireRate: 1
 --- !u!4 &1419494551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956956917734439519, guid: 5c77aa50051483543ad27db736884000,
@@ -575,18 +608,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452791550347159422, guid: f2db758b65dc8a441ac13da258254bf1,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452791550347159423, guid: f2db758b65dc8a441ac13da258254bf1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3218667005354556173, guid: f2db758b65dc8a441ac13da258254bf1,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
+      propertyPath: speed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1049342376, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
       propertyPath: circle
@@ -596,10 +619,6 @@ PrefabInstance:
       propertyPath: innerCircle
       value: 
       objectReference: {fileID: 1699480421}
-    - target: {fileID: 1049342376, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1049342377, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
       propertyPath: circle
       value: 
@@ -608,12 +627,7 @@ PrefabInstance:
       propertyPath: innerCircle
       value: 
       objectReference: {fileID: 522680270}
-    - target: {fileID: 1049342377, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1049342378, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
 --- !u!1001 &3457242521946431464
 PrefabInstance:
@@ -775,6 +789,6 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 991295806}
+      objectReference: {fileID: 1049342378}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}

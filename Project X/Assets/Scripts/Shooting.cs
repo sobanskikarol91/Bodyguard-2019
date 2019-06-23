@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     private void Awake()
     {
         input = GetComponent<IShootingInput>();
+        input.OnUse += TryShoot;
     }
 
     public void TryShoot()
@@ -45,16 +46,9 @@ public class Shooting : MonoBehaviour
     private void ShotEffect()
     {
         Transform bullet = SimpleBulletPool.instance.Get().transform;
-        Vector2 direction = input.GetShootDirection();
-        Debug.Log(direction);
-        bullet.LookAt(direction);
+        bullet.rotation = transform.rotation;
 
         bullet.transform.position = transform.position;
         StartCoroutine(DecreaseTimeToFire());
-    }
-
-    private void Update()
-    {
-        TryShoot();
     }
 }
