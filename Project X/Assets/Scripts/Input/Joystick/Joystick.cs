@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Joystick : MonoBehaviour
+public abstract class Joystick : TouchInput, IDirectionInput
 {
     [SerializeField] Transform circle;
     [SerializeField] Transform innerCircle;
@@ -12,7 +12,8 @@ public abstract class Joystick : MonoBehaviour
     private bool isPressed;
     private Transform player;
 
-    protected Vector2 MoveDirection { get; private set; }
+    public Vector2 Direction { get; private set; }
+
 
     private void Awake()
     {
@@ -62,8 +63,8 @@ public abstract class Joystick : MonoBehaviour
 
     private void UpdateJoystickPosition()
     {
-        MoveDirection = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
-        innerCircle.transform.position = pressPos + MoveDirection;
+        Direction = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
+        innerCircle.transform.position = pressPos + Direction;
     }
 
     protected abstract bool IsTouchConditionMet();

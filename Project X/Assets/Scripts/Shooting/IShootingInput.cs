@@ -2,5 +2,5 @@
 
 public interface IShootingInput
 {
-    Quaternion GetShootDirection();
+    Vector2 GetShootDirection();
 }

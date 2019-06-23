@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class EnemyAIInput : IMovementInput
+public class EnemyAIInput : IDirectionInput
 {
-    public Vector2 Movement { get { return new Vector2(1, 1); }}
+    public Vector2 Direction { get { return new Vector2(1, 1); }}
 }

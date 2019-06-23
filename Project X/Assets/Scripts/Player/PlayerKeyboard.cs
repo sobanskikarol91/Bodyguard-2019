@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class PlayerKeyboard : MonoBehaviour, IMovementInput
+public class PlayerKeyboard : MonoBehaviour, IDirectionInput
 {
-    public Vector2 Movement { get { return new Vector2(Input.GetAxis(horizAxis), Input.GetAxis(vertAxis)).normalized; } }
+    public Vector2 Direction { get { return new Vector2(Input.GetAxis(horizAxis), Input.GetAxis(vertAxis)).normalized; } }
     private const string vertAxis = "Vertical";
     private const string horizAxis = "Horizontal";
 }

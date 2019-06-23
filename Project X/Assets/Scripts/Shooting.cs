@@ -45,8 +45,16 @@ public class Shooting : MonoBehaviour
     private void ShotEffect()
     {
         Transform bullet = SimpleBulletPool.instance.Get().transform;
-        bullet.rotation = transform.rotation;
+        Vector2 direction = input.GetShootDirection();
+        Debug.Log(direction);
+        bullet.LookAt(direction);
+
         bullet.transform.position = transform.position;
         StartCoroutine(DecreaseTimeToFire());
+    }
+
+    private void Update()
+    {
+        TryShoot();
     }
 }

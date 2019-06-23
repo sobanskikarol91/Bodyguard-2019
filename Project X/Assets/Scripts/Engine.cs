@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Engine : MonoBehaviour, IMovement
+public class Engine : MonoBehaviour
 {
-    private IMovementInput input;
     [SerializeField] MoveSettings moveSettings;
+
+    private IMoveInput input;
+
 
     public void Move()
     {
-        transform.position += (Vector3)(moveSettings.Speed * input.Movement * Time.deltaTime);
+        transform.position += (Vector3)(moveSettings.Speed * input.Direction * Time.deltaTime);
     }
 
     private void Awake()
     {
-        input = GetComponent<IMovementInput>();
+        input = GetComponent<IMoveInput>();
     }
 }

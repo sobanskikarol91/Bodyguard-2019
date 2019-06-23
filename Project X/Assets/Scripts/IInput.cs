@@ -1,6 +1,22 @@
 ﻿using UnityEngine;
 
-public interface IMovementInput
+public interface IDirectionInput
 {
-    Vector2 Movement { get; }
+    Vector2 Direction { get; }
 }
+
+public interface IMoveInput : IDirectionInput
+{
+
+}
+
+public interface IRotateInput : IDirectionInput
+{
+
+}
+
+public interface IMovemenet
+{
+    void Move();
+}
+

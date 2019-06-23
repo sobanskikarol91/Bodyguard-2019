@@ -5,13 +5,11 @@ using System.Linq;
 
 public class Character : InteractiveObject
 {
-    private IMovementInput movement;
     private Engine engine;
-
+    
 
     protected  virtual void Awake()
     {
-        movement = GetComponent<IMovementInput>();
         engine = GetComponent<Engine>();
     }
 

@@ -7,10 +7,4 @@
         base.Awake();
         shooting = GetComponent<Shooting>();
     }
-
-    protected override void Update()
-    {
-        base.Update();
-        shooting.TryShoot();
-    }
 }

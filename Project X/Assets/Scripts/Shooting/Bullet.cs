@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Bullet : MonoBehaviour, IMovement
+public class Bullet : MonoBehaviour, IMovemenet
 {
     [SerializeField] protected float speed = 10;
 
