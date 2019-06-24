@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class Joystick : MonoBehaviour, IDirectionInput
+public class Joystick : MonoBehaviour, IDirectionInput
 {
     [SerializeField] Transform circle;
     [SerializeField] Transform innerCircle;
@@ -14,17 +14,14 @@ public abstract class Joystick : MonoBehaviour, IDirectionInput
 
     private Vector2 pressPos, currentFingerPos;
     private new Camera camera;
-    private Transform player;
 
-
-
-    private Touch touch;
     public int FingerId { get; private set; }
+    private Touch touch;
 
-
+    private const int notUsedValue = -1;
     private void Start()
     {
-        player = GameManager.instance.Player.transform;
+        FingerId = notUsedValue;
         camera = Camera.main;
     }
 
@@ -33,29 +30,29 @@ public abstract class Joystick : MonoBehaviour, IDirectionInput
         return camera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, camera.transform.position.z));
     }
 
-
-
-    private void OnMouseButtonDown()
+    public void OnTouchStart(Touch touch)
     {
-        Debug.Log("Down");
+        Debug.Log("Down" + name);
+        this.touch = touch;
         FingerId = touch.fingerId;
         pressPos = GetWorldMousePos();
         circle.transform.position = pressPos;
         circle.gameObject.SetActive(true);
     }
 
-    private void OnMouseButtonPressing()
+    public void OnTouching(Touch touch)
     {
-        Debug.Log("isTouching");
-        UpdateJoystickPosition();
+        this.touch = touch;
+        Debug.Log("isTouching" + name);
         currentFingerPos = GetWorldMousePos();
+        UpdateJoystickPosition();
         OnUse();
     }
 
-    private void OnMouseButtonUp()
+    public void OnTouchEnd()
     {
-        Debug.Log("Up");
-        FingerId = -1;
+        Debug.Log("Up" + name);
+        FingerId = notUsedValue;
         circle.gameObject.SetActive(false);
     }
 
@@ -65,5 +62,8 @@ public abstract class Joystick : MonoBehaviour, IDirectionInput
         innerCircle.transform.position = pressPos + Direction;
     }
 
-    protected abstract bool IsTouchConditionMet();
+    public bool IsNotUsed()
+    {
+        return FingerId == notUsedValue;
+    }
 }
