@@ -19,23 +19,24 @@ public class Joystick : MonoBehaviour, IDirectionInput
     private Touch touch;
 
     private const int notUsedValue = -1;
+
+
     private void Start()
     {
         FingerId = notUsedValue;
         camera = Camera.main;
     }
 
-    private Vector3 GetWorldMousePos()
+    private Vector3 GetWorldTouchPos()
     {
         return camera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, camera.transform.position.z));
     }
 
     public void OnTouchStart(Touch touch)
     {
-        Debug.Log("Down" + name);
         this.touch = touch;
         FingerId = touch.fingerId;
-        pressPos = GetWorldMousePos();
+        pressPos = GetWorldTouchPos();
         circle.transform.position = pressPos;
         circle.gameObject.SetActive(true);
     }
@@ -43,15 +44,13 @@ public class Joystick : MonoBehaviour, IDirectionInput
     public void OnTouching(Touch touch)
     {
         this.touch = touch;
-        Debug.Log("isTouching" + name);
-        currentFingerPos = GetWorldMousePos();
+        currentFingerPos = GetWorldTouchPos();
         UpdateJoystickPosition();
         OnUse();
     }
 
     public void OnTouchEnd()
     {
-        Debug.Log("Up" + name);
         FingerId = notUsedValue;
         circle.gameObject.SetActive(false);
     }

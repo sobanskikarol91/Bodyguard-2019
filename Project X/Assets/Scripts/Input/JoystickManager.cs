@@ -25,18 +25,24 @@ public class JoystickManager : MonoBehaviour
     {
         for (int i = 0; i < Input.touchCount; i++)
         {
+            touch = Input.touches[i];
+
             ChooseTapJoystickSide();
 
             if (IsTapOnWrongSide())
                 continue;
-
-            touch = Input.touches[i];
-
-            if (IsTheSameFingerAsJoystickFinger())
+            else if (IsTheSameFingerAsJoystickFinger())
                 JoystickTouchDetected();
             else if (currentJoystick.IsNotUsed())
                 OnTouchStart();
         }
+    }
+
+    private void SetInputDependsOnPlatform()
+    {
+        touchStart = () => touch.phase == TouchPhase.Began;
+        touchEnd = () => touch.phase == TouchPhase.Ended;
+        isTouching = () => touch.phase == TouchPhase.Moved;
     }
 
     private bool IsTapOnWrongSide()
@@ -77,15 +83,8 @@ public class JoystickManager : MonoBehaviour
         currentJoystick = IsRightSideScreen() ? rightJoystick : leftJoystick;
     }
 
-    private static bool IsRightSideScreen()
+    private bool IsRightSideScreen()
     {
-        return Input.mousePosition.x > Screen.width / 2;
-    }
-
-    private void SetInputDependsOnPlatform()
-    {
-        touchStart = () => Input.touches.Any(t => t.phase == TouchPhase.Began);
-        touchEnd = () => Input.touches.Any(t => t.phase == TouchPhase.Ended);
-        isTouching = () => touch.phase == TouchPhase.Moved;
+        return touch.position.x > Screen.width / 2;
     }
 }
