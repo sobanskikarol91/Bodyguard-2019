@@ -96,8 +96,7 @@ GameObject:
   - component: {fileID: 1452791550347159297}
   - component: {fileID: 1452791550347159422}
   - component: {fileID: 6451162215416072103}
-  - component: {fileID: 1049342376}
-  - component: {fileID: 1049342377}
+  - component: {fileID: 6543349747253418355}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -232,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSettings: {fileID: 11400000, guid: a5c9ae771d63ebf49991d5238d5d9788, type: 2}
+  inputMovement: {fileID: 0}
 --- !u!114 &1452791550347159422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  input: {fileID: 0}
 --- !u!114 &6451162215416072103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +261,7 @@ MonoBehaviour:
   health: 1
   deathEffect: {fileID: 0}
   godMode: 1
---- !u!114 &1049342376
+--- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -269,22 +270,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1452791550347159300}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172eb192c96ddd247858aecc033c5846, type: 3}
+  m_Script: {fileID: 11500000, guid: 30cec662fd1bc464f992d1938fc20423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circle: {fileID: 0}
-  innerCircle: {fileID: 0}
---- !u!114 &1049342377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452791550347159300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f32116b82b4b35647995ed56b9308392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  circle: {fileID: 0}
-  innerCircle: {fileID: 0}
+  refireRate: 1

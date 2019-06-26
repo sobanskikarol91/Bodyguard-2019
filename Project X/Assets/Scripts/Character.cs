@@ -6,8 +6,8 @@ using System.Linq;
 public class Character : InteractiveObject
 {
     private Engine engine;
-    
-    protected  virtual void Awake()
+
+    protected virtual void Awake()
     {
         engine = GetComponent<Engine>();
     }

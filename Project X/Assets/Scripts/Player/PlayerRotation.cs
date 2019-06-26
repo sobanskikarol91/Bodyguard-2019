@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PlayerRotation : Rotation
 {
-    IRotateInput input;
-
     protected override Vector2 Direction { get => (Vector3)input.Direction; }
+    [SerializeField] TwoAxisInput input;
 
     private void Start()
     {
-        input = GetComponent<IRotateInput>();
-        input.OnUse += Rotate;
+        input.InputUsed += Rotate;
     }
 }

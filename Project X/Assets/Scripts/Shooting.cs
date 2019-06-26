@@ -6,14 +6,13 @@ using System.Linq;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] float refireRate = 1f;
-    IShootingInput input;
+    [SerializeField] TwoAxisInput input;
 
     private float leftTimeToShot;
 
     private void Awake()
     {
-        input = GetComponent<IShootingInput>();
-        input.OnUse += TryShoot;
+        input.InputUsed += TryShoot;
     }
 
     public void TryShoot()

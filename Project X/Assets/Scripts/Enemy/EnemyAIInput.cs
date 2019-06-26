@@ -4,9 +4,9 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public class EnemyAIInput : IDirectionInput
-{
-    public Vector2 Direction { get { return new Vector2(1, 1); }}
+//public class EnemyAIInput : IDirectionInput
+//{
+//    public Vector2 Direction { get { return new Vector2(1, 1); }}
 
-    public event Action OnUse;
-}
+//    public event Action OnUse;
+//}

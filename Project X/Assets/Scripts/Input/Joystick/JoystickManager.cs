@@ -14,7 +14,7 @@ public class JoystickManager : MonoBehaviour
     private delegate bool TouchState();
     private TouchState touchStart, touchEnd, isTouching;
     private Joystick currentJoystick;
-
+  
 
     private void Start()
     {

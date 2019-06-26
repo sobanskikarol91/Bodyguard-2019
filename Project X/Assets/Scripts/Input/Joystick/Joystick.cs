@@ -4,20 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Joystick : MonoBehaviour, IDirectionInput
+public class Joystick : TwoAxisInput
 {
     [SerializeField] Transform circle;
     [SerializeField] Transform innerCircle;
 
-    public event Action OnUse = delegate { };
-    public Vector2 Direction { get; private set; }
+    public int FingerId { get; private set; }
 
     private Vector2 pressPos, currentFingerPos;
     private new Camera camera;
-
-    public int FingerId { get; private set; }
     private Touch touch;
-
     private const int notUsedValue = -1;
 
 
@@ -46,7 +42,7 @@ public class Joystick : MonoBehaviour, IDirectionInput
         this.touch = touch;
         currentFingerPos = GetWorldTouchPos();
         UpdateJoystickPosition();
-        OnUse();
+        OnInputUsed();
     }
 
     public void OnTouchEnd()

@@ -4,16 +4,16 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public class EnemyInput : MonoBehaviour, IDirectionInput
+public class EnemyInput : MonoBehaviour
 {
-    private Player player;
+    //private Player player;
 
-    public Vector2 Direction { get { return (player.transform.position - transform.position).normalized; } }
+    //public Vector2 Direction { get { return (player.transform.position - transform.position).normalized; } }
 
-    public event Action OnUse;
+    //public event Action OnUse;
 
-    private void Awake()
-    {
-        player = GameManager.instance.Player;
-    }
+    //private void Awake()
+    //{
+    //    player = GameManager.instance.Player;
+    //}
 }
