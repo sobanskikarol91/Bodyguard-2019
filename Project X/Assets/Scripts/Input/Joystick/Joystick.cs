@@ -35,6 +35,7 @@ public class Joystick : TwoAxisInput
         pressPos = GetWorldTouchPos();
         circle.transform.position = pressPos;
         circle.gameObject.SetActive(true);
+        OnInputStartUsing();
     }
 
     public void OnTouching(Touch touch)
@@ -42,13 +43,14 @@ public class Joystick : TwoAxisInput
         this.touch = touch;
         currentFingerPos = GetWorldTouchPos();
         UpdateJoystickPosition();
-        OnInputUsed();
+        OnInputUsing();
     }
 
     public void OnTouchEnd()
     {
         FingerId = notUsedValue;
         circle.gameObject.SetActive(false);
+        OnInputEndUsing();
     }
 
     private void UpdateJoystickPosition()

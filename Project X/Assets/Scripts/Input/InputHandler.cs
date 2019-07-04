@@ -3,11 +3,24 @@ using UnityEngine;
 
 public abstract class InputHandler : MonoBehaviour
 {
-    public event Action InputUsed = delegate { };
+    public event Action InputStartUsing = delegate { };
+    public event Action InputUsing = delegate { };
+    public event Action InputEndUsing = delegate { };
 
-    protected void OnInputUsed()
+
+    protected void OnInputStartUsing()
     {
-        InputUsed();
+        InputStartUsing();
+    }
+
+    protected void OnInputUsing()
+    {
+        InputUsing();
+    }
+
+    protected void OnInputEndUsing()
+    {
+        InputEndUsing();
     }
 }
 
@@ -16,4 +29,3 @@ public interface IMovemenet
 {
     void Move();
 }
-

@@ -11,7 +11,7 @@ public class Engine : MonoBehaviour
 
     private void Awake()
     {
-        inputMovement.InputUsed += Move;
+        inputMovement.InputUsing += Move;
     }
 
     public void Move()

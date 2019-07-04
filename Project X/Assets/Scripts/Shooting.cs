@@ -10,9 +10,10 @@ public class Shooting : MonoBehaviour
 
     private float leftTimeToShot;
 
+
     private void Awake()
     {
-        input.InputUsed += TryShoot;
+        input.InputStartUsing += TryShoot;
     }
 
     public void TryShoot()
