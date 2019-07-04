@@ -10,11 +10,11 @@ public class JoystickManager : MonoBehaviour
     [SerializeField] Joystick leftJoystick;
     [SerializeField] Joystick rightJoystick;
 
-    private Touch touch;
     private delegate bool TouchState();
-    private TouchState touchStart, touchEnd, isTouching;
+    private TouchState touchEnd;
     private Joystick currentJoystick;
-  
+    private Touch touch;
+
 
     private void Start()
     {
@@ -40,9 +40,7 @@ public class JoystickManager : MonoBehaviour
 
     private void SetInputDependsOnPlatform()
     {
-        touchStart = () => touch.phase == TouchPhase.Began;
         touchEnd = () => touch.phase == TouchPhase.Ended;
-        isTouching = () => touch.phase == TouchPhase.Moved;
     }
 
     private bool IsTapOnWrongSide()
@@ -52,10 +50,10 @@ public class JoystickManager : MonoBehaviour
 
     private void JoystickTouchDetected()
     {
-        if (isTouching())
-            OnTouching();
-        else if (touchEnd())
+        if (touchEnd())
             OnTouchEnd();
+        else
+            OnTouching();
     }
 
     private bool IsTheSameFingerAsJoystickFinger()
