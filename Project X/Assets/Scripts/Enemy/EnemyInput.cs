@@ -1,19 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
-using System;
+﻿using UnityEngine;
 
-public class EnemyInput : MonoBehaviour
+
+public class EnemyInput : TwoAxisInput
 {
-    //private Player player;
+    public override Vector2 Direction { get { return (player.transform.position - transform.position).normalized; } }
 
-    //public Vector2 Direction { get { return (player.transform.position - transform.position).normalized; } }
+    private Player player;
 
-    //public event Action OnUse;
 
-    //private void Awake()
-    //{
-    //    player = GameManager.instance.Player;
-    //}
+    private void Start()
+    {
+        player = GameManager.instance.Player;
+    }
+
+    private void Update()
+    {
+        OnInputUsing();
+    }
 }

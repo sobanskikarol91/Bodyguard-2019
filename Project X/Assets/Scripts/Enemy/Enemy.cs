@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    private void OnValidate()
+    protected override void Awake()
     {
+        base.Awake();
         type = ObjectType.Enemy;
     }
 }

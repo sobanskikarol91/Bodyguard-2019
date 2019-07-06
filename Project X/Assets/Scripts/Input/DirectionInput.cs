@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class TwoAxisInput : InputHandler
 {
-    public Vector2 Direction { get; protected set; }
+    public virtual Vector2 Direction { get; protected set; }
 }
