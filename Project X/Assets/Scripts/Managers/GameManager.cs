@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] Player player;
 
+    public ScoreManager ScoreManager { get; private set; }
+
     private void Awake()
     {
+        ScoreManager = GetComponent<ScoreManager>();
         instance = this;
     }
 }

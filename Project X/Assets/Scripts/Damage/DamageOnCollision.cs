@@ -3,11 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageOnCollision : Damage
+public class DamageOnCollision : Damagable
 {
     private InteractiveObject hitObject;
-
-    public event Action OnDamage = delegate { };
 
 
     private void OnCollisionEnter2D(Collision2D collision)

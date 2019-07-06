@@ -16,12 +16,12 @@ public class ReturnToPoolOnCollision : ReturnToPool
         damageOnCollision = GetComponent<DamageOnCollision>();
 
         if (damageOnCollision != null)
-            damageOnCollision.OnDamage += ReturnOnCollision;
+            damageOnCollision.Damage += ReturnOnCollision;
     }
 
     private void ReturnOnCollision()
     {
         objectToReturn.ReturnToPool();
-        GetComponent<DamageOnCollision>().OnDamage -= ReturnOnCollision;
+        GetComponent<DamageOnCollision>().Damage -= ReturnOnCollision;
     }
 }
