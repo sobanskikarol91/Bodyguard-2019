@@ -1,4 +1,0 @@
-﻿class BulletPool : ObjectPool<Bullet>
-{
-
-}

@@ -26,6 +26,6 @@ public class Bullet : InteractiveObject, IMovemenet, IPoolObject
 
     public void ReturnToPool()
     {
-        BulletPool.instance.ReturnToPool(this);
+        ObjectPoolManager.instance.ReturnToPool(gameObject);
     }
 }

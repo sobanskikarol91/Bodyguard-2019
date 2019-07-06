@@ -4,25 +4,33 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public abstract class ObjectPool<T> : MonoBehaviour where T : Component
+public class ObjectPool
 {
-    [SerializeField] private T prefab;
+    public readonly GameObject Prefab;
+    public readonly int Id;
 
-    public static ObjectPool<T> instance { get; private set; }
-
-    private Queue<T> gameobjects = new Queue<T>();
+    private Queue<GameObject> instances = new Queue<GameObject>();
 
 
-    private void Awake()
+    public ObjectPool(GameObject prefab, int id)
     {
-        instance = this;
+        Id = id;
+        Prefab = prefab;
+
+        ObjectPoolId prefabId = prefab.GetComponent<ObjectPoolId>();
+
+        if (!prefabId)
+            prefab.AddComponent<ObjectPoolId>();
+
+        prefabId.id = Id;
     }
 
-    public T Get()
+    public GameObject Get()
     {
-        if (gameobjects.Count == 0)
+        if (instances.Count == 0)
             Add(1);
-        T poolObject = gameobjects.Dequeue();
+
+        GameObject poolObject = instances.Dequeue();
         poolObject.gameObject.SetActive(true);
 
         return poolObject;
@@ -30,15 +38,15 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
 
     private void Add(int count)
     {
-        T newObject = Instantiate(prefab);
+        GameObject newObject = GameObject.Instantiate(Prefab);
         ReturnToPool(newObject);
     }
 
-    public void ReturnToPool(T returnObject)
+    public void ReturnToPool(GameObject returnObject)
     {
         Debug.Log("return to pool: " + returnObject.name);
         returnObject.gameObject.SetActive(false);
-        gameobjects.Enqueue(returnObject);
+        instances.Enqueue(returnObject);
     }
 }
 

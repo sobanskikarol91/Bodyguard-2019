@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] float refireRate = 1f;
     [SerializeField] TwoAxisInput input;
+    [SerializeField] GameObject prefab;
 
     private float leftTimeToShot;
 
@@ -45,7 +46,7 @@ public class Shooting : MonoBehaviour
 
     private void ShotEffect()
     {
-        Transform bullet = BulletPool.instance.Get().transform;
+        Transform bullet = ObjectPoolManager.instance.Get(prefab).transform;
         bullet.rotation = transform.rotation;
 
         bullet.transform.position = transform.position;
