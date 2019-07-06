@@ -14,13 +14,18 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject Get(GameObject instance)
     {
+        ObjectPoolId objectPoolId = instance.GetComponent<ObjectPoolId>();
+
+        if (!objectPoolId)
+            CreateObjectPool(new ObjectPool(instance));
+
         int id = instance.GetComponent<ObjectPoolId>().id;
         ObjectPool pool;
 
         if (objectPools.TryGetValue(id, out pool))
             return pool.Get();
         else
-            CreateObjectPool(new ObjectPool(instance, id));
+            CreateObjectPool(new ObjectPool(instance));
 
         return Get(instance);
     }
@@ -38,7 +43,7 @@ public class ObjectPoolManager : MonoBehaviour
 
         if (!objectPools.TryGetValue(id, out pool))
         {
-            CreateObjectPool(new ObjectPool(instance, id));
+            CreateObjectPool(new ObjectPool(instance));
             objectPools.TryGetValue(id, out pool);
         }
 

@@ -8,21 +8,23 @@ public class ObjectPool
 {
     public readonly GameObject Prefab;
     public readonly int Id;
+    static int poolsCount = 0;
 
     private Queue<GameObject> instances = new Queue<GameObject>();
 
 
-    public ObjectPool(GameObject prefab, int id)
+    public ObjectPool(GameObject prefab)
     {
-        Id = id;
+        Id = poolsCount;
         Prefab = prefab;
 
         ObjectPoolId prefabId = prefab.GetComponent<ObjectPoolId>();
 
         if (!prefabId)
-            prefab.AddComponent<ObjectPoolId>();
+            prefabId = prefab.AddComponent<ObjectPoolId>();
 
         prefabId.id = Id;
+        poolsCount++;
     }
 
     public GameObject Get()

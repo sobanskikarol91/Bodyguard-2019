@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] SpawnLvl[] lvls;
-    [SerializeField] float radius = 3f; 
+    [SerializeField] float radius = 3f;
 
     private Player player;
     private int lvlNr = 0;
@@ -35,7 +35,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void ShowNewEnemy()
     {
-        Transform enemy = Instantiate(lvls[lvlNr].Enemies[0]).transform;
+        Enemy random = lvls[lvlNr].Enemies[0];
+        Transform enemy = ObjectPoolManager.instance.Get(random.gameObject).transform;
         enemy.position = GetRandomPosition();
     }
 
@@ -47,7 +48,7 @@ public class EnemySpawner : MonoBehaviour
     Vector2 GetRandomPosition()
     {
         Vector2 spawnPos = player.transform.position;
-        return spawnPos + UnityEngine.Random.insideUnitCircle.normalized* radius;
+        return spawnPos + UnityEngine.Random.insideUnitCircle.normalized * radius;
     }
 
     [Serializable]
