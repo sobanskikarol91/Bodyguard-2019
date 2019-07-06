@@ -1,4 +1,0 @@
-﻿class SimpleBulletPool : ObjectPool<Bullet>
-{
-
-}

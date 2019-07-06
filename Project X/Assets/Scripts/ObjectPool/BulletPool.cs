@@ -1,0 +1,4 @@
+﻿class BulletPool : ObjectPool<Bullet>
+{
+
+}

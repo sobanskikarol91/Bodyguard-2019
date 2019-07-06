@@ -7,6 +7,9 @@ public class DamageOnCollision : Damage
 {
     private InteractiveObject hitObject;
 
+    public event Action OnDamage = delegate { };
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hitObject = collision.gameObject.GetComponent<InteractiveObject>();
@@ -14,14 +17,16 @@ public class DamageOnCollision : Damage
         if (hitObject == null) return;
 
         if (IsHitTargetOnDamageObjectsCollection(hitObject))
-            HitCorrectObject();
+            HitResult();
     }
 
-    private void HitCorrectObject()
+    private void HitResult()
     {
         Health health = hitObject.GetComponent<Health>();
 
         if (health)
             health.DoDamage(damage);
+
+        OnDamage();
     }
 }

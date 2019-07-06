@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 7696240082753549402}
   - component: {fileID: 207260611433673405}
   - component: {fileID: 5846887723326059202}
+  - component: {fileID: 7824824286691282310}
+  - component: {fileID: -8491120688834446511}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -238,7 +240,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4710505377383510129}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bac9917fb44db704abb4a48c00f40243, type: 3}
@@ -327,3 +329,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7824824286691282310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de76a0f0852722546b232af7e93f1ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-8491120688834446511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b70b8f97dd913743b302af53051529e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToReturn: 2

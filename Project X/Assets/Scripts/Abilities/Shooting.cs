@@ -45,7 +45,7 @@ public class Shooting : MonoBehaviour
 
     private void ShotEffect()
     {
-        Transform bullet = SimpleBulletPool.instance.Get().transform;
+        Transform bullet = BulletPool.instance.Get().transform;
         bullet.rotation = transform.rotation;
 
         bullet.transform.position = transform.position;

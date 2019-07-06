@@ -22,20 +22,23 @@ public abstract class ObjectPool<T> : MonoBehaviour where T : Component
     {
         if (gameobjects.Count == 0)
             Add(1);
+        T poolObject = gameobjects.Dequeue();
+        poolObject.gameObject.SetActive(true);
 
-        return gameobjects.Dequeue();
+        return poolObject;
     }
 
     private void Add(int count)
     {
         T newObject = Instantiate(prefab);
-        SetToPool(newObject);
+        ReturnToPool(newObject);
     }
 
-    public void SetToPool(T gameobject)
+    public void ReturnToPool(T returnObject)
     {
-        gameObject.SetActive(false);
-        gameobjects.Enqueue(gameobject);
+        Debug.Log("return to pool: " + returnObject.name);
+        returnObject.gameObject.SetActive(false);
+        gameobjects.Enqueue(returnObject);
     }
 }
 

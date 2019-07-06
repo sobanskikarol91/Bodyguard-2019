@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSettings: {fileID: 11400000, guid: 1fc860591bef41140bcd558d0560e0f8, type: 2}
-  inputMovement: {fileID: 0}
+  inputMovement: {fileID: 1411421080463516405}
 --- !u!114 &1411421080463516405
 MonoBehaviour:
   m_ObjectHideFlags: 0

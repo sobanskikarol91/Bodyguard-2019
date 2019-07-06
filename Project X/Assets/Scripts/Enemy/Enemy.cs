@@ -7,6 +7,6 @@ public class Enemy : Character
     protected override void Awake()
     {
         base.Awake();
-        type = ObjectType.Enemy;
+        Type = ObjectType.Enemy;
     }
 }
