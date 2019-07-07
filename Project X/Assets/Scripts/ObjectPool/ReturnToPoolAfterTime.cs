@@ -11,16 +11,16 @@ public class ReturnToPoolAfterTime : ReturnToPool
     private float timeLeft;
 
 
-    private void OnEnable()
-    {
-        timeLeft = timeToReturn;
-    }
-
     private void Update()
     {
         timeLeft -= Time.deltaTime;
 
         if (timeLeft <= 0)
             ObjectPoolManager.instance.ReturnToPool(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        timeLeft = timeToReturn;
     }
 }

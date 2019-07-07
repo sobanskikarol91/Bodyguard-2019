@@ -7,6 +7,7 @@ public class ObjectPoolManager : MonoBehaviour
 
     public static ObjectPoolManager instance;
 
+
     private void Awake()
     {
         instance = this;

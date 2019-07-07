@@ -20,6 +20,12 @@ public class ReturnToPoolOnCollision : ReturnToPool
             damageOnCollision.Damage += ReturnOnCollision;
     }
 
+    private void OnDisable()
+    {
+        if (damageOnCollision != null)
+            damageOnCollision.Damage -= ReturnOnCollision;
+    }
+
     private void ReturnOnCollision()
     {
         damageOnCollision.Damage -= ReturnOnCollision;

@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 using System;
 
 public class ObjectPool
@@ -9,7 +7,7 @@ public class ObjectPool
     public readonly GameObject Prefab;
     public readonly int Id;
 
-    private Queue<GameObject> instances = new Queue<GameObject>();
+    private readonly Queue<GameObject> instances = new Queue<GameObject>();
 
 
     public ObjectPool(GameObject prefab)
@@ -32,7 +30,6 @@ public class ObjectPool
     private void Add(int count)
     {
         GameObject newObject = GameObject.Instantiate(Prefab);
-
         ReturnToPool[] returnConditions = newObject.GetComponents<ReturnToPool>();
 
         if (returnConditions == null)

@@ -702,7 +702,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 951375166}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478282578}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a14bc2ee3148cf34584617ea92785246, type: 3}
@@ -795,6 +795,11 @@ PrefabInstance:
       propertyPath: deathEffect
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6451162215416072103, guid: f2db758b65dc8a441ac13da258254bf1,
+        type: 3}
+      propertyPath: godMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6543349747253418355, guid: f2db758b65dc8a441ac13da258254bf1,
         type: 3}
       propertyPath: input
@@ -846,30 +851,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 114799602}
+--- !u!114 &1348189730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348189727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82e4c7d8fe7533a40b0572b49925f900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1419494551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956956917734439519, guid: 5c77aa50051483543ad27db736884000,
     type: 3}
   m_PrefabInstance: {fileID: 3956956917954249392}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1478282578 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1452791550347159300, guid: f2db758b65dc8a441ac13da258254bf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 951375166}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1478282586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478282578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e4c7d8fe7533a40b0572b49925f900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1699480420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1192,7 @@ PrefabInstance:
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: lvls.Array.data[0].spawnTime
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3545255941332485880, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
