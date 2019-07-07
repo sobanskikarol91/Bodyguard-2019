@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 
-public class Bullet : InteractiveObject, IMovemenet, IPoolObject
+public class Bullet : InteractiveObject, IMovemenet
 {
     [SerializeField] protected float speed = 10;
 
@@ -22,10 +22,5 @@ public class Bullet : InteractiveObject, IMovemenet, IPoolObject
     public virtual void Move()
     {
         transform.position += transform.right * Time.deltaTime * speed;
-    }
-
-    public void ReturnToPool()
-    {
-        ObjectPoolManager.instance.ReturnToPool(gameObject);
     }
 }

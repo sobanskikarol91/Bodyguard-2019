@@ -18,12 +18,12 @@ public class ObjectPool
         Id = poolsCount;
         Prefab = prefab;
 
-        ObjectPoolId prefabId = prefab.GetComponent<ObjectPoolId>();
+        ReturnToPool[] returnConditions = prefab.GetComponents<ReturnToPool>();
 
-        if (!prefabId)
-            prefabId = prefab.AddComponent<ObjectPoolId>();
+        if (returnConditions == null)
+            Debug.LogError("No Return to Poll Conditions: " + prefab.name);
 
-        prefabId.id = Id;
+        Array.ForEach(returnConditions, r =>r.Id = Id);
         poolsCount++;
     }
 

@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDeath
 {
     [SerializeField] float health;
     [SerializeField] GameObject deathEffect;
     [SerializeField] bool godMode;
 
     private float currentHealth;
-    
+
+    public event Action Death;
 
     private void Awake()
     {
@@ -24,11 +25,11 @@ public class Health : MonoBehaviour
         health -= damage;
 
         if (health <= 0)
-            Death();
+            OnDeath();
     }
 
-    private void Death()
+    private void OnDeath()
     {
-        Destroy(gameObject);
+        Death();
     }
 }

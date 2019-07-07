@@ -6,10 +6,10 @@ using System.Linq;
 
 public abstract class ReturnToPool : MonoBehaviour
 {
-    protected IPoolObject objectToReturn;
+    public int Id;
 
-    protected virtual void Awake()
+    protected void ReturnObjectToPool()
     {
-        objectToReturn = GetComponent<IPoolObject>();
+        ObjectPoolManager.instance.ReturnToPool(gameObject);
     }
 }

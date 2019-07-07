@@ -14,12 +14,13 @@ public class ObjectPoolManager : MonoBehaviour
 
     public GameObject Get(GameObject instance)
     {
-        ObjectPoolId objectPoolId = instance.GetComponent<ObjectPoolId>();
+        ReturnToPool returnCondition = instance.GetComponent<ReturnToPool>();
 
-        if (!objectPoolId)
-            CreateObjectPool(new ObjectPool(instance));
+        if (returnCondition == null)
+            Debug.LogError("No Return to Poll Conditions: " + instance.name);
 
-        int id = instance.GetComponent<ObjectPoolId>().id;
+        int id = returnCondition.Id;
+
         ObjectPool pool;
 
         if (objectPools.TryGetValue(id, out pool))
@@ -39,7 +40,7 @@ public class ObjectPoolManager : MonoBehaviour
     public void ReturnToPool(GameObject instance)
     {
         ObjectPool pool;
-        int id = instance.GetComponent<ObjectPoolId>().id;
+        int id = instance.GetComponent<ReturnToPool>().Id;
 
         if (!objectPools.TryGetValue(id, out pool))
         {

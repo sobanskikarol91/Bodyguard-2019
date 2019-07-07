@@ -9,19 +9,20 @@ public class ReturnToPoolOnCollision : ReturnToPool
     private DamageOnCollision damageOnCollision;
 
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
-
         damageOnCollision = GetComponent<DamageOnCollision>();
+    }
 
+    private void OnEnable()
+    {
         if (damageOnCollision != null)
             damageOnCollision.Damage += ReturnOnCollision;
     }
 
     private void ReturnOnCollision()
     {
-        objectToReturn.ReturnToPool();
-        GetComponent<DamageOnCollision>().Damage -= ReturnOnCollision;
+        damageOnCollision.Damage -= ReturnOnCollision;
+        ObjectPoolManager.instance.ReturnToPool(gameObject);
     }
 }
