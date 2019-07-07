@@ -12,11 +12,6 @@ public class Shooting : MonoBehaviour
     private float leftTimeToShot;
 
 
-    private void Awake()
-    {
-        input.InputStartUsing += TryShoot;
-    }
-
     public void TryShoot()
     {
         if (IsReadyToFire())
@@ -51,5 +46,15 @@ public class Shooting : MonoBehaviour
 
         bullet.transform.position = transform.position;
         StartCoroutine(DecreaseTimeToFire());
+    }
+
+    private void OnEnable()
+    {
+        input.InputStartUsing += TryShoot;
+    }
+
+    private void OnDisable()
+    {
+        input.InputStartUsing -= TryShoot;
     }
 }
