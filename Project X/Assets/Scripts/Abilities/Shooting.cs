@@ -51,6 +51,7 @@ public class Shooting : MonoBehaviour
     private void OnEnable()
     {
         input.InputStartUsing += TryShoot;
+        leftTimeToShot = 0;
     }
 
     private void OnDisable()
