@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14bc2ee3148cf34584617ea92785246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
 --- !u!114 &1452791550347159297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   deathEffect: {fileID: 0}
-  godMode: 1
+  godMode: 0
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,3 +273,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refireRate: 1
+  input: {fileID: 0}
+  prefab: {fileID: 0}

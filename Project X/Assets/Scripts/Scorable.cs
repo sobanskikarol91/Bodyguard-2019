@@ -11,7 +11,7 @@ public class Scorable : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<Damagable>().Damage += AddScore;
+        GetComponent<IDeath>().Death += AddScore;
     }
 
     private void AddScore()

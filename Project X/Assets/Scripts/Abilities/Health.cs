@@ -22,6 +22,7 @@ public class Health : MonoBehaviour, IDeath
     {
         if (godMode) return;
 
+        Debug.Log("damage" + damage + " " + gameObject.name);
         health -= damage;
 
         if (health <= 0)
