@@ -6,11 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Player Player { get { return player; } }
+    public ScoreManager ScoreManager { get; private set; }
 
     [SerializeField] Player player;
 
-    public ScoreManager ScoreManager { get; private set; }
-    public EnemySpawner enemySpawner;
+    private EnemySpawner enemySpawner;
+
 
     private void Awake()
     {

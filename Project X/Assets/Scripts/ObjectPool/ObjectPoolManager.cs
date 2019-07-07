@@ -15,26 +15,26 @@ public class ObjectPoolManager : MonoBehaviour
     public GameObject Get(GameObject instance)
     {
         ReturnToPool returnCondition = instance.GetComponent<ReturnToPool>();
-
         if (returnCondition == null)
             Debug.LogError("No Return to Poll Conditions: " + instance.name);
 
-        int id = returnCondition.Id;
-
+        int id = instance.GetInstanceID();
         ObjectPool pool;
 
         if (objectPools.TryGetValue(id, out pool))
             return pool.Get();
         else
-            CreateObjectPool(new ObjectPool(instance));
-
-        return Get(instance);
+        {
+            pool = new ObjectPool(instance);
+            CreateObjectPool(pool);
+            return pool.Get();
+        }
     }
 
     private void CreateObjectPool(ObjectPool pool)
     {
-        Debug.Log("Create pool" + pool.Id);
         objectPools.Add(pool.Id, pool);
+        Debug.Log("Create pool " + pool.Id);
     }
 
     public void ReturnToPool(GameObject instance)

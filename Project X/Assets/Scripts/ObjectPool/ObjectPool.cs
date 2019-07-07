@@ -8,23 +8,14 @@ public class ObjectPool
 {
     public readonly GameObject Prefab;
     public readonly int Id;
-    static int poolsCount = 0;
 
     private Queue<GameObject> instances = new Queue<GameObject>();
 
 
     public ObjectPool(GameObject prefab)
     {
-        Id = poolsCount;
+        Id = prefab.GetInstanceID();
         Prefab = prefab;
-
-        ReturnToPool[] returnConditions = prefab.GetComponents<ReturnToPool>();
-
-        if (returnConditions == null)
-            Debug.LogError("No Return to Poll Conditions: " + prefab.name);
-
-        Array.ForEach(returnConditions, r =>r.Id = Id);
-        poolsCount++;
     }
 
     public GameObject Get()
@@ -41,12 +32,19 @@ public class ObjectPool
     private void Add(int count)
     {
         GameObject newObject = GameObject.Instantiate(Prefab);
+
+        ReturnToPool[] returnConditions = newObject.GetComponents<ReturnToPool>();
+
+        if (returnConditions == null)
+            Debug.LogError("No Return to Poll Conditions: " + newObject.name);
+
+        Array.ForEach(returnConditions, r => r.Id = Id);
+
         ReturnToPool(newObject);
     }
 
     public void ReturnToPool(GameObject returnObject)
     {
-        Debug.Log("return to pool: " + returnObject.name);
         returnObject.gameObject.SetActive(false);
         instances.Enqueue(returnObject);
     }
