@@ -5,9 +5,8 @@ using System.Linq;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] float refireRate = 1f;
     [SerializeField] TwoAxisInput input;
-    [SerializeField] GameObject prefab;
+    [SerializeField] Weapon weapon;
 
     private float leftTimeToShot;
 
@@ -25,7 +24,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator DecreaseTimeToFire()
     {
-        leftTimeToShot = refireRate;
+        leftTimeToShot = weapon.Settings.RefireRate;
 
         while (leftTimeToShot > 0)
         {
@@ -41,10 +40,7 @@ public class Shooting : MonoBehaviour
 
     private void ShotEffect()
     {
-        Transform bullet = ObjectPoolManager.instance.Get(prefab).transform;
-        bullet.rotation = transform.rotation;
-
-        bullet.transform.position = transform.position;
+        weapon.Shot(transform);
         StartCoroutine(DecreaseTimeToFire());
     }
 

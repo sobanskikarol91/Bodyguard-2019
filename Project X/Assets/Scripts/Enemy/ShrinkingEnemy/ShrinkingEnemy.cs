@@ -19,7 +19,7 @@ public class ShrinkingEnemy : MonoBehaviour
 
     private void OnEnable()
     {
-
+        StartCoroutine(ChangeState());
     }
 
     private void OnDisable()
@@ -27,10 +27,26 @@ public class ShrinkingEnemy : MonoBehaviour
 
     }
 
-    //private IEnumerable ChangeState()
-    //{
-    //                private float leftTimeToChangeState;
+    private IEnumerator ChangeState()
+    {
+        while (true)
+        {
+            yield return StartCoroutine(ShrinkState());
+        }
+    }
 
-    //yield return null;
-    //}
+    IEnumerator ShrinkState()
+    {
+        float leftTimeToChangeState = timeToChangeState;
+        float percantage = 0;
+        float timeStart = Time.time;
+
+        while (leftTimeToChangeState > 0)
+        {
+            leftTimeToChangeState -= Time.deltaTime;
+            percantage = (Time.time - timeStart) / timeToChangeState;
+        }
+
+        yield return null;
+    }
 }

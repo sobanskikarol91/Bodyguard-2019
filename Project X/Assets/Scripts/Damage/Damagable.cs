@@ -7,7 +7,6 @@ using UnityEngine;
 public class Damagable : MonoBehaviour
 {
     [SerializeField] protected ObjectType[] damageObjects;
-    [SerializeField] protected GameObject effect;
     [SerializeField] protected float damage;
 
     public event Action Damage = delegate { };

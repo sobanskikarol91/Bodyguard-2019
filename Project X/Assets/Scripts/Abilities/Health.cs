@@ -16,13 +16,19 @@ public class Health : MonoBehaviour, IDeath
     private void Awake()
     {
         currentHealth = health;
+        if (deathEffect) Death += ShowDeathEffect;
+    }
+
+    private void ShowDeathEffect()
+    {
+        Transform effect = ObjectPoolManager.instance.Get(deathEffect).transform;
+        effect.position = transform.position;
     }
 
     public void DoDamage(float damage)
     {
         if (godMode) return;
 
-        //Debug.Log("damage" + damage + " " + gameObject.name);
         health -= damage;
 
         if (health <= 0)
