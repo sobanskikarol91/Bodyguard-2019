@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
 
     private void ShotEffect()
     {
-        weapon.Shot(transform);
+        weapon.Shoot(transform);
         StartCoroutine(DecreaseTimeToFire());
     }
 

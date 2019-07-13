@@ -32,6 +32,16 @@ public class ObjectPoolManager : MonoBehaviour
         }
     }
 
+    public GameObject[] Get(GameObject instance, int amount)
+    {
+        GameObject[] gameobjects = new GameObject[amount];
+
+        for (int i = 0; i < amount; i++)
+            gameobjects[i] = Get(instance);
+
+        return gameobjects;
+    }
+
     private void CreateObjectPool(ObjectPool pool)
     {
         objectPools.Add(pool.Id, pool);
