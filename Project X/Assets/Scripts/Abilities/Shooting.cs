@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator DecreaseTimeToFire()
     {
-        leftTimeToShot = weapon.Settings.RefireRate;
+        leftTimeToShot = weapon.RefireRate;
 
         while (leftTimeToShot > 0)
         {

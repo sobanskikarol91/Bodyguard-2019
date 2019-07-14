@@ -21,7 +21,7 @@ public class MultipleBulletWeapon : Weapon
         {
             Vector3 rotation = new Vector3(0, 0, playerRotation + i * angle);
             bullets[i].transform.rotation = Quaternion.Euler(rotation);
+            bullets[i].transform.position = transform.position;
         }
     }
 }
-

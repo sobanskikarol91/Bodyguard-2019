@@ -820,7 +820,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 1c8870e181f7ed444b40b2aff4aebcb8,
+      objectReference: {fileID: 11400000, guid: 2243f7cd9f8330a468a01ad748c358d8,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2db758b65dc8a441ac13da258254bf1, type: 3}
@@ -876,7 +876,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348189727}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b470432d7ce59ed4db71697500c86e9e, type: 3}
