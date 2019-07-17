@@ -13,7 +13,7 @@ public class MultipleBulletWeapon : Weapon
 
     public override void Shoot(Transform transform)
     {
-        GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet, amount);
+        GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet.gameObject, amount);
 
         for (int i = 0; i < amount; i++)
         {

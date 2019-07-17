@@ -4,11 +4,14 @@ using UnityEngine;
 
 public abstract class Weapon : ScriptableObject
 {
-    public GameObject Bullet { get { return bullet; } }
+    public Damagable Bullet { get { return bullet; } }
     public float RefireRate { get { return refireRate; } }
 
-    [SerializeField] GameObject bullet;
+    [SerializeField] Damagable bullet;
     [SerializeField] float refireRate = 0.1f;
+    [SerializeField] protected ObjectType[] damageObjects;
+    [SerializeField] protected float damage;
+
 
     public abstract void Shoot(Transform shotPosition);
 }

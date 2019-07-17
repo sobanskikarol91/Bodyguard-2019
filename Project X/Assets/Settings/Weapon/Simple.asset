@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a4abd6b91f3ed4c86588e2ee63c52c, type: 3}
-  m_Name: GreenLaser
+  m_Script: {fileID: 11500000, guid: fa9ec6b4405753249b22510cca650952, type: 3}
+  m_Name: Simple
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8535946045795624035, guid: 0ba72806562ff3049b038a39dc28b7a3, type: 3}
+  bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
   refireRate: 0.1
   damageObjects: 01000000
   damage: 10
-  beamLength: 10
