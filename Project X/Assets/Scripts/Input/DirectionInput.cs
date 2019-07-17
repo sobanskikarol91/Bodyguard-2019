@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoAxisInput : InputHandler
+public abstract class TwoAxisInput : InputHandler
 {
     public virtual Vector2 Direction { get; protected set; }
 }

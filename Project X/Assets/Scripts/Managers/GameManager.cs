@@ -5,9 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public Player Player { get { return player; } }
     public ScoreManager ScoreManager { get; private set; }
-
+    public InputManager Input { get; private set; }
     [SerializeField] Player player;
 
     private EnemySpawner enemySpawner;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Input = PlatformManager.GetInpuntDependsOnPlatform();
         enemySpawner = GetComponent<EnemySpawner>();
         ScoreManager = GetComponent<ScoreManager>();
         player.GetComponent<Health>().Death += GameOver;

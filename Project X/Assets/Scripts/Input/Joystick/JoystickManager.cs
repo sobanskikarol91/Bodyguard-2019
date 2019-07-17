@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class JoystickManager : MonoBehaviour
@@ -18,7 +14,7 @@ public class JoystickManager : MonoBehaviour
 
     private void Start()
     {
-        SetInputDependsOnPlatform();
+        touchEnd = () => touch.phase == TouchPhase.Ended;
     }
 
     private void Update()
@@ -36,11 +32,6 @@ public class JoystickManager : MonoBehaviour
             else if (currentJoystick.IsNotUsed())
                 OnTouchStart();
         }
-    }
-
-    private void SetInputDependsOnPlatform()
-    {
-        touchEnd = () => touch.phase == TouchPhase.Ended;
     }
 
     private bool IsTapOnWrongSide()
