@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public static class PlatformManager
+[CreateAssetMenu(fileName = "PlatformManager", menuName = "Platform/Settings")]
+public class PlatformManager : ScriptableObject
 {
-    public static InputManager GetInpuntDependsOnPlatform()
+    [SerializeField] MobileInput mobile;
+    [SerializeField] PCInput pc;
+
+
+    public InputManager GetInpuntDependsOnPlatform()
     {
-        if (IsPC())
-            return new PCInput();
-        else if (IsMobile())
-            return new MobileInput();
-        else
-            return null;
+        return mobile;
+        //if (IsPC())
+        //    return new PCInput();
+        //else if (IsMobile())
+        //    return new MobileInput();
+        //else
+        //    return null;
     }
 
     private static bool IsMobile()
