@@ -19,6 +19,6 @@ public class LaserWeapon : Weapon
         line.SetPosition(0, shotPoint.position);
         line.SetPosition(1, shotPoint.position + shotPoint.right * beamLength);
         DamageOnRaycastHit  damageOnRaycastHit =  line.GetComponent<DamageOnRaycastHit>();
-        damageOnRaycastHit.CastRay(shotPoint.position, shotPoint.right, beamLength, interact); 
+        damageOnRaycastHit?.CastRay(shotPoint.position, shotPoint.right, beamLength, interact); 
     }
 }

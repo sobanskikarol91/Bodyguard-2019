@@ -8,20 +8,21 @@ public class DamageOnRaycastHit : Damagable
 {
     public void CastRay(Vector3 origin, Vector3 direction, float length, ObjectType damagable)
     {
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction, length);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, direction, length);
 
-        if (hit)
+        if (hits.Length > 0)
         {
-            InteractiveObject interactive = hit.collider.gameObject.GetComponent<InteractiveObject>();
-
-            if (!interactive) return;
-            else if (interactive.Type != damagable) return;
-
-            Health health = interactive.GetComponent<Health>();
-
-            if (health) return;
-
-            health.DoDamage(damage);
+            Array.ForEach(hits, h => CheckHitObject(h, damagable));
         }
+    }
+
+    private void CheckHitObject(RaycastHit2D hit, ObjectType damagable)
+    {
+        Debug.Log("hit: " + hit.collider.name);
+        InteractiveObject interactive = hit.collider.gameObject.GetComponent<InteractiveObject>();
+
+        if (!interactive) return;
+        else if (interactive.Type != damagable) return;
+        interactive.GetComponent<Health>()?.DoDamage(damage);
     }
 }
