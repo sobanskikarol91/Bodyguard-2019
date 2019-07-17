@@ -1,12 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] TwoAxisInput input;
     [SerializeField] Weapon weapon;
+    [SerializeField] Transform bulletSpawnPoint;
 
     private float leftTimeToShot;
 
@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
 
     private void ShotEffect()
     {
-        weapon.Shoot(transform);
+        weapon.Shoot(bulletSpawnPoint);
         StartCoroutine(DecreaseTimeToFire());
     }
 

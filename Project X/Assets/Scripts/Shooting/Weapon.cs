@@ -10,5 +10,5 @@ public abstract class Weapon : ScriptableObject
     [SerializeField] GameObject bullet;
     [SerializeField] float refireRate = 0.1f;
 
-    public abstract void Shoot(Transform transform);
+    public abstract void Shoot(Transform shotPosition);
 }

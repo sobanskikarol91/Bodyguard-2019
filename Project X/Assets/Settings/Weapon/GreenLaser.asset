@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c77f7db3b435931409d8a057055cea31, type: 3}
-  m_Name: TripleBullets
+  m_Script: {fileID: 11500000, guid: 85a4abd6b91f3ed4c86588e2ee63c52c, type: 3}
+  m_Name: GreenLaser
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4710505377383510129, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
+  bullet: {fileID: 2683820113467408796, guid: 0ba72806562ff3049b038a39dc28b7a3, type: 3}
   refireRate: 0.1
-  amount: 3
-  angle: 50
+  beamLength: 10
+  interact: 1

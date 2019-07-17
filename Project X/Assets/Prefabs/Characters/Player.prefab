@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1452791549944338994}
   - component: {fileID: 1452791549944338995}
   m_Layer: 0
-  m_Name: nose
+  m_Name: viewfinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -272,6 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30cec662fd1bc464f992d1938fc20423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refireRate: 1
   input: {fileID: 0}
-  prefab: {fileID: 0}
+  weapon: {fileID: 0}
+  spawnPoint: {fileID: 0}

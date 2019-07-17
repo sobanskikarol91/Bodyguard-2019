@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerRotation : Rotation
+public class InputRotation : Rotation
 {
     protected override Vector2 Direction { get => (Vector3)input.Direction; }
     [SerializeField] TwoAxisInput input;
