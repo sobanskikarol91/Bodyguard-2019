@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField] TwoAxisInput input;
+   TwoAxisInput input;
     [SerializeField] Weapon weapon;
     [SerializeField] Transform bulletSpawnPoint;
 
@@ -46,12 +46,13 @@ public class Shooting : MonoBehaviour
 
     private void OnEnable()
     {
-        //input.InputStartUsing += TryShoot;
+        input = GameManager.instance.Input.Rotation;
+        input.InputStartUsing += TryShoot;
         leftTimeToShot = 0;
     }
 
     private void OnDisable()
     {
-       // input.InputStartUsing -= TryShoot;
+        input.InputStartUsing -= TryShoot;
     }
 }

@@ -3,11 +3,14 @@
 [CreateAssetMenu(fileName = "MobileInput", menuName = "Input/Mobile/Settings")]
 public class MobileInput : InputManager
 {
-    [SerializeField] Joystick leftJoystick;
-    [SerializeField] Joystick rightJoystick;
+    [SerializeField] Joystick movement;
+    [SerializeField] Joystick rotation;
 
-    public override TwoAxisInput Movement { get { return leftJoystick; } protected set { Movement = value; } }
-    public override TwoAxisInput Rotation { get { return rightJoystick; } protected set { Rotation = value; } }
+
+    public override TwoAxisInput Movement { get { return movement; } protected set { Movement = value; } }
+    public override TwoAxisInput Rotation { get { return rotation; } protected set { Rotation = value; } }
+
+    public override InputHandler Fire { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
 
     private Joystick currentJoystick;
     private Touch touch;
@@ -32,13 +35,13 @@ public class MobileInput : InputManager
 
     public override void Init()
     {
-        leftJoystick.Init();
+        movement.Init();
         //rightJoystick.Init();
     }
 
     private bool IsTapOnWrongSide()
     {
-        return IsRightSideScreen() && currentJoystick == leftJoystick || !IsRightSideScreen() && currentJoystick == rightJoystick;
+        return IsRightSideScreen() && currentJoystick == movement || !IsRightSideScreen() && currentJoystick == rotation;
     }
 
     private void JoystickTouchDetected()
@@ -76,7 +79,7 @@ public class MobileInput : InputManager
 
     private void ChooseTapJoystickSide()
     {
-        currentJoystick = IsRightSideScreen() ? rightJoystick : leftJoystick;
+        currentJoystick = IsRightSideScreen() ? rotation : movement;
     }
 
     private bool IsRightSideScreen()

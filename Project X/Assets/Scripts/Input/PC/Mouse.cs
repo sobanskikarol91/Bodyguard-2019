@@ -15,7 +15,6 @@ public class Mouse : TwoAxisInput
     public override void OnTouching(Touch touch)
     {
         Direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log("Mouse" + Direction);
         OnInputUsing();
     }
 
