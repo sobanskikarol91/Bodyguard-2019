@@ -13,8 +13,18 @@ public class EnemyInput : TwoAxisInput
         player = GameManager.instance.Player;
     }
 
-    private void Update()
+    public override void OnTouchStart(Touch touch)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void OnTouching(Touch touch)
     {
         OnInputUsing();
+    }
+
+    public override void OnTouchEnd()
+    {
+        throw new System.NotImplementedException();
     }
 }

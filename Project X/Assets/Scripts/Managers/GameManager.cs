@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,10 +17,16 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Input = platform.GetInpuntDependsOnPlatform();
+        Input.Init();
         enemySpawner = GetComponent<EnemySpawner>();
         ScoreManager = GetComponent<ScoreManager>();
         player.GetComponent<Health>().Death += GameOver;
         instance = this;
+    }
+
+    private void Update()
+    {
+        Input.Execute();
     }
 
     public void GameOver()

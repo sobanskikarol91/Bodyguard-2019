@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
 
 public class KeyboardsJoystick: TwoAxisInput
@@ -11,7 +7,7 @@ public class KeyboardsJoystick: TwoAxisInput
     [SerializeField] string verticalAxis = "Vertical";
 
 
-    private void Update()
+    public override void OnTouching(Touch touch)
     {
         float verticalMove = Input.GetAxis(verticalAxis);
         float horizontalMove = Input.GetAxis(horizontalAxis);
@@ -19,5 +15,15 @@ public class KeyboardsJoystick: TwoAxisInput
         Direction = new Vector2(horizontalMove, verticalMove);
 
         OnInputUsing();
+    }
+
+    public override void OnTouchEnd()
+    {
+
+    }
+
+    public override void OnTouchStart(Touch touch)
+    {
+        
     }
 }

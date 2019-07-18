@@ -4,11 +4,12 @@
 public class Engine : MonoBehaviour
 {
     [SerializeField] MoveSettings moveSettings;
-    [SerializeField] TwoAxisInput inputMovement;
+    TwoAxisInput inputMovement;
 
 
-    private void Awake()
+    private void Start()
     {
+        inputMovement = GameManager.instance.Input.Movement;
         inputMovement.InputUsing += Move;
     }
 

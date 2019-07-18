@@ -7,6 +7,8 @@ public abstract class InputHandler : MonoBehaviour
     public event Action InputUsing = delegate { };
     public event Action InputEndUsing = delegate { };
 
+    protected Touch touch;
+
 
     protected void OnInputStartUsing()
     {
@@ -22,6 +24,10 @@ public abstract class InputHandler : MonoBehaviour
     {
         InputEndUsing();
     }
+
+    public abstract void OnTouchStart(Touch touch);
+    public abstract void OnTouching(Touch touch);
+    public abstract void OnTouchEnd();
 }
 
 

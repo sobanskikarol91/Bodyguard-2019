@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: MobileInput
   m_EditorClassIdentifier: Assembly-CSharp::MobileInput
-  moveJoystick: {fileID: 612546440398452525, guid: 2fe69355982be5c46b67a91a4f48ce52,
+  leftJoystickPrefab: {fileID: 612546440398452525, guid: 2fe69355982be5c46b67a91a4f48ce52,
     type: 3}
-  rotateJoystick: {fileID: 2302827256492935123, guid: 8d261509d9c4c5743acd48fead780c6d,
+  rightJoystickPrefab: {fileID: 2302827256492935123, guid: 8d261509d9c4c5743acd48fead780c6d,
     type: 3}
