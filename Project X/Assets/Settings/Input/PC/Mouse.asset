@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ffcfb5bef5fa824ebddce4092b48f3c, type: 3}
-  m_Name: PCInput
+  m_Script: {fileID: 11500000, guid: 13f08f3317f36ef40b857dba1053d5c3, type: 3}
+  m_Name: Mouse
   m_EditorClassIdentifier: 
-  movement: {fileID: 11400000, guid: 3c46d733a097457428c5bc3b1120bbdc, type: 2}
-  rotation: {fileID: 11400000, guid: 0e6bb0e5958623249ae86dacd7f02d40, type: 2}

@@ -4,7 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Mouse : TwoAxisInput 
+[CreateAssetMenu(fileName = "Mouse", menuName = "Input/PC/Mouse")]
+public class Mouse : TwoAxisInput
 {
+    public override void OnTouchEnd()
+    {
+       
+    }
 
+    public override void OnTouching(Touch touch)
+    {
+        Direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log("Mouse" + Direction);
+        OnInputUsing();
+    }
+
+    public override void OnTouchStart(Touch touch)
+    {
+       
+    }
 }

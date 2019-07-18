@@ -5,10 +5,17 @@ using UnityEngine;
 public class InputRotation : Rotation
 {
     protected override Vector2 Direction { get => (Vector3)input.Direction; }
-    [SerializeField] TwoAxisInput input;
 
-    private void Start()
+    private TwoAxisInput input;
+
+    private void OnEnable()
     {
-        //input.InputUsing += Rotate;
+        input = GameManager.instance.Input.Rotation;
+        input.InputUsing += Rotate;
+    }
+
+    private void OnDisable()
+    {
+        input.InputUsing -= Rotate;
     }
 }

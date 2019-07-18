@@ -5,18 +5,19 @@
 public class PCInput : InputManager
 {
     public override TwoAxisInput Movement { get { return movement; } protected set { Movement = value; } }
-    public override TwoAxisInput Rotation { get { return movement; } protected set { Rotation = value; } }
+    public override TwoAxisInput Rotation { get { return rotation; } protected set { Rotation = value; } }
 
-    [SerializeField] KeyboardsJoystick movement;
-
+    [SerializeField] TwoAxisInput movement;
+    [SerializeField] TwoAxisInput rotation;
 
     public override void Execute()
     {
         movement.OnTouching(new Touch());
+        rotation.OnTouching(new Touch());
     }
 
     public override void Init()
     {
-       
+
     }
 }
