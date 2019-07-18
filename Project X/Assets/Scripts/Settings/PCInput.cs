@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "MobileInput", menuName = "Input/PC")]
+
+[CreateAssetMenu(fileName = "MobileInput", menuName = "Input/PC/Settings")]
 public class PCInput : InputManager
 {
-    public override TwoAxisInput Movement { get { return keyboardJoystick; } protected set { Movement = value; } }
-    public override TwoAxisInput Rotation { get { return keyboardJoystick; } protected set { Rotation = value; } }
+    public override TwoAxisInput Movement { get { return movement; } protected set { Movement = value; } }
+    public override TwoAxisInput Rotation { get { return movement; } protected set { Rotation = value; } }
 
-    [SerializeField] KeyboardsJoystick keyboardJoystick;
+    [SerializeField] KeyboardsJoystick movement;
 
 
     public override void Execute()
     {
-        keyboardJoystick.OnTouchStart(new Touch());
+        movement.OnTouching(new Touch());
     }
 
     public override void Init()
     {
-        keyboardJoystick = new KeyboardsJoystick();
+       
     }
 }

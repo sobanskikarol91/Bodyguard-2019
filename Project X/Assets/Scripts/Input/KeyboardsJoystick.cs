@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-
+[CreateAssetMenu(fileName = "JoystickKeyboard", menuName = "Input/PC/JoystickKeyboard")]
 public class KeyboardsJoystick: TwoAxisInput
 {
     [SerializeField] string horizontalAxis = "Horizontal";

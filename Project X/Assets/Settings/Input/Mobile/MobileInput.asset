@@ -12,7 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: MobileInput
   m_EditorClassIdentifier: Assembly-CSharp::MobileInput
-  leftJoystickPrefab: {fileID: 612546440398452525, guid: 2fe69355982be5c46b67a91a4f48ce52,
-    type: 3}
-  rightJoystickPrefab: {fileID: 2302827256492935123, guid: 8d261509d9c4c5743acd48fead780c6d,
-    type: 3}
+  leftJoystick: {fileID: 11400000, guid: 3c6a04a74e1a56b489fa233e41dc7127, type: 2}
+  rightJoystick: {fileID: 11400000, guid: c630b1643eef73d40a585b31ed4a7696, type: 2}

@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
-
+[CreateAssetMenu(fileName = "Joystick", menuName = "Input/Mobile/Joystick")]
 public class Joystick : TwoAxisInput
 {
-    [SerializeField] Transform circle;
-    [SerializeField] Transform innerCircle;
+    [SerializeField] VisualJoystick joystickPrefab;
 
     public int FingerId { get; private set; }
 
     private Vector2 pressPos, currentFingerPos;
     private const int notUsedValue = -1;
+    private VisualJoystick joystick;
 
 
-    private void Awake()
+    public void Init()
     {
+        joystick = Instantiate(joystickPrefab);
         FingerId = notUsedValue;
     }
 
@@ -27,8 +28,8 @@ public class Joystick : TwoAxisInput
         this.touch = touch;
         FingerId = touch.fingerId;
         pressPos = GetWorldTouchPos();
-        circle.transform.position = pressPos;
-        circle.gameObject.SetActive(true);
+        joystick.Circle.transform.position = pressPos;
+        joystick.Circle.gameObject.SetActive(true);
         OnInputStartUsing();
     }
 
@@ -43,14 +44,14 @@ public class Joystick : TwoAxisInput
     public override void OnTouchEnd()
     {
         FingerId = notUsedValue;
-        circle.gameObject.SetActive(false);
+        joystick.Circle.gameObject.SetActive(false);
         OnInputEndUsing();
     }
 
     private void UpdateJoystickPosition()
     {
         Direction = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
-        innerCircle.transform.position = pressPos + Direction;
+        joystick.InnerCircle.position = pressPos + Direction;
     }
 
     public bool IsNotUsed()

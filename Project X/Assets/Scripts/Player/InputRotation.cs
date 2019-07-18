@@ -9,6 +9,6 @@ public class InputRotation : Rotation
 
     private void Start()
     {
-        input.InputUsing += Rotate;
+        //input.InputUsing += Rotate;
     }
 }

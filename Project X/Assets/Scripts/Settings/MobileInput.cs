@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "MobileInput", menuName = "Input/Mobile")]
+[CreateAssetMenu(fileName = "MobileInput", menuName = "Input/Mobile/Settings")]
 public class MobileInput : InputManager
 {
-    [SerializeField] Joystick leftJoystickPrefab;
-    [SerializeField] Joystick rightJoystickPrefab;
+    [SerializeField] Joystick leftJoystick;
+    [SerializeField] Joystick rightJoystick;
 
     public override TwoAxisInput Movement { get { return leftJoystick; } protected set { Movement = value; } }
     public override TwoAxisInput Rotation { get { return rightJoystick; } protected set { Rotation = value; } }
 
-    private Joystick leftJoystick;
-    private Joystick rightJoystick;
     private Joystick currentJoystick;
     private Touch touch;
 
@@ -34,8 +32,8 @@ public class MobileInput : InputManager
 
     public override void Init()
     {
-        leftJoystick =  Instantiate(leftJoystickPrefab);
-        rightJoystick = Instantiate(rightJoystickPrefab);
+        leftJoystick.Init();
+        //rightJoystick.Init();
     }
 
     private bool IsTapOnWrongSide()

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public abstract class InputHandler : MonoBehaviour
+public abstract class InputHandler : ScriptableObject
 {
     public event Action InputStartUsing = delegate { };
     public event Action InputUsing = delegate { };

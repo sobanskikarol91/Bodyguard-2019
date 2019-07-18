@@ -3,7 +3,7 @@
 
 public class EnemyInput : TwoAxisInput
 {
-    public override Vector2 Direction { get { return (player.transform.position - transform.position).normalized; } }
+    public override Vector2 Direction { get { return (player.transform.position).normalized; } }
 
     private Player player;
 

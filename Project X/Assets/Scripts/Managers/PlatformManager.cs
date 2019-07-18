@@ -9,13 +9,13 @@ public class PlatformManager : ScriptableObject
 
     public InputManager GetInpuntDependsOnPlatform()
     {
-        return pc; 
-        //if (IsPC())
-        //    return new PCInput();
-        //else if (IsMobile())
-        //    return new MobileInput();
-        //else
-        //    return null;
+        //return mobile; 
+        if (IsPC())
+            return pc;
+        else if (IsMobile())
+            return mobile;
+        else
+           return mobile;
     }
 
     private static bool IsMobile()
@@ -27,6 +27,7 @@ public class PlatformManager : ScriptableObject
     private static bool IsPC()
     {
         return Application.platform == RuntimePlatform.LinuxPlayer ||
-            Application.platform == RuntimePlatform.WindowsPlayer;
+            Application.platform == RuntimePlatform.WindowsPlayer ||
+            Application.platform == RuntimePlatform.WindowsEditor;
     }
 }
