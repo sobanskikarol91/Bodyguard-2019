@@ -9,7 +9,7 @@ public class PlatformManager : ScriptableObject
 
     public InputManager GetInpuntDependsOnPlatform()
     {
-        //return mobile; 
+        return pc; 
         if (IsPC())
             return pc;
         else if (IsMobile())

@@ -6,17 +6,22 @@ public class PCInput : InputManager
 {
     public override TwoAxisInput Movement { get { return movement; } protected set { Movement = value; } }
     public override TwoAxisInput Rotation { get { return rotation; } protected set { Rotation = value; } }
-    public override InputHandler Fire { get => throw new System.NotImplementedException(); protected set => throw new System.NotImplementedException(); }
+    public override InputHandler Fire { get { return fire; } protected set { Fire = value; } }
 
     [SerializeField] TwoAxisInput movement;
     [SerializeField] TwoAxisInput rotation;
+    [SerializeField] InputHandler fire;
 
 
     public override void Execute()
     {
-        movement.OnTouching(new Touch());
-        rotation.OnTouching(new Touch());
+        movement.Execute();
+        rotation.Execute();
+        fire.Execute();
     }
 
-    public override void Init() { }
+    public override void Init()
+    {
+    
+    }
 }

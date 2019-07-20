@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "MobileInput", menuName = "Input/PC/Button")]
-public class Button : MonoBehaviour 
+[CreateAssetMenu(fileName = "Button", menuName = "Input/PC/Button")]
+public class Button : InputHandler
 {
+    [SerializeField] KeyCode button;
 
+    public override void Execute()
+    {
+        if (Input.GetKeyDown(button))
+            OnInputStartUsing();
+        else if (Input.GetKey(button))
+            OnInputUsing();
+        else if (Input.GetKeyUp(button))
+            OnInputEndUsing();
+    }
 }

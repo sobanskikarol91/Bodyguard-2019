@@ -7,19 +7,16 @@ using System.Linq;
 [CreateAssetMenu(fileName = "Mouse", menuName = "Input/PC/Mouse")]
 public class Mouse : TwoAxisInput
 {
-    public override void OnTouchEnd()
+    private Camera camera;
+
+    private void OnEnable()
     {
-       
+        camera = Camera.main;  
     }
 
-    public override void OnTouching(Touch touch)
+    public override void Execute()
     {
-        Direction = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        OnInputUsing();
-    }
-
-    public override void OnTouchStart(Touch touch)
-    {
-       
+        Direction = camera.ScreenToWorldPoint(Input.mousePosition);
+        base.OnInputUsing();
     }
 }

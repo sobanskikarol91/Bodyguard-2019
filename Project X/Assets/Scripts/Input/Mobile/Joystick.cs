@@ -23,7 +23,7 @@ public class Joystick : TwoAxisInput
         return Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
     }
 
-    public override void OnTouchStart(Touch touch)
+    public void OnTouchStart(Touch touch)
     {
         this.touch = touch;
         FingerId = touch.fingerId;
@@ -33,7 +33,7 @@ public class Joystick : TwoAxisInput
         OnInputStartUsing();
     }
 
-    public override void OnTouching(Touch touch)
+    public void OnTouching(Touch touch)
     {
         this.touch = touch;
         currentFingerPos = GetWorldTouchPos();
@@ -41,7 +41,7 @@ public class Joystick : TwoAxisInput
         OnInputUsing();
     }
 
-    public override void OnTouchEnd()
+    public void OnTouchEnd()
     {
         FingerId = notUsedValue;
         joystick.Circle.gameObject.SetActive(false);
@@ -57,5 +57,10 @@ public class Joystick : TwoAxisInput
     public bool IsNotUsed()
     {
         return FingerId == notUsedValue;
+    }
+
+    public override void Execute()
+    {
+       
     }
 }

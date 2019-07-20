@@ -10,24 +10,22 @@ public abstract class InputHandler : ScriptableObject
     protected Touch touch;
 
 
-    protected void OnInputStartUsing()
+    protected virtual void OnInputStartUsing()
     {
         InputStartUsing();
     }
 
-    protected void OnInputUsing()
+    protected virtual void OnInputUsing()
     {
         InputUsing();
     }
 
-    protected void OnInputEndUsing()
+    protected virtual void OnInputEndUsing()
     {
         InputEndUsing();
     }
 
-    public abstract void OnTouchStart(Touch touch);
-    public abstract void OnTouching(Touch touch);
-    public abstract void OnTouchEnd();
+    public abstract void Execute();
 }
 
 
