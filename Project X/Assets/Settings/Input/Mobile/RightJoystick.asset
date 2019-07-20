@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickPrefab: {fileID: 6179960020821762479, guid: 2fe69355982be5c46b67a91a4f48ce52,
     type: 3}
+  position: 1

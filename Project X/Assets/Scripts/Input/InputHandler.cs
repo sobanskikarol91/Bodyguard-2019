@@ -7,8 +7,6 @@ public abstract class InputHandler : ScriptableObject
     public event Action InputUsing = delegate { };
     public event Action InputEndUsing = delegate { };
 
-    protected Touch touch;
-
 
     protected virtual void OnInputStartUsing()
     {
@@ -26,10 +24,4 @@ public abstract class InputHandler : ScriptableObject
     }
 
     public abstract void Execute();
-}
-
-
-public interface IMovemenet
-{
-    void Move();
 }

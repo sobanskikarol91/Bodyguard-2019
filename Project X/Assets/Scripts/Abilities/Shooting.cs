@@ -45,13 +45,13 @@ public class Shooting : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.instance.Input.Fire.InputStartUsing += TryShoot;
+        GameManager.instance.Input.Fire.InputEndUsing += TryShoot;
 
         leftTimeToShot = 0;
     }
 
     private void OnDisable()
     {
-        GameManager.instance.Input.Fire.InputStartUsing -= TryShoot;
+        GameManager.instance.Input.Fire.InputEndUsing -= TryShoot;
     }
 }

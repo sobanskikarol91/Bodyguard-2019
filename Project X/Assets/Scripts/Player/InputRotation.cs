@@ -1,21 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InputRotation : Rotation
 {
     protected override Vector2 Direction { get => (Vector3)input.Direction; }
 
-    private TwoAxisInput input;
-
-    private void OnEnable()
+    protected override void OnEnable()
     {
         input = GameManager.instance.Input.Rotation;
-        input.InputUsing += Rotate;
-    }
-
-    private void OnDisable()
-    {
-        input.InputUsing -= Rotate;
+        base.OnEnable();
     }
 }

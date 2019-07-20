@@ -1,51 +1,70 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
+enum JoystickPosition { Left, Right }
 
 [CreateAssetMenu(fileName = "Joystick", menuName = "Input/Mobile/Joystick")]
 public class Joystick : TwoAxisInput
 {
-    [SerializeField] VisualJoystick joystickPrefab;
-
     public int FingerId { get; private set; }
+
+    [SerializeField] VisualJoystick joystickPrefab;
+    [SerializeField] JoystickPosition position;
 
     private Vector2 pressPos, currentFingerPos;
     private const int notUsedValue = -1;
     private VisualJoystick joystick;
+    private Touch touch;
+    private Camera camera;
 
 
     public void Init()
     {
+        camera = Camera.main;
         joystick = Instantiate(joystickPrefab);
         FingerId = notUsedValue;
     }
 
-    private Vector3 GetWorldTouchPos()
+    public override void Execute()
     {
-        return Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            touch = Input.touches[i];
+
+            if (IsTappedOnRightSideScreen())
+                JoystickUsed();
+        }
     }
 
-    public void OnTouchStart(Touch touch)
+    private Vector3 GetWorldTouchPos()
     {
-        this.touch = touch;
+        return camera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
+    }
+      
+    protected override void OnInputStartUsing()
+    {
         FingerId = touch.fingerId;
         pressPos = GetWorldTouchPos();
         joystick.Circle.transform.position = pressPos;
         joystick.Circle.gameObject.SetActive(true);
-        OnInputStartUsing();
+
+        base.OnInputStartUsing();
     }
 
-    public void OnTouching(Touch touch)
+    protected override void OnInputUsing()
     {
-        this.touch = touch;
         currentFingerPos = GetWorldTouchPos();
         UpdateJoystickPosition();
-        OnInputUsing();
+
+        base.OnInputUsing();
     }
 
-    public void OnTouchEnd()
+    protected override void OnInputEndUsing()
     {
         FingerId = notUsedValue;
         joystick.Circle.gameObject.SetActive(false);
-        OnInputEndUsing();
+
+        base.OnInputEndUsing();
     }
 
     private void UpdateJoystickPosition()
@@ -59,8 +78,34 @@ public class Joystick : TwoAxisInput
         return FingerId == notUsedValue;
     }
 
-    public override void Execute()
+    private void JoystickUsed()
     {
-       
+        if (IsTheSameFingerAsJoystickFinger())
+            JoystickTouchDetected();
+        else if (IsNotUsed())
+            OnInputStartUsing();
+    }
+
+    private void JoystickTouchDetected()
+    {
+        if (IsTouchEnd())
+            OnInputEndUsing();
+        else
+            OnInputUsing();
+    }
+
+    private bool IsTouchEnd()
+    {
+        return touch.phase == TouchPhase.Ended;
+    }
+
+    private bool IsTheSameFingerAsJoystickFinger()
+    {
+        return touch.fingerId == FingerId;
+    }
+
+    private bool IsTappedOnRightSideScreen()
+    {
+        return position == JoystickPosition.Right ? touch.position.x > Screen.width / 2 : touch.position.x <= Screen.width / 2;
     }
 }

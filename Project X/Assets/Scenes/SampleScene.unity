@@ -325,18 +325,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &264336643 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3956956917748823987, guid: 5c77aa50051483543ad27db736884000,
-    type: 3}
-  m_PrefabInstance: {fileID: 3956956917954249392}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f74d661648fda2f46bcb1d9b4b169c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &414950894
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,11 +507,11 @@ PrefabInstance:
         type: 3}
       propertyPath: input
       value: 
-      objectReference: {fileID: 264336643}
+      objectReference: {fileID: 0}
     - target: {fileID: 1452791550347159422, guid: f2db758b65dc8a441ac13da258254bf1,
         type: 3}
       propertyPath: speed
-      value: 500
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1452791550347159297, guid: f2db758b65dc8a441ac13da258254bf1,
         type: 3}
@@ -544,7 +532,7 @@ PrefabInstance:
         type: 3}
       propertyPath: input
       value: 
-      objectReference: {fileID: 264336643}
+      objectReference: {fileID: 0}
     - target: {fileID: 6543349747253418355, guid: f2db758b65dc8a441ac13da258254bf1,
         type: 3}
       propertyPath: refireRate

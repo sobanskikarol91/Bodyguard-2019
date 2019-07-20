@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 62b9a844f9895b2479574c3defaf19b0, type: 3}
   m_Name: MobileInput
   m_EditorClassIdentifier: Assembly-CSharp::MobileInput
-  leftJoystick: {fileID: 11400000, guid: 3c6a04a74e1a56b489fa233e41dc7127, type: 2}
-  rightJoystick: {fileID: 11400000, guid: c630b1643eef73d40a585b31ed4a7696, type: 2}
+  movement: {fileID: 11400000, guid: 3c6a04a74e1a56b489fa233e41dc7127, type: 2}
+  rotation: {fileID: 11400000, guid: c630b1643eef73d40a585b31ed4a7696, type: 2}
+  fire: {fileID: 11400000, guid: bd061c6bb71f9c34293f319cd3598c1b, type: 2}
