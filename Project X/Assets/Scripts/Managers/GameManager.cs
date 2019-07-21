@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 
     public Player Player { get { return player; } }
     public ScoreManager ScoreManager { get; private set; }
-    public InputManager Input { get; private set; }
 
     [SerializeField] Player player;
     [SerializeField] PlatformManager platform;
@@ -16,17 +15,11 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Input = platform.GetInpuntDependsOnPlatform();
-        Input.Init();
+
         enemySpawner = GetComponent<EnemySpawner>();
         ScoreManager = GetComponent<ScoreManager>();
         player.GetComponent<Health>().Death += GameOver;
         instance = this;
-    }
-
-    private void Update()
-    {
-        Input.Execute();
     }
 
     public void GameOver()

@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 
-public abstract class Rotation : MonoBehaviour
+public class RotationAbility : MonoBehaviour, ITwoAxisInput
 {
     [SerializeField] protected float speed = 5f;
-    protected abstract Vector2 Direction { get; }
-
-    protected TwoAxisInput input;
+    [SerializeField] TwoAxisInput input;
+    public TwoAxisInput Input { get => input; set => input = value; }
 
     protected void SlerpRotate()
     {
@@ -21,7 +20,7 @@ public abstract class Rotation : MonoBehaviour
 
     private float GetAngle()
     {
-        return Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
+        return Mathf.Atan2(input.Direction.y, input.Direction.x) * Mathf.Rad2Deg;
     }
 
     protected virtual void OnEnable()
@@ -32,13 +31,13 @@ public abstract class Rotation : MonoBehaviour
     private void ChooseState()
     {
         if (speed == 0)
-            input.InputUsing += InstantRotation;
+            input.Using += InstantRotation;
         else
-            input.InputUsing += SlerpRotate;
+            input.Using += SlerpRotate;
     }
 
     private void OnDisable()
     {
-        input.InputUsing -= SlerpRotate;
+        input.Using -= SlerpRotate;
     }
 }

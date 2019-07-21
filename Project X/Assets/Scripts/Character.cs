@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
+
 
 public class Character : InteractiveObject
 {
-    private Engine engine;
+    [SerializeField] protected InputManager input;
 
     protected virtual void Awake()
     {
-        engine = GetComponent<Engine>();
+        input.Init();
     }
 }

@@ -2,11 +2,13 @@
 using UnityEngine;
 
 
-public class Shooting : MonoBehaviour
+public class ShootingAbility : MonoBehaviour, IInput
 {
     [SerializeField] Weapon weapon;
     [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] InputHandler input;
 
+    public InputHandler Input { get => input; set => input = value; }
     private float leftTimeToShot;
 
 
@@ -45,13 +47,12 @@ public class Shooting : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.instance.Input.Fire.InputEndUsing += TryShoot;
-
+        input.EndUsing += TryShoot;
         leftTimeToShot = 0;
     }
 
     private void OnDisable()
     {
-        GameManager.instance.Input.Fire.InputEndUsing -= TryShoot;
+        input.EndUsing -= TryShoot;
     }
 }

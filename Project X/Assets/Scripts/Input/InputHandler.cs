@@ -3,24 +3,24 @@ using UnityEngine;
 
 public abstract class InputHandler : ScriptableObject
 {
-    public event Action InputStartUsing = delegate { };
-    public event Action InputUsing = delegate { };
-    public event Action InputEndUsing = delegate { };
+    public event Action StartUsing = delegate { };
+    public event Action Using = delegate { };
+    public event Action EndUsing = delegate { };
 
 
     protected virtual void OnInputStartUsing()
     {
-        InputStartUsing();
+        StartUsing();
     }
 
     protected virtual void OnInputUsing()
     {
-        InputUsing();
+        Using();
     }
 
     protected virtual void OnInputEndUsing()
     {
-        InputEndUsing();
+        EndUsing();
     }
 
     public abstract void Execute();

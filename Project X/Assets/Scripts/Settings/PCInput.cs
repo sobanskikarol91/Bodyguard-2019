@@ -4,9 +4,9 @@
 [CreateAssetMenu(fileName = "MobileInput", menuName = "Input/PC/Settings")]
 public class PCInput : InputManager
 {
-    public override TwoAxisInput Movement { get { return movement; } protected set { Movement = value; } }
-    public override TwoAxisInput Rotation { get { return rotation; } protected set { Rotation = value; } }
-    public override InputHandler Fire { get { return fire; } protected set { Fire = value; } }
+    public override TwoAxisInput Moving { get { return movement; } protected set { Moving = value; } }
+    public override TwoAxisInput Rotating { get { return rotation; } protected set { Rotating = value; } }
+    public override InputHandler Shooting { get { return fire; } protected set { Shooting = value; } }
 
     [SerializeField] TwoAxisInput movement;
     [SerializeField] TwoAxisInput rotation;

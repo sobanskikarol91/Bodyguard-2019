@@ -6,6 +6,7 @@ public class KeyboardsJoystick: TwoAxisInput
     [SerializeField] string horizontalAxis = "Horizontal";
     [SerializeField] string verticalAxis = "Vertical";
 
+
     public override void Execute()
     {
         float verticalMove = Input.GetAxis(verticalAxis);
