@@ -3,19 +3,19 @@
 [CreateAssetMenu(fileName = "PlatformManager", menuName = "Platform/Settings")]
 public class PlatformManager : ScriptableObject
 {
-    [SerializeField] static MobileInput mobile;
-    [SerializeField] static PCInput pc;
+    [SerializeField]  MobileInput mobile;
+    [SerializeField]  PCInput pc;
 
 
-    public static InputManager GetPlayerInputDependsOnPlatform()
+    public InputManager GetPlayerInputDependsOnPlatform()
     {
-        return pc; 
+        return pc;
         if (IsPC())
             return pc;
         else if (IsMobile())
             return mobile;
         else
-           return mobile;
+            return mobile;
     }
 
     private static bool IsMobile()

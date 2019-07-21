@@ -12,7 +12,6 @@ public class MovingAbility : MonoBehaviour, ITwoAxisInput
 
     private void OnEnable()
     {
-        Debug.Log("enable" + gameObject.name);
         inputMovement.Using += Move;
     }
 

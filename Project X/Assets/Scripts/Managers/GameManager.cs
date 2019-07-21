@@ -1,45 +1,55 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public Player Player { get { return player; } }
+    public Player Player { get; private set; }
     public ScoreManager ScoreManager { get; private set; }
-
-    [SerializeField] Player player;
+    public PlatformManager Platform { get => platform; }
+    [SerializeField] Player playerPrefab;
     [SerializeField] PlatformManager platform;
 
-    private EnemySpawner enemySpawner;
-
+    private SpawnManager spawnManager;
 
     private void Awake()
     {
-
-        enemySpawner = GetComponent<EnemySpawner>();
-        ScoreManager = GetComponent<ScoreManager>();
-        player.GetComponent<Health>().Death += GameOver;
         instance = this;
+        GetReferences();
+        InvokeMethods();    
     }
 
+    private void GetReferences()
+    {
+        spawnManager = GetComponent<SpawnManager>();
+        ScoreManager = GetComponent<ScoreManager>();
+    }
+
+    private void InvokeMethods()
+    {
+        Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
+        Player.GetComponent<Health>().Death += GameOver;
+    }
+       
     public void GameOver()
     {
-        player.gameObject.SetActive(false);
-        enemySpawner.enabled = false;
+        Player.gameObject.SetActive(false);
+        spawnManager.enabled = false;
         Invoke("Reset", 1f);
     }
 
     private void Reset()
     {
-        player.gameObject.SetActive(true);
-        enemySpawner.enabled = true;
-        player.GetComponent<Collider2D>().enabled = false;
+        Player.gameObject.SetActive(true);
+        spawnManager.enabled = true;
+        Player.GetComponent<Collider2D>().enabled = false;
         ScoreManager.Reset();
         Invoke("GoodModeOff", 1f);
     }
 
     void GoodModeOff()
     {
-        player.GetComponent<Collider2D>().enabled = true;
+        Player.GetComponent<Collider2D>().enabled = true;
     }
 }

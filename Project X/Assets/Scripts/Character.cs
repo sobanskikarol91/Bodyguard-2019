@@ -9,4 +9,9 @@ public class Character : InteractiveObject
     {
         input.Init();
     }
+
+    private void Update()
+    {
+        input.Execute();
+    }
 }
