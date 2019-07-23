@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public abstract class MoveType : ScriptableObject, IMovemenet
+public abstract class MoveType : ScriptableObject
 {
     protected Transform transform;
     [SerializeField] protected MoveSettings settings;

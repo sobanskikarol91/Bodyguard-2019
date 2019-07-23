@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Bullet : InteractiveObject, IMovemenet
+public class Bullet : InteractiveObject
 {
     [SerializeField] protected float speed = 10;
 

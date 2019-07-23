@@ -1,9 +1,4 @@
-﻿public interface IMovemenet
-{
-    void Move();
-}
-
-public interface IInput
+﻿public interface IInput
 {
     InputHandler Input { get; set; }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 
 public class SimpleAIShooting : MonoBehaviour
 {
-    public class SimpleAIMoving : MonoBehaviour, IMovemenet
+    public class SimpleAIMoving : MonoBehaviour
     {
         [SerializeField] MoveSettings moveSettings;
 
