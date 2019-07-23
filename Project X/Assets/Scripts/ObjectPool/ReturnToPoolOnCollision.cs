@@ -17,18 +17,18 @@ public class ReturnToPoolOnCollision : ReturnToPool
     private void OnEnable()
     {
         if (damageOnCollision != null)
-            damageOnCollision.Damage += ReturnOnCollision;
+            damageOnCollision.DoDamage += ReturnOnCollision;
     }
 
     private void OnDisable()
     {
         if (damageOnCollision != null)
-            damageOnCollision.Damage -= ReturnOnCollision;
+            damageOnCollision.DoDamage -= ReturnOnCollision;
     }
 
     private void ReturnOnCollision()
     {
-        damageOnCollision.Damage -= ReturnOnCollision;
+        damageOnCollision.DoDamage -= ReturnOnCollision;
         ObjectPoolManager.instance.ReturnToPool(gameObject);
     }
 }

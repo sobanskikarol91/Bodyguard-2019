@@ -1,27 +1,21 @@
 ﻿using UnityEngine;
 
 
-public class MovingAbility : MonoBehaviour, ITwoAxisInput
+public class MovingAbility : MonoBehaviour
 {
     [SerializeField] MoveSettings moveSettings;
 
-    public TwoAxisInput Input { get => inputMovement; set => inputMovement = value; }
+    public MoveType MoveType { get => moveType; }
+    [SerializeField] MoveType moveType;
 
-    [SerializeField] TwoAxisInput inputMovement;
 
-
-    private void OnEnable()
+    private void Awake()
     {
-        inputMovement.Using += Move;
+        moveType.Init(transform.transform, moveSettings);
     }
 
-    private void OnDisable()
+    public void Update()
     {
-        inputMovement.Using -= Move;
-    }
-
-    public void Move()
-    {
-        transform.position += (Vector3)(moveSettings.Speed * inputMovement.Direction * Time.deltaTime);
+        moveType.Move();
     }
 }

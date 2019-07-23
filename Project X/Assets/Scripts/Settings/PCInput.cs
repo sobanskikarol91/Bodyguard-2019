@@ -2,7 +2,7 @@
 
 
 [CreateAssetMenu(fileName = "MobileInput", menuName = "Input/PC/Settings")]
-public class PCInput : InputManager
+public class PCInput : PlayerInput
 {
     public override TwoAxisInput Moving { get { return movement; } protected set { Moving = value; } }
     public override TwoAxisInput Rotating { get { return rotation; } protected set { Rotating = value; } }

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class Health : MonoBehaviour, IDeath
 {
@@ -27,6 +26,7 @@ public class Health : MonoBehaviour, IDeath
 
     public void DoDamage(float damage)
     {
+        Debug.Log("Do Damage: " + damage + "  " + gameObject.name);
         if (godMode) return;
 
         health -= damage;

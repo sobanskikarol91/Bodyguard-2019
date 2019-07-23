@@ -194,8 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageObjects: 01000000
-  effect: {fileID: 0}
-  damage: 10
+  Damage: 1
 --- !u!58 &7696240082753549402
 CircleCollider2D:
   m_ObjectHideFlags: 0

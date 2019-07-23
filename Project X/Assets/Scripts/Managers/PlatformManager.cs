@@ -7,7 +7,7 @@ public class PlatformManager : ScriptableObject
     [SerializeField]  PCInput pc;
 
 
-    public InputManager GetPlayerInputDependsOnPlatform()
+    public PlayerInput GetPlayerInputDependsOnPlatform()
     {
         return pc;
         if (IsPC())

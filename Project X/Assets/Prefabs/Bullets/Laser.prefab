@@ -253,4 +253,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageObjects: 01000000
-  damage: 10
+  Damage: 1

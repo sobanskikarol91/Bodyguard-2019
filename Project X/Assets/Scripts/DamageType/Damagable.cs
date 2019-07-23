@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
-    protected ObjectType[] damageObjects;
-    protected float damage;
+    [SerializeField] ObjectType[] damageObjects;
+    [SerializeField] protected float Damage;
 
-    public event Action Damage = delegate { };
+    public event Action DoDamage = delegate { };
+
 
     protected bool IsHitTargetOnDamageObjectsCollection(InteractiveObject target)
     {
@@ -18,12 +17,12 @@ public class Damagable : MonoBehaviour
 
     protected void OnDamage()
     {
-        Damage();
+        DoDamage();
     }
 
-    public void Init(float damage,ObjectType[] damageObjects )
+    public void Init(float damage, ObjectType[] damageObjects)
     {
         this.damageObjects = damageObjects;
-        this.damage = damage;
+        Damage = damage;
     }
 }

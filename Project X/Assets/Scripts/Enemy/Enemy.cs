@@ -1,12 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Enemy : Character
+﻿public class Enemy : Character
 {
-    protected override void Awake()
+    private SimpleAIMoving moving;
+
+
+    protected void Awake()
     {
-        base.Awake();
         Type = ObjectType.Enemy;
+        moving = GetComponent<SimpleAIMoving>();
+    }
+
+    private void Update()
+    {
+        moving.Move();
     }
 }

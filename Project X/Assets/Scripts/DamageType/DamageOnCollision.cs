@@ -23,7 +23,7 @@ public class DamageOnCollision : Damagable
         Health health = hitObject.GetComponent<Health>();
 
         if (health)
-            health.DoDamage(damage);
+            health.DoDamage(Damage);
 
         OnDamage();
     }

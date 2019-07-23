@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public abstract class InputManager : ScriptableObject
+public abstract class PlayerInput : ScriptableObject
 {
     public abstract TwoAxisInput Moving { get; protected set; }
     public abstract TwoAxisInput Rotating { get; protected set; }

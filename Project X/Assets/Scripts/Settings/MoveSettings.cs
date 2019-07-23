@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
+
 
 [CreateAssetMenu(menuName = "Settings/Movement", fileName = "Settings")]
 public class MoveSettings : ScriptableObject

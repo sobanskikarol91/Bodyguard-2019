@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "MobileInput", menuName = "Input/Mobile/Settings")]
-public class MobileInput : InputManager
+public class MobileInput : PlayerInput
 {
     [SerializeField] Joystick movement;
     [SerializeField] Joystick rotation;
@@ -10,6 +10,11 @@ public class MobileInput : InputManager
     public override TwoAxisInput Rotating { get { return rotation; } protected set { Rotating = value; } }
     public override InputHandler Shooting { get => rotation; protected set => throw new System.NotImplementedException(); }
 
+    private void Awake()
+    {
+        movement.Init();
+        rotation.Init();
+    }
 
     public override void Execute()
     {
@@ -19,7 +24,6 @@ public class MobileInput : InputManager
 
     public override void Init()
     {
-        movement.Init();
-        rotation.Init();
+
     }
 }
