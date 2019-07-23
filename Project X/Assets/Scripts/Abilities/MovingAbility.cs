@@ -17,4 +17,5 @@ public class MovingAbility : MonoBehaviour
     {
         moveTypeInstance.Move();
     }
+
 }

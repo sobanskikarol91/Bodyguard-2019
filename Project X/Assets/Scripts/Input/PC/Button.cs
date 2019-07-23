@@ -13,6 +13,9 @@ public class Button : InputHandler
         else if (Input.GetKey(button))
             OnInputUsing();
         else if (Input.GetKeyUp(button))
+        {
+            Debug.Log("key down");
             OnInputEndUsing();
+        }
     }
 }

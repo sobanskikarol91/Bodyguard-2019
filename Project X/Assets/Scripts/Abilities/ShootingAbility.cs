@@ -2,15 +2,20 @@
 using UnityEngine;
 
 
-public class ShootingAbility : MonoBehaviour, IInput
+public class ShootingAbility : MonoBehaviour
 {
+    [SerializeField] ShootingType type;
     [SerializeField] Weapon weapon;
     [SerializeField] Transform bulletSpawnPoint;
-    [SerializeField] InputHandler input;
 
-    public InputHandler Input { get => input; set => input = value; }
     private float leftTimeToShot;
+    private ShootingType typeInstance;
 
+    private void Awake()
+    {
+        typeInstance = Instantiate(type);
+        typeInstance.Init(TryShoot);
+    }
 
     public void TryShoot()
     {
@@ -47,12 +52,6 @@ public class ShootingAbility : MonoBehaviour, IInput
 
     private void OnEnable()
     {
-        input.EndUsing += TryShoot;
         leftTimeToShot = 0;
-    }
-
-    private void OnDisable()
-    {
-        input.EndUsing -= TryShoot;
     }
 }
