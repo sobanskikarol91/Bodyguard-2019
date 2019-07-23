@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-
-[CreateAssetMenu(menuName = "Settings/Movement", fileName = "Settings")]
-public class MoveSettings : ScriptableObject
+[Serializable]
+public class MoveSettings
 {
     public Vector2 Speed { get { return new Vector2(horizontalSpeed, verticalSpeed); } }
 

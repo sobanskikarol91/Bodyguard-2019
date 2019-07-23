@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5ed59f8da03d4689086b093d7e709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 0
   deathEffect: {fileID: 8871031139695382733, guid: 4c8d764922023764a893aadab4a01fa1,
     type: 3}
   godMode: 0
@@ -194,8 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726aa527267542143820730661ea0c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSettings: {fileID: 0}
-  moveType: {fileID: 0}
+  moveType: {fileID: 11400000, guid: deab27ab3bea1e94581fbbc8cae75f0e, type: 2}
 --- !u!1 &8210579939764367727
 GameObject:
   m_ObjectHideFlags: 0

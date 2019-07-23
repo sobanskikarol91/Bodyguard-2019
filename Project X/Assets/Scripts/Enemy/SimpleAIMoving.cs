@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Simple", menuName = "")]
+
+[CreateAssetMenu(fileName = "AIMoving", menuName = "MoveType/FollowPlayer")]
 public class SimpleAIMoving : MoveType
 {
-    [SerializeField] MoveSettings moveSettings;
-    [SerializeField] Transform transform;
-
     private Player player;
 
-    private void Awake()
+    public override void Init(Transform transform)
     {
+        base.Init(transform);
         player = GameManager.instance.Player;
     }
 
     public override void Move()
     {
         Vector2 direction = (player.transform.position - transform.position).normalized;
-        transform.position += (Vector3)(moveSettings.Speed * direction * Time.deltaTime);
+        transform.position += (Vector3)(settings.Speed * direction * Time.deltaTime);
     }
 }

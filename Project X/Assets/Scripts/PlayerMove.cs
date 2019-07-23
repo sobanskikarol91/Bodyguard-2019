@@ -9,10 +9,10 @@ public class PlayerMove : MoveType
 {
     PlayerInput input;
 
-    public override void Init(Transform transform, MoveSettings settings)
+    public override void Init(Transform transform)
     {
+        base.Init(transform);
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
-        base.Init(transform, settings);
     }
 
     public override void Move()

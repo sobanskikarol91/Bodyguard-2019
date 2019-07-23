@@ -4,11 +4,10 @@
 public abstract class MoveType : ScriptableObject, IMovemenet
 {
     protected Transform transform;
-    protected MoveSettings settings;
+    [SerializeField] protected MoveSettings settings;
 
-    public virtual void Init(Transform transform, MoveSettings settings)
+    public virtual void Init(Transform transform)
     {
-        this.settings = settings;
         this.transform = transform;
     }
 

@@ -1,4 +1,4 @@
-﻿public class Character : InteractiveObject
+﻿public abstract class Character : InteractiveObject
 {
 
 }
