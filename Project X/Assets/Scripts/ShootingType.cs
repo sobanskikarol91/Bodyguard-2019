@@ -1,13 +1,11 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public abstract class ShootingType : ScriptableObject 
 {
-    protected Action TryShoot;
+    protected ShootingAbility ability;
 
-    public virtual void Init(Action TryShoot)
+    public virtual void Init(ShootingAbility ability)
     {
-        this.TryShoot = TryShoot;
+        this.ability = ability;       
     }
 }

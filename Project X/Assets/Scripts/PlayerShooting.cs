@@ -1,26 +1,24 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerShooting", menuName = "Shooting/Player")]
 public class PlayerShooting : ShootingType
 {
     private PlayerInput input;
 
-    public override void Init(Action TryShoot)
+    public override void Init(ShootingAbility ability)
     {
-        base.Init(TryShoot);
+        base.Init(ability);
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
-        input.Shooting.EndUsing += TryShoot;
+        input.Shooting.EndUsing += ability.TryShoot;
     }
 
     private void OnEnable()
     {
-        if (input) input.Shooting.EndUsing += TryShoot;
+        if (input && ability) input.Shooting.EndUsing += ability.TryShoot;
     }
 
     private void OnDisable()
     {
-        input.Shooting.EndUsing -= TryShoot;
+        if (input && ability) input.Shooting.EndUsing -= ability.TryShoot;
     }
 }
