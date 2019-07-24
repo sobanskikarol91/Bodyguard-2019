@@ -15,12 +15,12 @@ public class PlayerRotating : RotateType
 
     private void OnEnable()
     {
-        if (input && ability) input.Rotating.Using += Rotate;
+        if (input) input.Rotating.Using += Rotate;
     }
 
     private void OnDisable()
     {
-        if (input && ability) input.Rotating.Using -= Rotate;
+        if (input) input.Rotating.Using -= Rotate;
     }
 
     void Rotate()

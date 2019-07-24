@@ -45,7 +45,6 @@ public class ObjectPoolManager : MonoBehaviour
     private void CreateObjectPool(ObjectPool pool)
     {
         objectPools.Add(pool.Id, pool);
-        Debug.Log("Create pool " + pool.Id);
     }
 
     public void ReturnToPool(GameObject instance)

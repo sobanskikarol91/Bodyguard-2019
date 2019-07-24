@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -4020952158638287947}
   - component: {fileID: 7033016939144099625}
   - component: {fileID: -7022898893689427705}
+  - component: {fileID: -6706392536112429587}
   m_Layer: 0
   m_Name: SimpleEnemy
   m_TagString: Untagged
@@ -211,6 +212,20 @@ MonoBehaviour:
   type: {fileID: 11400000, guid: 5def577ea3c3a0b4aa43e158d69c8552, type: 2}
   weapon: {fileID: 11400000, guid: 7ae1aa2fe4274484b8fe71f1b5bfd0a9, type: 2}
   bulletSpawnPoint: {fileID: 1570190672824428428}
+--- !u!114 &-6706392536112429587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421080463516400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfa92f4ddd578c4e8ab3224380d483f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  type: {fileID: 11400000, guid: ed315c7fe11f0634ea4f9884f8ecad10, type: 2}
 --- !u!1 &8210579939764367727
 GameObject:
   m_ObjectHideFlags: 0
