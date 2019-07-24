@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  input: {fileID: 0}
+  type: {fileID: 11400000, guid: 4acf21207e429a540bcf2a4548b0b2fc, type: 2}
 --- !u!114 &6748983074186029745
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,7 +17,6 @@ public class ShootingAbility : MonoBehaviour
     {
         typeInstance = Instantiate(type);
         typeInstance.Init(this);
-        StartCoroutine(DecreaseTimeToFire());
     }
 
     public void TryShoot()
@@ -34,24 +33,16 @@ public class ShootingAbility : MonoBehaviour
     private IEnumerator DecreaseTimeToFire()
     {
         leftTimeToShot = weapon.RefireRate;
-        Debug.Log("Prepare: " + gameObject.name + " "  + leftTimeToShot);
 
         while (leftTimeToShot > 0)
         {
-            Debug.Log("Time0: " + gameObject.name + " " + leftTimeToShot);
             leftTimeToShot -= Time.deltaTime;
-            Debug.Log("Time1: " + gameObject.name + " " + leftTimeToShot);
+            if (leftTimeToShot < 0) break;
             yield return null;
-            Debug.Log("Time2: " + gameObject.name + " " + leftTimeToShot);
-            if (leftTimeToShot < 0)
-                break;
-
-            Debug.Log("Time3: " + gameObject.name + " " + leftTimeToShot);
         }
 
         leftTimeToShot = 0;
-        Debug.Log("Ready: " + gameObject.name);
-       // ReadyToShoot();
+        ReadyToShoot();
     }
 
     public void ShotEffect()
@@ -62,6 +53,7 @@ public class ShootingAbility : MonoBehaviour
 
     private void OnEnable()
     {
+        StartCoroutine(DecreaseTimeToFire());
         leftTimeToShot = 0;
     }
 }

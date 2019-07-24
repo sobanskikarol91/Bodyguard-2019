@@ -5,11 +5,6 @@ public class AutoShootingAI : ShootingType
 {
     private Player player;
 
-    private void Awake()
-    {
-        player = GameManager.instance.Player;
-    }
-
     public override void Init(ShootingAbility ability)
     {
         base.Init(ability);
@@ -18,11 +13,12 @@ public class AutoShootingAI : ShootingType
 
     private void OnEnable()
     {
+        player = GameManager.instance.Player;
         if (ability) ability.ReadyToShoot += ability.ShotEffect;
     }
 
     private void OnDisable()
     {
-        if (ability) ability.ReadyToShoot += ability.ShotEffect;
+        if (ability) ability.ReadyToShoot -= ability.ShotEffect;
     }
 }
