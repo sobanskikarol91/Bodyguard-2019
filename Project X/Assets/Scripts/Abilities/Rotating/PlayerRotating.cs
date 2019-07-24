@@ -9,6 +9,7 @@ public class PlayerRotating : RotateType
     {
         base.Init(ability);
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
+        input.Init();
         input.Rotating.Using += Rotate;
     }
 
