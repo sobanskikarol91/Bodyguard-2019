@@ -82,8 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 970c8db871a76d74eae4bad5461ebce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  platform: {fileID: 0}
+  playerPrefab: {fileID: 1452791550347159296, guid: f2db758b65dc8a441ac13da258254bf1,
+    type: 3}
+  platform: {fileID: 11400000, guid: cec3250b6caa39044b074455e9d9714a, type: 2}
 --- !u!114 &3956956917734439518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 0.5
+  - spawnTime: 2
     enemies:
     - {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
   - spawnTime: 0
@@ -290,11 +291,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3457242522232530838, guid: 0a8adbe988216f345bb69a50b54da1a3,
-        type: 3}
-      propertyPath: target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3457242522232530838, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}

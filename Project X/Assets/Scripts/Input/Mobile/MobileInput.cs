@@ -10,11 +10,6 @@ public class MobileInput : PlayerInput
     public override TwoAxisInput Rotating { get { return rotation; } protected set { Rotating = value; } }
     public override InputHandler Shooting { get => rotation; protected set => throw new System.NotImplementedException(); }
 
-    private void Awake()
-    {
-        movement.Init();
-        rotation.Init();
-    }
 
     public override void Execute()
     {
@@ -24,6 +19,8 @@ public class MobileInput : PlayerInput
 
     public override void Init()
     {
-
+        Debug.Log("Mobieinput Awake");
+        movement.Init();
+        rotation.Init();
     }
 }
