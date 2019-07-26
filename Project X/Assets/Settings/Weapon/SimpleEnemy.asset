@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SimpleEnemy
   m_EditorClassIdentifier: 
   bullet: {fileID: 9128766157284198419, guid: ebb7d20e6744cb34e8a7dc29eeca3850, type: 3}
-  refireRate: 0.4
+  refireRate: 0.8
   damageObjects: 00000000
   damage: 10

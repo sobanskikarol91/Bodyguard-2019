@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBullet Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: damageObjects.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2920203329106431753, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,10 +87,15 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.108383656
       objectReference: {fileID: 0}
-    - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
+    - target: {fileID: -8491120688834446511, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
-      propertyPath: damageObjects.Array.data[0]
-      value: 0
+      propertyPath: timeToReturn
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 255737724276374462, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: speed
+      value: 13.5
       objectReference: {fileID: 0}
     - target: {fileID: 532631823601657968, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}

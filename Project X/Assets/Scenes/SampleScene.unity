@@ -493,14 +493,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
+      propertyPath: lvls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
+      propertyPath: lvls.Array.data[0].enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: lvls.Array.data[0].spawnTime
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
+      propertyPath: lvls.Array.data[1].spawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
+      propertyPath: lvls.Array.data[0].enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
+        type: 3}
     - target: {fileID: 1348189729, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: scoreTxt
       value: 
