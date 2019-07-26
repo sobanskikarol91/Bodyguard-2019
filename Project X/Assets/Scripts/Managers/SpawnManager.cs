@@ -9,12 +9,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] float radius = 3f;
 
     private Player player;
-    private int lvlNr = 0;
+    private SpawnLvl currentLvl;
     private float timeLeftToSpawn;
 
 
     private void Start()
     {
+        currentLvl = lvls[0];
         player = GameManager.instance.Player;
         ResetSpawnTime();
     }
@@ -35,14 +36,20 @@ public class SpawnManager : MonoBehaviour
 
     private void ShowNewEnemy()
     {
-        Enemy random = lvls[lvlNr].Enemies[0];
+        Enemy random = GetRandomEnemy();
         Transform enemy = ObjectPoolManager.instance.Get(random.gameObject).transform;
         enemy.position = GetRandomPosition();
     }
 
     private void ResetSpawnTime()
     {
-        timeLeftToSpawn = lvls[lvlNr].SpawTime;
+        timeLeftToSpawn = currentLvl.SpawTime;
+    }
+
+    Enemy GetRandomEnemy()
+    {
+        int nr = UnityEngine.Random.Range(0, currentLvl.Enemies.Length);
+        return currentLvl.Enemies[nr];
     }
 
     Vector2 GetRandomPosition()
