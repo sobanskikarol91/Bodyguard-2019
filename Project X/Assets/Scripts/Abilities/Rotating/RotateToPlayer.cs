@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "RotateToPlayer", menuName = "Rotating/RotateToPlayer")]
-public class EnemyRotating : RotateType
+public class RotateToPlayer : RotateType
 {
     private Transform player;
     private Transform transform;
