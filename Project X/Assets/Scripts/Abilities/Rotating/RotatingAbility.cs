@@ -11,13 +11,6 @@ public class RotatingAbility : MonoBehaviour
     private Vector2 origin, destination;
 
 
-    private void Awake()
-    {
-        typeInstance = Instantiate(type);
-        typeInstance.Init(this);
-        ChooseAlgorithm();
-    }
-
     public void Rotate(Vector2 destination)
     {
         this.destination = destination;
@@ -44,5 +37,12 @@ public class RotatingAbility : MonoBehaviour
     private void ChooseAlgorithm()
     {
         choosenAlgorithm = speed == 0 ? (Action)InstantRotation : SlerpRotate;
+    }
+
+    private void OnEnable()
+    {
+        typeInstance = Instantiate(type);
+        typeInstance.Init(this);
+        ChooseAlgorithm();
     }
 }

@@ -31,6 +31,7 @@ public class SpawnManager : MonoBehaviour
     {
         ShowNewEnemy();
         ResetSpawnTime();
+        timeLeftToSpawn = 10000;
     }
 
     private void ShowNewEnemy()

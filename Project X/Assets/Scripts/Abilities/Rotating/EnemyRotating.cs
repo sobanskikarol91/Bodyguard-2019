@@ -17,27 +17,10 @@ public class EnemyRotating : RotateType
         ability.StartCoroutine(Rotate());
     }
 
-    private void OnEnable()
-    {
-        Debug.Log("Enable");
-        if (ability)
-        {
-            ability.StopAllCoroutines();
-            ability.StartCoroutine(Rotate());
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (ability) Debug.Log("Disable " + ability.gameObject.name);
-        else Debug.Log("Disable without init");
-    }
-
     IEnumerator Rotate()
     {
         while (true)
         {
-            Debug.Log("rotate: " + DirectionToPlayer + " " + ability.gameObject.name);
             ability.Rotate(DirectionToPlayer);
             yield return null;
         }
