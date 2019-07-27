@@ -27,7 +27,7 @@ public class PlayerRotating : RotateType
 
     void Rotate()
     {
-        Vector2 direction = input.Rotating.Direction - (Vector2)transform.rotation.eulerAngles;
+        Vector2 direction = input.Rotating.Direction - (Vector2)transform.transform.position;
         ability.Rotate(direction);
     }
 }
