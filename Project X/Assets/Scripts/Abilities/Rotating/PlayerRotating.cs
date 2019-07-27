@@ -4,6 +4,7 @@
 public class PlayerRotating : RotateType
 {
     private PlayerInput input;
+    private Transform transform;
 
     public override void Init(RotatingAbility ability)
     {
@@ -11,6 +12,7 @@ public class PlayerRotating : RotateType
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
         input.Init();
         input.Rotating.Using += Rotate;
+        transform = ability.GetComponent<Transform>();
     }
 
     private void OnEnable()
@@ -25,6 +27,7 @@ public class PlayerRotating : RotateType
 
     void Rotate()
     {
-        ability.Rotate(input.Rotating.Direction);
+        Vector2 direction = input.Rotating.Direction - (Vector2)transform.rotation.eulerAngles;
+        ability.Rotate(direction);
     }
 }

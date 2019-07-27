@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Mouse", menuName = "Input/PC/Mouse")]
-public class Mouse : TwoAxisInput
+public class MouseRotating : TwoAxisInput
 {
     private Camera camera;
 
