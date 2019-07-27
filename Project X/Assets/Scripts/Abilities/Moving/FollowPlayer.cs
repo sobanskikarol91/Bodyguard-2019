@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "AIMoving", menuName = "MoveType/FollowPlayer")]
-public class SimpleAIMoving : MoveType
+[CreateAssetMenu(fileName = "AIMoving", menuName = "Moving/FollowPlayer")]
+public class FollowPlayer : MoveType
 {
     private Player player;
 

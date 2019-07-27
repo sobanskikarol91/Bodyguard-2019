@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "PlayerMove", menuName = "MoveType/PlayerSimple")]
+[CreateAssetMenu(fileName = "PlayerMove", menuName = "Moving/PlayerSimple")]
 public class PlayerMove : MoveType
 {
     PlayerInput input;
