@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 5def577ea3c3a0b4aa43e158d69c8552, type: 2}
-  weapon: {fileID: 11400000, guid: 23930c3ff3c524c4996a35bce2548396, type: 2}
+  weapon: {fileID: 11400000, guid: 544b8cff3047e494183f918bfa7f4558, type: 2}
   bulletSpawnPoint: {fileID: 8711785304903788224}
 --- !u!114 &5408456603123648044
 MonoBehaviour:
