@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 5def577ea3c3a0b4aa43e158d69c8552, type: 2}
-  weapon: {fileID: 11400000, guid: 7ae1aa2fe4274484b8fe71f1b5bfd0a9, type: 2}
+  weapon: {fileID: 11400000, guid: 23930c3ff3c524c4996a35bce2548396, type: 2}
   bulletSpawnPoint: {fileID: 8711785304903788224}
 --- !u!114 &5408456603123648044
 MonoBehaviour:
@@ -39,7 +39,7 @@ PrefabInstance:
     - target: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: m_Name
-      value: ShootingEnemy
+      value: ShootingEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1411421080463516404, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}

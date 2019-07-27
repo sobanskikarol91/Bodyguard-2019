@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
+
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Simple")]
 public class SimpleWeapon : Weapon
