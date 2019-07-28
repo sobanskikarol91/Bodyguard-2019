@@ -11,6 +11,12 @@ public abstract class Weapon : ScriptableObject
     [SerializeField] protected ObjectType[] damageObjects;
     [SerializeField] protected float damage;
 
+    protected Transform bulletSpawnPoint;
 
-    public abstract void Shoot(Transform shotPosition);
+    public virtual void Init(Transform bulletSpawnPoint)
+    {
+        this.bulletSpawnPoint = bulletSpawnPoint;
+    }
+
+    public abstract void Shoot();
 }

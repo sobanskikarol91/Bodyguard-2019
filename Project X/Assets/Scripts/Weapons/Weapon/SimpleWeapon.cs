@@ -4,12 +4,12 @@
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Simple")]
 public class SimpleWeapon : Weapon
 {
-    public override void Shoot(Transform transform)
+    public override void Shoot()
     {
         Transform bullet = ObjectPoolManager.instance.Get(Bullet.gameObject).transform;
         bullet.GetComponent<Damagable>()?.Init(damage, damageObjects);
 
-        bullet.rotation = transform.rotation;
-        bullet.transform.position = transform.position;
+        bullet.rotation = bulletSpawnPoint.rotation;
+        bullet.transform.position = bulletSpawnPoint.position;
     }
 }

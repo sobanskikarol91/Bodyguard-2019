@@ -7,16 +7,16 @@ public class MultipleBulletWeapon : Weapon
     [SerializeField, Tooltip("Angle between bullets")] float angle;
 
 
-    public override void Shoot(Transform transform)
+    public override void Shoot()
     {
         GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet.gameObject, amount);
 
         for (int i = 0; i < amount; i++)
         {
-            float angleZ = GetAngle(transform, i);
+            float angleZ = GetAngle(bulletSpawnPoint, i);
             Vector3 rotation = new Vector3(0, 0, angleZ);
             bullets[i].transform.rotation = Quaternion.Euler(rotation);
-            bullets[i].transform.position = transform.position;
+            bullets[i].transform.position = bulletSpawnPoint.position;
         }
     }
 
