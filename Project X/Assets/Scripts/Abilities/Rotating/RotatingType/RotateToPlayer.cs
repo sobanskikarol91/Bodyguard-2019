@@ -1,27 +1,19 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "RotateToPlayer", menuName = "Rotating/RotateToPlayer")]
 public class RotateToPlayer : RotateType
 {
     private Transform player;
-    private Transform transform;
-    private Vector2 DirectionToPlayer { get => player.position - transform.position; }
 
     public override void Init(RotatingAbility ability)
     {
         base.Init(ability);
         player = GameManager.instance.Player.transform;
-        transform = ability.transform;
-        ability.StartCoroutine(Rotate());
     }
 
-    IEnumerator Rotate()
+    public override void Rotate()
     {
-        while (true)
-        {
-            ability.Rotate(DirectionToPlayer);
-            yield return null;
-        }
+        Vector2 directionToPlayer = player.position - ability.transform.position;
+        SetNewRotation(directionToPlayer);
     }
 }

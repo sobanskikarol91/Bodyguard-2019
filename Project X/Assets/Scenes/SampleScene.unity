@@ -233,7 +233,7 @@ PrefabInstance:
         type: 3}
       propertyPath: lvls.Array.data[0].enemies.Array.data[1]
       value: 
-      objectReference: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
+      objectReference: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
         type: 3}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
