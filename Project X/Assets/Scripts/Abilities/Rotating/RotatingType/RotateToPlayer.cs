@@ -13,7 +13,6 @@ public class RotateToPlayer : RotateType
         base.Init(ability);
         player = GameManager.instance.Player.transform;
         transform = ability.transform;
-        this.ability = ability;
         ability.StartCoroutine(Rotate());
     }
 

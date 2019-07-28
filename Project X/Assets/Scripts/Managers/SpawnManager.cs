@@ -5,6 +5,7 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] SpawnLvl[] lvls;
     [SerializeField] float radius = 3f;
+    [SerializeField] bool spawnOnlyOneEnemy;
 
     private Player player;
     private SpawnLvl currentLvl;
@@ -30,6 +31,8 @@ public class SpawnManager : MonoBehaviour
     {
         ShowNewEnemy();
         ResetSpawnTime();
+
+        if (spawnOnlyOneEnemy) timeLeftToSpawn = 1000;
     }
 
     private void ShowNewEnemy()
