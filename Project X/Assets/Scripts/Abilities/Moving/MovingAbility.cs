@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 public class MovingAbility : MonoBehaviour
 {
     [SerializeField] MoveType moveType;
@@ -9,8 +8,8 @@ public class MovingAbility : MonoBehaviour
 
     private void Awake()
     {
-        moveTypeInstance =  Instantiate(moveType);
-        moveTypeInstance.Init(transform.transform);
+        moveTypeInstance = Instantiate(moveType);
+        moveTypeInstance.Init(this);
     }
 
     public void Update()

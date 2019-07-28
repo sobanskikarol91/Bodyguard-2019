@@ -6,9 +6,9 @@ public class FollowPlayer : MoveType
 {
     private Player player;
 
-    public override void Init(Transform transform)
+    public override void Init(MovingAbility ability)
     {
-        base.Init(transform);
+        base.Init(ability);
         player = GameManager.instance.Player;
     }
 

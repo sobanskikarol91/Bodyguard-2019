@@ -23,7 +23,6 @@ public class AutoRotating : RotateType
             float angle = transform.rotation.eulerAngles.z + Time.deltaTime * speed;
             Vector3 rotation = new Vector3(0, 0, angle);
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-            //ability.Rotate(new Vector3(0, 0, angle));
             yield return null;
         }
     }
