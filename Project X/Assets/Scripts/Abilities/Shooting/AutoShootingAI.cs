@@ -13,7 +13,6 @@ public class AutoShootingAI : ShootingType
 
     private void OnEnable()
     {
-       // player = GameManager.instance.Player;
         if (ability) ability.ReadyToShoot += ability.ShotEffect;
     }
 

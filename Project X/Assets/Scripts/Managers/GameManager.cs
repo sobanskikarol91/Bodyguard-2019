@@ -1,17 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public Player Player { get; private set; }
     public ScoreManager ScoreManager { get; private set; }
     public PlatformManager Platform { get => platform; }
+
     [SerializeField] Player playerPrefab;
     [SerializeField] PlatformManager platform;
 
     private SpawnManager spawnManager;
+
 
     private void Awake()
     {
@@ -24,11 +24,11 @@ public class GameManager : MonoBehaviour
     {
         spawnManager = GetComponent<SpawnManager>();
         ScoreManager = GetComponent<ScoreManager>();
+        Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
     }
 
     private void InvokeMethods()
     {
-        Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
         Player.GetComponent<Health>().Death += GameOver;
     }
        

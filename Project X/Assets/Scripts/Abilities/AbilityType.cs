@@ -27,7 +27,9 @@ public abstract class RotateType : AbilityType<RotatingAbility>
 
     public abstract void Rotate();
 }
+
 public abstract class ShootingType : AbilityType<ShootingAbility> { }
+
 public abstract class MoveType : AbilityType<MovingAbility>
 {
     protected Transform transform;

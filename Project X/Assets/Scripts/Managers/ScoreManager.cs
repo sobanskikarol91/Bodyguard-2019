@@ -1,20 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] TextMeshPro scoreTxt;
 
-    int score = 0;
+    private int score = 0;
+    private ExpierienceManager expierienceManager;
 
+    private void Awake()
+    {
+        expierienceManager = GetComponent<ExpierienceManager>();
+    }
 
     public void AddScore(int amount = 1)
     {
         score += amount;
+        expierienceManager?.AddExpierience(amount);
         UpdateUIText();
     }
 

@@ -56,4 +56,11 @@ public class ShootingAbility : MonoBehaviour
         StartCoroutine(DecreaseTimeToFire());
         leftTimeToShot = 0;
     }
+
+    public void Set(Weapon weapon)
+    {
+        StopAllCoroutines();
+        this.weapon = weapon;
+        StartCoroutine(DecreaseTimeToFire());
+    }
 }
