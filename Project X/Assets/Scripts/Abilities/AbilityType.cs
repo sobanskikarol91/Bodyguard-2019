@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class AbilityType<Ability> : ScriptableObject
+public abstract class AbilityType<Ability> : ScriptableObject
 {
     protected Ability ability;
 
@@ -8,6 +8,8 @@ public class AbilityType<Ability> : ScriptableObject
     {
         this.ability = ability;
     }
+
+    public abstract void Execute();
 }
 
 public abstract class RotateType : AbilityType<RotatingAbility>
@@ -24,11 +26,7 @@ public abstract class RotateType : AbilityType<RotatingAbility>
     {
         ability.transform.rotation = Quaternion.Euler(0, 0, angle);
     }
-
-    public abstract void Rotate();
 }
-
-public abstract class ShootingType : AbilityType<ShootingAbility> { }
 
 public abstract class MoveType : AbilityType<MovingAbility>
 {
@@ -40,6 +38,4 @@ public abstract class MoveType : AbilityType<MovingAbility>
         base.Init(ability);
         transform = ability.transform;
     }
-
-    public abstract void Move();
 }

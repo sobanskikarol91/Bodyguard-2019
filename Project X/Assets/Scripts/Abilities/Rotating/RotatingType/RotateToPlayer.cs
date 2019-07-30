@@ -11,7 +11,7 @@ public class RotateToPlayer : RotateType
         player = GameManager.instance.Player.transform;
     }
 
-    public override void Rotate()
+    public override void Execute()
     {
         Vector2 directionToPlayer = player.position - ability.transform.position;
         SetNewRotation(directionToPlayer);

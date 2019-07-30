@@ -14,6 +14,6 @@ public class RotatingAbility : MonoBehaviour
 
     private void Update()
     {
-        typeInstance.Rotate();
+        typeInstance.Execute();
     }
 }

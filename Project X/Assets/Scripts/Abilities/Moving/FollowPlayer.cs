@@ -12,7 +12,7 @@ public class FollowPlayer : MoveType
         player = GameManager.instance.Player;
     }
 
-    public override void Move()
+    public override void Execute()
     {
         Vector2 direction = (player.transform.position - transform.position).normalized;
         transform.position += (Vector3)(settings.Speed * direction * Time.deltaTime);

@@ -11,7 +11,7 @@ public class PlayerRotating : RotateType
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
     }
 
-    public override void Rotate()
+    public override void Execute()
     {
         Vector2 direction = input.Rotating.Direction - (Vector2)ability.transform.position;
         SetNewRotation(direction);

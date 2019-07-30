@@ -12,7 +12,7 @@ public class PlayerMove : MoveType
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
     }
 
-    public override void Move()
+    public override void Execute()
     {
         transform.position += (Vector3)(settings.Speed * input.Moving.Direction * Time.deltaTime);
     }

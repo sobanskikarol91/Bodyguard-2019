@@ -14,6 +14,6 @@ public class MovingAbility : MonoBehaviour
 
     public void Update()
     {
-        moveTypeInstance.Move();
+        moveTypeInstance.Execute();
     }
 }

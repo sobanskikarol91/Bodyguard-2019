@@ -9,16 +9,11 @@ public class PlayerShooting : ShootingType
     {
         base.Init(ability);
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
-        input.Shooting.EndUsing += ability.TryShoot;
+        input.Shooting.EndUsing += TryShoot;
     }
 
-    private void OnEnable()
+    public override void Execute()
     {
-        if (input && ability) input.Shooting.EndUsing += ability.TryShoot;
-    }
-
-    private void OnDisable()
-    {
-        if (input && ability) input.Shooting.EndUsing -= ability.TryShoot;
+        DecreaseTimeToShoot();
     }
 }
