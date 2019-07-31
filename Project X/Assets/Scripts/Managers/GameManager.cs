@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlatformManager platform;
 
     private SpawnManager spawnManager;
+    private UIManager uiManager;
 
 
     private void Awake()
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     {
         spawnManager = GetComponent<SpawnManager>();
         ScoreManager = GetComponent<ScoreManager>();
+        uiManager = GetComponent<UIManager>();
         Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
     }
 
@@ -36,7 +38,7 @@ public class GameManager : MonoBehaviour
     {
         Player.gameObject.SetActive(false);
         spawnManager.enabled = false;
-        Invoke("Reset", 1f);
+        uiManager.ShowGameOver();
     }
 
     private void Reset()

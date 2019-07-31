@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 
-public class CameraFollower : MonoBehaviour
+public class PlayerFollower : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    private Transform target;
+
+    private void Start()
+    {
+        target = GameManager.instance.Player.transform;
+    }
 
     private void Update()
     {

@@ -15,7 +15,6 @@ public class ExpierienceManager : MonoBehaviour, IScore
     private void Start()
     {
         player = GameManager.instance.Player;
-
     }
 
     bool IsPlayerReachedNewLvl()
