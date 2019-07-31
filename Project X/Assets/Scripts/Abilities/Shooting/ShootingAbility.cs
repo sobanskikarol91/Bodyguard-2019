@@ -12,13 +12,13 @@ public class ShootingAbility : MonoBehaviour
 
     private void Awake()
     {
-        CreateWeapon();
+        CreateWeapon(weapon);
         CreateShootingType();
     }
 
-    private void CreateWeapon()
+    private void CreateWeapon(Weapon newWeapon)
     {
-        Weapon = Instantiate(weapon);
+        Weapon = Instantiate(newWeapon);
         Weapon.Init(bulletSpawnPoint);
     }
 
@@ -33,8 +33,9 @@ public class ShootingAbility : MonoBehaviour
         typeInstance.Execute();
     }
 
-    public void Set(Weapon weapon)
+    public void Set(Weapon newWeapon)
     {
-        this.weapon = weapon;
+        Debug.Log("Create new Weapon: " + newWeapon.name);
+        CreateWeapon(newWeapon);
     }
 }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77f7db3b435931409d8a057055cea31, type: 3}
   m_Name: GreenTripleBullets
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
   refireRate: 0.1
   damageObjects: 01000000
   damage: 10

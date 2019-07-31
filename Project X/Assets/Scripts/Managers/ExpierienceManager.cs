@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class ExpierienceManager : MonoBehaviour
 {
-    [SerializeField] LevelSettings levelSettings;
+    [SerializeField] LevelSettings settings;
 
     private float expierience = 0;
     private Player player;
     private int lvlNr = 0;
-    private Level CurrentLvl { get => levelSettings.Lvls[lvlNr]; }
+    private Level CurrentLvl { get => settings.Lvls[lvlNr]; }
+    private Level NextLvl { get => settings.Lvls[lvlNr + 1]; }
 
 
     private void Start()
@@ -18,15 +19,18 @@ public class ExpierienceManager : MonoBehaviour
 
     public void AddExpierience(float expierience)
     {
+        Debug.Log(this.expierience + " " + expierience);
         this.expierience += expierience;
 
-        if (IsPlayerReachedNewLvl())
+        if (IsLastLvl())
+            return;
+        else if (IsPlayerReachedNewLvl())
             IncreaseLvl();
     }
 
     bool IsPlayerReachedNewLvl()
     {
-        return expierience >= CurrentLvl.RequiredExpierience;
+        return expierience >= NextLvl.RequiredExpierience;
     }
 
     void IncreaseLvl()
@@ -35,12 +39,18 @@ public class ExpierienceManager : MonoBehaviour
         ShootingAbility shooting = player.GetComponent<ShootingAbility>();
         shooting?.Set(CurrentLvl.Weapon);
     }
+
+    bool IsLastLvl()
+    {
+        return lvlNr == settings.MaxLvl - 1;
+    }
 }
 
 [CreateAssetMenu(fileName = "LevelSettings", menuName = "Level/LevelSettings")]
 public class LevelSettings : ScriptableObject
 {
     public Level[] Lvls { get => lvls; }
+    public int MaxLvl { get => lvls.Length; }
     [SerializeField] Level[] lvls;
 }
 
