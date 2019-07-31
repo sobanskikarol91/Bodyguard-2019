@@ -5,12 +5,11 @@ public abstract class ShootingType : AbilityType<ShootingAbility>
 {
     public event Action ReadyToShoot = delegate { };
     protected float leftTimeToShot;
-    private float timeToShot;
 
+    
     public override void Init(ShootingAbility ability)
     {
         base.Init(ability);
-        timeToShot = ability.Weapon.RefireRate;
     }
 
     public override void Execute()
@@ -33,7 +32,7 @@ public abstract class ShootingType : AbilityType<ShootingAbility>
     void OnReadyToFire()
     {
         ReadyToShoot();
-        leftTimeToShot = timeToShot;
+        leftTimeToShot = ability.Weapon.RefireRate;
         ability.Weapon.Shoot();
     }
 
