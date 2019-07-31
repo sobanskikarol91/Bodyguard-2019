@@ -15,11 +15,12 @@ public class ExpierienceManager : MonoBehaviour
     private void Start()
     {
         player = GameManager.instance.Player;
+        ScoreManager scoreManager = GetComponent<ScoreManager>();
+        if (scoreManager) scoreManager.ScoreAdded += AddExpierience;
     }
 
     public void AddExpierience(float expierience)
     {
-        Debug.Log(this.expierience + " " + expierience);
         this.expierience += expierience;
 
         if (IsLastLvl())

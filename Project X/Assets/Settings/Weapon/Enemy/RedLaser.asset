@@ -16,4 +16,4 @@ MonoBehaviour:
   refireRate: 0.3
   damageObjects: 00000000
   damage: 10
-  beamLength: 10
+  beamLength: 4

@@ -7,6 +7,9 @@ public class ScoreManager : MonoBehaviour
 
     private int score = 0;
     private ExpierienceManager expierienceManager;
+    public delegate void UpdateScore(float score);
+    public event UpdateScore ScoreAdded;
+
 
     private void Awake()
     {
@@ -18,6 +21,7 @@ public class ScoreManager : MonoBehaviour
         score += amount;
         expierienceManager?.AddExpierience(amount);
         UpdateUIText();
+        ScoreAdded(score);
     }
 
     private void UpdateUIText()
