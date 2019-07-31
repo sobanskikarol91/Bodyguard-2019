@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class ExpierienceManager : MonoBehaviour
+public class ExpierienceManager : MonoBehaviour, IScore
 {
     [SerializeField] LevelSettings settings;
 
@@ -15,18 +15,7 @@ public class ExpierienceManager : MonoBehaviour
     private void Start()
     {
         player = GameManager.instance.Player;
-        ScoreManager scoreManager = GetComponent<ScoreManager>();
-        if (scoreManager) scoreManager.ScoreAdded += AddExpierience;
-    }
 
-    public void AddExpierience(float expierience)
-    {
-        this.expierience += expierience;
-
-        if (IsLastLvl())
-            return;
-        else if (IsPlayerReachedNewLvl())
-            IncreaseLvl();
     }
 
     bool IsPlayerReachedNewLvl()
@@ -44,6 +33,16 @@ public class ExpierienceManager : MonoBehaviour
     bool IsLastLvl()
     {
         return lvlNr == settings.MaxLvl - 1;
+    }
+
+    public void UpdateScore(float score)
+    {
+        expierience = score;
+
+        if (IsLastLvl())
+            return;
+        else if (IsPlayerReachedNewLvl())
+            IncreaseLvl();
     }
 }
 

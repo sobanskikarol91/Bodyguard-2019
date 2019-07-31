@@ -9,7 +9,7 @@ public class PlayerShooting : ShootingType
     {
         base.Init(ability);
         input = GameManager.instance.Platform.GetPlayerInputDependsOnPlatform();
-        input.Shooting.EndUsing += TryShoot;
+        input.Shooting.Using += TryShoot;
     }
 
     public override void Execute()

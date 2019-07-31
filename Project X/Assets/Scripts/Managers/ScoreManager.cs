@@ -1,20 +1,26 @@
 ﻿using UnityEngine;
 using TMPro;
+using System;
+using System.Linq;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour, IScore
 {
     [SerializeField] TextMeshPro scoreTxt;
 
-    private int score = 0;
-    public delegate void UpdateScore(float score);
-    public event UpdateScore ScoreAdded;
+    private float score = 0;
+    private IScore[] scorables;
 
 
-    public void AddScore(int amount = 1)
+    private void Awake()
+    {
+        scorables = GetComponents<IScore>().Where(t => t != (IScore)this).ToArray();    
+    }
+
+    public void UpdateScore(float amount = 1)
     {
         score += amount;
         UpdateUIText();
-        ScoreAdded(score);
+        Array.ForEach(scorables, s => s.UpdateScore(score));
     }
 
     private void UpdateUIText()

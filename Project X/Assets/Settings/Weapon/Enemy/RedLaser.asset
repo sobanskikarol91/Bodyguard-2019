@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedLaser
   m_EditorClassIdentifier: 
   bullet: {fileID: 8535946045795624035, guid: 0d36951fd827ca24889c7332b00f9a85, type: 3}
-  refireRate: 0.3
+  refireRate: 1
   damageObjects: 00000000
   damage: 10
   beamLength: 4

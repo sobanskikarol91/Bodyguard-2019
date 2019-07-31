@@ -35,7 +35,6 @@ public class ShootingAbility : MonoBehaviour
 
     public void Set(Weapon newWeapon)
     {
-        Debug.Log("Create new Weapon: " + newWeapon.name);
         CreateWeapon(newWeapon);
     }
 }

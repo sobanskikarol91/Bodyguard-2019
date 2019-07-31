@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GreenLaser
   m_EditorClassIdentifier: 
   bullet: {fileID: 8535946045795624035, guid: 0ba72806562ff3049b038a39dc28b7a3, type: 3}
-  refireRate: 0.1
+  refireRate: 1
   damageObjects: 01000000
   damage: 10
   beamLength: 4
