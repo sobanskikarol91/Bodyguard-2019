@@ -3,7 +3,7 @@ using TMPro;
 using System;
 using System.Linq;
 
-public class ScoreManager : MonoBehaviour, IScore
+public class ScoreManager : MonoBehaviour, IScore, IRestart
 {
     [SerializeField] TextMeshPro scoreTxt;
 
@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour, IScore
         scoreTxt.text = "Score: " + score;
     }
 
-    public void Reset()
+    public void Restart()
     {
         score = 0;
         UpdateUIText();

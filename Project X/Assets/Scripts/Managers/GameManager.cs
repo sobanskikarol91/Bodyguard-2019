@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class GameManager : MonoBehaviour, IRestart
+public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Player Player { get; private set; }
@@ -12,17 +13,18 @@ public class GameManager : MonoBehaviour, IRestart
 
     private SpawnManager spawnManager;
     private UIManager uiManager;
-
+    private IRestart[] restartObjects;
 
     private void Awake()
     {
         instance = this;
         GetReferences();
-        InvokeMethods();    
+        InvokeMethods();
     }
 
     private void GetReferences()
     {
+        restartObjects = GetComponents<IRestart>();
         spawnManager = GetComponent<SpawnManager>();
         ScoreManager = GetComponent<ScoreManager>();
         uiManager = GetComponent<UIManager>();
@@ -38,15 +40,12 @@ public class GameManager : MonoBehaviour, IRestart
     {
         Player.gameObject.SetActive(false);
         spawnManager.StopSpawning();
-        spawnManager.enabled = false;
         uiManager.ShowGameOver();
     }
 
     public void Restart()
     {
-        spawnManager.Restart();
-        ObjectPoolManager.instance.Restart();
-        ScoreManager.Reset();
+        Array.ForEach(restartObjects, r => r.Restart());
         Player.gameObject.SetActive(true);
     }
 }

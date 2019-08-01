@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class SpawnManager : MonoBehaviour, IRestart
 {
     [SerializeField] SpawnLvl[] lvls;
     [SerializeField] float radius = 3f;
@@ -23,10 +23,10 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         if (isSpawning)
-            SpawnObjects();
+            DecreaseSpawnTime();
     }
 
-    private void SpawnObjects()
+    private void DecreaseSpawnTime()
     {
         timeLeftToSpawn -= Time.deltaTime;
 
@@ -36,6 +36,7 @@ public class SpawnManager : MonoBehaviour
 
     private void Spawn()
     {
+        Debug.Log("Spawn");
         ShowNewEnemy();
         ResetSpawnTime();
 
