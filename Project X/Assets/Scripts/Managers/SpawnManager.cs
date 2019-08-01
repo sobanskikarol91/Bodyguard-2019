@@ -36,7 +36,6 @@ public class SpawnManager : MonoBehaviour, IRestart
 
     private void Spawn()
     {
-        Debug.Log("Spawn");
         ShowNewEnemy();
         ResetSpawnTime();
 

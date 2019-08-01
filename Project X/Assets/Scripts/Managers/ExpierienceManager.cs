@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class ExpierienceManager : MonoBehaviour, IScore
+public class ExpierienceManager : MonoBehaviour, IScore, IRestart
 {
     [SerializeField] LevelSettings settings;
 
@@ -42,6 +42,13 @@ public class ExpierienceManager : MonoBehaviour, IScore
             return;
         else if (IsPlayerReachedNewLvl())
             IncreaseLvl();
+    }
+
+    public void Restart()
+    {
+        expierience =  lvlNr = 0;
+        ShootingAbility shooting = player.GetComponent<ShootingAbility>();
+        shooting?.Set(CurrentLvl.Weapon);
     }
 }
 
