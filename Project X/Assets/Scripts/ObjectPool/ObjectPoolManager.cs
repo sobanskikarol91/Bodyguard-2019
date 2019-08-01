@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class ObjectPoolManager : MonoBehaviour
+public class ObjectPoolManager : MonoBehaviour, IRestart
 {
     Dictionary<int, ObjectPool> objectPools = new Dictionary<int, ObjectPool>();
 
     public static ObjectPoolManager instance;
 
+    List<GameObject> spawnedObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -22,14 +24,16 @@ public class ObjectPoolManager : MonoBehaviour
         int id = instance.GetInstanceID();
         ObjectPool pool;
 
-        if (objectPools.TryGetValue(id, out pool))
-            return pool.Get();
-        else
+        if (objectPools.TryGetValue(id, out pool) == false)
         {
             pool = new ObjectPool(instance);
             CreateObjectPool(pool);
-            return pool.Get();
         }
+
+        GameObject poolObject = pool.Get();
+        spawnedObjects.Add(poolObject);
+
+        return poolObject;
     }
 
     public GameObject[] Get(GameObject instance, int amount)
@@ -47,17 +51,28 @@ public class ObjectPoolManager : MonoBehaviour
         objectPools.Add(pool.Id, pool);
     }
 
-    public void ReturnToPool(GameObject instance)
+    public void ReturnToPool(ReturnToPool returnCondition)
     {
         ObjectPool pool;
-        int id = instance.GetComponent<ReturnToPool>().Id;
+        int id = returnCondition.Id;
 
         if (!objectPools.TryGetValue(id, out pool))
         {
-            CreateObjectPool(new ObjectPool(instance));
+            CreateObjectPool(new ObjectPool(returnCondition.gameObject));
             objectPools.TryGetValue(id, out pool);
         }
 
-        pool.ReturnToPool(instance);
+        pool.ReturnToPool(returnCondition.gameObject);
+        spawnedObjects.Remove(returnCondition.gameObject);
+    }
+
+    public void Restart()
+    {
+        ReturnObjectsToPool();
+    }
+
+    private void ReturnObjectsToPool()
+    {
+        spawnedObjects.Select(s => s.GetComponent<ReturnToPool>()).ToList().ForEach(r => ReturnToPool(r));
     }
 }

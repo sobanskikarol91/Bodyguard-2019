@@ -10,6 +10,6 @@ public abstract class ReturnToPool : MonoBehaviour
 
     protected void ReturnObjectToPool()
     {
-        ObjectPoolManager.instance.ReturnToPool(gameObject);
+        ObjectPoolManager.instance.ReturnToPool(this);
     }
 }

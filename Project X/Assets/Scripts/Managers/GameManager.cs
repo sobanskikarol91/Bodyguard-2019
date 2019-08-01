@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IRestart
 {
     public static GameManager instance;
     public Player Player { get; private set; }
@@ -37,21 +37,16 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Player.gameObject.SetActive(false);
+        spawnManager.StopSpawning();
         spawnManager.enabled = false;
         uiManager.ShowGameOver();
     }
 
-    private void Reset()
+    public void Restart()
     {
-        Player.gameObject.SetActive(true);
-        spawnManager.enabled = true;
-        Player.GetComponent<Collider2D>().enabled = false;
+        spawnManager.Restart();
+        ObjectPoolManager.instance.Restart();
         ScoreManager.Reset();
-        Invoke("GoodModeOff", 1f);
-    }
-
-    void GoodModeOff()
-    {
-        Player.GetComponent<Collider2D>().enabled = true;
+        Player.gameObject.SetActive(true);
     }
 }

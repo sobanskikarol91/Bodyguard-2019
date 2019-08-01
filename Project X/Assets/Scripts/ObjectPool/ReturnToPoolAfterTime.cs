@@ -16,7 +16,7 @@ public class ReturnToPoolAfterTime : ReturnToPool
         timeLeft -= Time.deltaTime;
 
         if (timeLeft <= 0)
-            ObjectPoolManager.instance.ReturnToPool(gameObject);
+            ObjectPoolManager.instance.ReturnToPool(this);
     }
 
     private void OnEnable()

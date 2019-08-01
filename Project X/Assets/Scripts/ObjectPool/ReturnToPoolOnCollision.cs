@@ -29,6 +29,6 @@ public class ReturnToPoolOnCollision : ReturnToPool
     private void ReturnOnCollision()
     {
         damageOnCollision.DoDamage -= ReturnOnCollision;
-        ObjectPoolManager.instance.ReturnToPool(gameObject);
+        ObjectPoolManager.instance.ReturnToPool(this);
     }
 }

@@ -12,3 +12,8 @@ public interface IScore
 {
    void UpdateScore(float score);
 }
+
+public interface IRestart
+{
+    void Restart();
+}

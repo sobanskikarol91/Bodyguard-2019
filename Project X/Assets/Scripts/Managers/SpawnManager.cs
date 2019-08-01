@@ -10,6 +10,7 @@ public class SpawnManager : MonoBehaviour
     private Player player;
     private SpawnLvl currentLvl;
     private float timeLeftToSpawn;
+    private bool isSpawning = true;
 
 
     private void Start()
@@ -20,6 +21,12 @@ public class SpawnManager : MonoBehaviour
     }
 
     void Update()
+    {
+        if (isSpawning)
+            SpawnObjects();
+    }
+
+    private void SpawnObjects()
     {
         timeLeftToSpawn -= Time.deltaTime;
 
@@ -53,6 +60,11 @@ public class SpawnManager : MonoBehaviour
         return currentLvl.Enemies[nr];
     }
 
+    public void StopSpawning()
+    {
+        isSpawning = true;
+    }
+
     Vector2 GetRandomPosition()
     {
         Vector2 spawnPos = player.transform.position;
@@ -74,5 +86,10 @@ public class SpawnManager : MonoBehaviour
     {
         [SerializeField] Enemy enemy;
         [SerializeField, Range(0, 1)] float percantage;
+    }
+
+    public void Restart()
+    {
+        isSpawning = true;
     }
 }
