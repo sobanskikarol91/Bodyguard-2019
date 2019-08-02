@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2036170717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956956917460744908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a3f2fb5e03f945b9b8eaefc3442a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2043956201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,18 +46,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &2036170717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3956956917460744908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51a3f2fb5e03f945b9b8eaefc3442a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3956956917734439517
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 1348189730}
   - component: {fileID: 721663001}
   - component: {fileID: 721663003}
+  - component: {fileID: 797929041}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -207,17 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be3cbfddf8e7e34dba49410e9e3ea00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lvls:
-  - spawnTime: 1
-    enemies:
-    - {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606, type: 3}
-    - {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc, type: 3}
-  - spawnTime: 1
-    enemies:
-    - {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
-    - {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc, type: 3}
-  radius: 25
-  spawnOnlyOneEnemy: 1
+  radius: 9
+  spawnOnlyOneEnemy: 0
+  enemySpawnSettings: {fileID: 11400000, guid: 3eeac0ca518e12e4ba4dfd41b96d8ce9, type: 2}
 --- !u!114 &1348189729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24944e3be23290146934cb8660dbd2ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 27e94de0ed9ca8646a1ab87a893e23e0, type: 2}
+  settings: {fileID: 11400000, guid: ba940ce02f9f9964f804def736825645, type: 2}
 --- !u!114 &721663003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +261,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711e97ff719d98b45acd2230f57b838c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+--- !u!114 &797929041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956956917734439517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d71e63f85b5072429df96cdf211584e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSettings: {fileID: 11400000, guid: c47044911c175f741ab29a08559f46ca, type: 2}
 --- !u!1001 &1806920485721480536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -335,8 +342,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3457242522232530838, guid: 0a8adbe988216f345bb69a50b54da1a3, type: 3}
+    - target: {fileID: 3457242522232530839, guid: 0a8adbe988216f345bb69a50b54da1a3,
+        type: 3}
+      propertyPath: orthographic size
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a8adbe988216f345bb69a50b54da1a3, type: 3}
 --- !u!1 &3956956917460744908 stripped
 GameObject:

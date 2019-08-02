@@ -16,6 +16,6 @@ public class Scorable : MonoBehaviour
 
     private void AddScore()
     {
-        GameManager.instance.ScoreManager.UpdateScore(score);
+        GameManager.instance.ScoreManager.UpdatedScore(score);
     }
 }

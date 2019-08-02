@@ -16,11 +16,11 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
         scorables = GetComponents<IScore>().Where(t => t != (IScore)this).ToArray();    
     }
 
-    public void UpdateScore(float amount = 1)
+    public void UpdatedScore(float amount = 1)
     {
         score += amount;
         UpdateUIText();
-        Array.ForEach(scorables, s => s.UpdateScore(score));
+        Array.ForEach(scorables, s => s.UpdatedScore(score));
     }
 
     private void UpdateUIText()

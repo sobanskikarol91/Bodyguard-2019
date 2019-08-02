@@ -227,41 +227,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3956956917460744911, guid: 5c77aa50051483543ad27db736884000,
-        type: 3}
-      propertyPath: orthographic size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
-        type: 3}
-      propertyPath: spawnOnlyOneEnemy
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
-        type: 3}
-      propertyPath: lvls.Array.data[0].enemies.Array.data[1]
-      value: 
-      objectReference: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
-        type: 3}
-    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
-        type: 3}
-      propertyPath: enemySpawnSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: 3eeac0ca518e12e4ba4dfd41b96d8ce9,
-        type: 2}
-    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
-        type: 3}
-      propertyPath: radius
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 1348189729, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: scoreTxt
       value: 
       objectReference: {fileID: 114799602}
-    - target: {fileID: 721663001, guid: 5c77aa50051483543ad27db736884000, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}
 --- !u!1 &2019648755 stripped

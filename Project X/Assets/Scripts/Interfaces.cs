@@ -10,10 +10,15 @@ public interface ITwoAxisInput
 
 public interface IScore
 {
-   void UpdateScore(float score);
+   void UpdatedScore(float score);
 }
 
 public interface IRestart
 {
     void Restart();
+}
+
+public interface IDependsOnLvl
+{
+    void OnGainNextLvl(int lvl);
 }
