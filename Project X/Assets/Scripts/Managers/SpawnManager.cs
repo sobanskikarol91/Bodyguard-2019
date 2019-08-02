@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpawnManager : MonoBehaviour, IRestart
+public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 {
     [SerializeField] float radius = 3f;
     [SerializeField] bool spawnOnlyOneEnemy;
@@ -73,5 +73,11 @@ public class SpawnManager : MonoBehaviour, IRestart
     public void Restart()
     {
         isSpawning = true;
+    }
+
+    public void OnGainNextLvl(int lvl)
+    {
+        if (lvl < enemySpawnSettings.Lvls.Length)
+            currentLvl = enemySpawnSettings.Lvls[lvl];
     }
 }

@@ -16,7 +16,6 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl
 
     public void OnGainNextLvl(int lvl)
     {
-
         playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
     }
 }
