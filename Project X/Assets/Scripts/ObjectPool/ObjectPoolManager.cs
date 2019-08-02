@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ObjectPoolManager : MonoBehaviour, IRestart
 {
-    Dictionary<int, ObjectPool> objectPools = new Dictionary<int, ObjectPool>();
-
     public static ObjectPoolManager instance;
 
-    List<GameObject> spawnedObjects = new List<GameObject>();
+    private Dictionary<int, ObjectPool> objectPools = new Dictionary<int, ObjectPool>();
+    private List<GameObject> spawnedObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -17,12 +16,11 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
 
     public GameObject Get(GameObject instance)
     {
-        ReturnToPool returnCondition = instance.GetComponent<ReturnToPool>();
-        if (returnCondition == null)
-            Debug.LogError("No Return to Poll Conditions: " + instance.name);
+        CheckIsThereAnyConditionAttached(instance);
+
+        ObjectPool pool;
 
         int id = instance.GetInstanceID();
-        ObjectPool pool;
 
         if (objectPools.TryGetValue(id, out pool) == false)
         {
@@ -34,6 +32,14 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         spawnedObjects.Add(poolObject);
 
         return poolObject;
+    }
+
+    private static void CheckIsThereAnyConditionAttached(GameObject instance)
+    {
+        ReturnToPool returnCondition = instance.GetComponent<ReturnToPool>();
+
+        if (returnCondition == null)
+            Debug.LogError("No Return to Poll Conditions: " + instance.name);
     }
 
     public GameObject[] Get(GameObject instance, int amount)
@@ -54,12 +60,11 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
     public void ReturnToPool(ReturnToPool returnCondition)
     {
         ObjectPool pool;
-        int id = returnCondition.Id;
 
-        if (!objectPools.TryGetValue(id, out pool))
+        if (!objectPools.TryGetValue(returnCondition.Id, out pool))
         {
             CreateObjectPool(new ObjectPool(returnCondition.gameObject));
-            objectPools.TryGetValue(id, out pool);
+            objectPools.TryGetValue(returnCondition.Id, out pool);
         }
 
         pool.ReturnToPool(returnCondition.gameObject);
