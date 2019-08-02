@@ -8,9 +8,11 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
 
     private Dictionary<int, ObjectPool> objectPools = new Dictionary<int, ObjectPool>();
     private List<GameObject> spawnedObjects = new List<GameObject>();
+    private Transform ObjectPoolsHolder;
 
     private void Awake()
     {
+        ObjectPoolsHolder = new GameObject("ObjectPoolHolder").transform;
         instance = this;
     }
 
@@ -32,7 +34,7 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
 
         if (objectPools.TryGetValue(id, out pool) == false)
         {
-            pool = new ObjectPool(instance);
+            pool = new ObjectPool(instance, ObjectPoolsHolder);
             CreateObjectPool(pool);
         }
 
@@ -52,13 +54,18 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         ObjectPool pool;
 
         if (!objectPools.TryGetValue(returnCondition.Id, out pool))
-        {
-            CreateObjectPool(new ObjectPool(returnCondition.gameObject));
-            objectPools.TryGetValue(returnCondition.Id, out pool);
-        }
+            pool = CreateNewPool(returnCondition);
 
         pool.ReturnToPool(returnCondition.gameObject);
         spawnedObjects.Remove(returnCondition.gameObject);
+    }
+
+    private ObjectPool CreateNewPool(ReturnToPool returnCondition)
+    {
+        ObjectPool pool = new ObjectPool(returnCondition.gameObject, ObjectPoolsHolder);
+        CreateObjectPool(pool);
+        objectPools.TryGetValue(returnCondition.Id, out pool);
+        return pool;
     }
 
     public void Restart()

@@ -9,10 +9,13 @@ public class ObjectPool
 
     private readonly Queue<GameObject> toSpawn = new Queue<GameObject>();
     private int spawnedObjectsAmount = 0;
-    
+    private Transform poolHolder;
 
-    public ObjectPool(GameObject prefab)
+    public ObjectPool(GameObject prefab, Transform mainHolder)
     {
+        poolHolder = new GameObject(prefab.name + "Pool").transform;
+        poolHolder.SetParent(mainHolder);
+
         Id = prefab.GetInstanceID();
         Prefab = prefab;
     }
@@ -33,6 +36,7 @@ public class ObjectPool
         GameObject newObject = GameObject.Instantiate(Prefab);
         newObject.name = newObject.name + spawnedObjectsAmount;
         ReturnToPool[] returnConditions = newObject.GetComponents<ReturnToPool>();
+        newObject.transform.SetParent(poolHolder);
 
         if (returnConditions == null)
             Debug.LogError("No Return to Poll Conditions: " + newObject.name);
