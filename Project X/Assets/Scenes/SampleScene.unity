@@ -234,7 +234,18 @@ PrefabInstance:
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: spawnOnlyOneEnemy
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
+      propertyPath: lvls.Array.data[0].enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
+        type: 3}
+    - target: {fileID: 3956956917460744911, guid: 5c77aa50051483543ad27db736884000,
+        type: 3}
+      propertyPath: orthographic size
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}
