@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
 public abstract class ReturnToPool : MonoBehaviour
 {
@@ -10,6 +6,7 @@ public abstract class ReturnToPool : MonoBehaviour
 
     protected void ReturnObjectToPool()
     {
+        Debug.Log("Return object to pool on collision: " + gameObject.name);
         ObjectPoolManager.instance.ReturnToPool(this);
     }
 }

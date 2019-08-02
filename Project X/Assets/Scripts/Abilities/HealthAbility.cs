@@ -2,15 +2,17 @@
 using UnityEngine;
 
 
-public class Health : MonoBehaviour, IDeath
+public class HealthAbility : MonoBehaviour, IDeath
 {
+    public event Action Death;
+
     [SerializeField] float health;
     [SerializeField] GameObject deathEffect;
     [SerializeField] bool godMode;
 
     private float currentHealth;
+    private bool isAlive = true;
 
-    public event Action Death;
 
     private void Awake()
     {
@@ -26,7 +28,7 @@ public class Health : MonoBehaviour, IDeath
 
     public void DoDamage(float damage)
     {
-        if (godMode) return;
+        if (godMode || !isAlive) return;
 
         health -= damage;
 
@@ -36,6 +38,12 @@ public class Health : MonoBehaviour, IDeath
 
     private void OnDeath()
     {
+        isAlive = false;
         Death();
+    }
+
+    private void OnEnable()
+    {
+        isAlive = true;
     }
 }

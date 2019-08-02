@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void InvokeMethods()
     {
-        Player.GetComponent<Health>().Death += GameOver;
+        Player.GetComponent<HealthAbility>().Death += GameOver;
     }
        
     public void GameOver()

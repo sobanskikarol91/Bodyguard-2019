@@ -7,8 +7,9 @@ public class ObjectPool
     public readonly GameObject Prefab;
     public readonly int Id;
 
-    private readonly Queue<GameObject> instances = new Queue<GameObject>();
-
+    private readonly Queue<GameObject> toSpawn = new Queue<GameObject>();
+    private int spawnedObjectsAmount = 0;
+    
 
     public ObjectPool(GameObject prefab)
     {
@@ -18,10 +19,10 @@ public class ObjectPool
 
     public GameObject Get()
     {
-        if (instances.Count == 0)
+        if (toSpawn.Count == 0)
             Add(1);
 
-        GameObject poolObject = instances.Dequeue();
+        GameObject poolObject = toSpawn.Dequeue();
         poolObject.gameObject.SetActive(true);
 
         return poolObject;
@@ -30,6 +31,7 @@ public class ObjectPool
     private void Add(int count)
     {
         GameObject newObject = GameObject.Instantiate(Prefab);
+        newObject.name = newObject.name + spawnedObjectsAmount;
         ReturnToPool[] returnConditions = newObject.GetComponents<ReturnToPool>();
 
         if (returnConditions == null)
@@ -38,12 +40,12 @@ public class ObjectPool
         Array.ForEach(returnConditions, r => r.Id = Id);
 
         ReturnToPool(newObject);
+        spawnedObjectsAmount++;
     }
 
     public void ReturnToPool(GameObject returnObject)
     {
         returnObject.gameObject.SetActive(false);
-        instances.Enqueue(returnObject);
+        toSpawn.Enqueue(returnObject);
     }
 }
-

@@ -17,7 +17,7 @@ public class DamageOnCollision : Damagable
 
     private void HitResult()
     {
-        Health health = hitObject.GetComponent<Health>();
+        HealthAbility health = hitObject.GetComponent<HealthAbility>();
 
         if (health)
             health.DoDamage(Damage);

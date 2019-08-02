@@ -20,6 +20,6 @@ public class DamageOnRaycastHit : Damagable
 
         if (!interactive) return;
         else if (!damagable.Contains(interactive.Type)) return;
-        interactive.GetComponent<Health>()?.DoDamage(Damage);
+        interactive.GetComponent<HealthAbility>()?.DoDamage(Damage);
     }
 }
