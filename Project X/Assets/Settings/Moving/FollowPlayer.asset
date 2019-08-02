@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FollowPlayer
   m_EditorClassIdentifier: 
   settings:
-    horizontalSpeed: 5
-    verticalSpeed: 5
+    horizontalSpeed: 9
+    verticalSpeed: 9

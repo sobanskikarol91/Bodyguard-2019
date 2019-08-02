@@ -6,7 +6,7 @@ public class ExpierienceManager : MonoBehaviour, IScore, IRestart
     [SerializeField] LevelSettings settings;
 
     private float expierience = 0;
-    private Player player;
+    private ShootingAbility playerShootingAbility;
     private int lvlNr = 0;
     private Level CurrentLvl { get => settings.Lvls[lvlNr]; }
     private Level NextLvl { get => settings.Lvls[lvlNr + 1]; }
@@ -14,7 +14,7 @@ public class ExpierienceManager : MonoBehaviour, IScore, IRestart
 
     private void Start()
     {
-        player = GameManager.instance.Player;
+        playerShootingAbility = GameManager.instance.Player.GetComponent<ShootingAbility>();
     }
 
     bool IsPlayerReachedNewLvl()
@@ -25,8 +25,7 @@ public class ExpierienceManager : MonoBehaviour, IScore, IRestart
     void IncreaseLvl()
     {
         lvlNr++;
-        ShootingAbility shooting = player.GetComponent<ShootingAbility>();
-        shooting?.Set(CurrentLvl.Weapon);
+        playerShootingAbility?.Set(CurrentLvl.Weapon);
     }
 
     bool IsLastLvl()
@@ -47,8 +46,7 @@ public class ExpierienceManager : MonoBehaviour, IScore, IRestart
     public void Restart()
     {
         expierience =  lvlNr = 0;
-        ShootingAbility shooting = player.GetComponent<ShootingAbility>();
-        shooting?.Set(CurrentLvl.Weapon);
+        playerShootingAbility?.Set(CurrentLvl.Weapon);
     }
 }
 

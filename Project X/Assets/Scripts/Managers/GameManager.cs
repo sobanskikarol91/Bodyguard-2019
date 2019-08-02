@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
        
     public void GameOver()
     {
-        Player.gameObject.SetActive(false);
+        //Player.gameObject.SetActive(false);
         spawnManager.StopSpawning();
         uiManager.ShowGameOver();
     }
