@@ -1,21 +1,20 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SpawnManager : MonoBehaviour, IRestart
 {
-    [SerializeField] SpawnLvl[] lvls;
     [SerializeField] float radius = 3f;
     [SerializeField] bool spawnOnlyOneEnemy;
+    [SerializeField] EnemySpawnSettings enemySpawnSettings;
 
     private Player player;
-    private SpawnLvl currentLvl;
+    private LvlEnemySpawn currentLvl;
     private float timeLeftToSpawn;
     private bool isSpawning = true;
 
 
     private void Start()
     {
-        currentLvl = lvls[0];
+        currentLvl = enemySpawnSettings.Lvls[0];
         player = GameManager.instance.Player;
         ResetSpawnTime();
     }
@@ -56,7 +55,7 @@ public class SpawnManager : MonoBehaviour, IRestart
 
     Enemy GetRandomEnemy()
     {
-        int nr = UnityEngine.Random.Range(0, currentLvl.Enemies.Length);
+        int nr = Random.Range(0, currentLvl.Enemies.Length);
         return currentLvl.Enemies[nr];
     }
 
@@ -68,24 +67,7 @@ public class SpawnManager : MonoBehaviour, IRestart
     Vector2 GetRandomPosition()
     {
         Vector2 spawnPos = player.transform.position;
-        return spawnPos + UnityEngine.Random.insideUnitCircle.normalized * radius;
-    }
-
-    [Serializable]
-    public class SpawnLvl
-    {
-        public float SpawTime { get { return spawnTime; } }
-        public Enemy[] Enemies { get { return enemies; } }
-
-        [SerializeField] float spawnTime;
-        [SerializeField] Enemy[] enemies;
-    }
-
-    [Serializable]
-    public class SpawnEnemy
-    {
-        [SerializeField] Enemy enemy;
-        [SerializeField, Range(0, 1)] float percantage;
+        return spawnPos + Random.insideUnitCircle.normalized * radius;
     }
 
     public void Restart()
