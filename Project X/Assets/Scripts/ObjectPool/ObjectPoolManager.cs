@@ -14,10 +14,18 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         instance = this;
     }
 
+    public GameObject[] Get(GameObject instance, int amount)
+    {
+        GameObject[] gameobjects = new GameObject[amount];
+
+        for (int i = 0; i < amount; i++)
+            gameobjects[i] = Get(instance);
+
+        return gameobjects;
+    }
+
     public GameObject Get(GameObject instance)
     {
-        CheckIsThereAnyConditionAttached(instance);
-
         ObjectPool pool;
 
         int id = instance.GetInstanceID();
@@ -32,24 +40,6 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         spawnedObjects.Add(poolObject);
 
         return poolObject;
-    }
-
-    private static void CheckIsThereAnyConditionAttached(GameObject instance)
-    {
-        ReturnToPool returnCondition = instance.GetComponent<ReturnToPool>();
-
-        if (returnCondition == null)
-            Debug.LogError("No Return to Poll Conditions: " + instance.name);
-    }
-
-    public GameObject[] Get(GameObject instance, int amount)
-    {
-        GameObject[] gameobjects = new GameObject[amount];
-
-        for (int i = 0; i < amount; i++)
-            gameobjects[i] = Get(instance);
-
-        return gameobjects;
     }
 
     private void CreateObjectPool(ObjectPool pool)

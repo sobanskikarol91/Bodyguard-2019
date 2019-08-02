@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5041581987894892735
+--- !u!114 &-8182692854991547116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15,19 +15,6 @@ MonoBehaviour:
   type: {fileID: 11400000, guid: 5def577ea3c3a0b4aa43e158d69c8552, type: 2}
   weapon: {fileID: 11400000, guid: 544b8cff3047e494183f918bfa7f4558, type: 2}
   bulletSpawnPoint: {fileID: 8711785304903788224}
---- !u!114 &5408456603123648044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9131705152369091516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfa92f4ddd578c4e8ab3224380d483f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: ed315c7fe11f0634ea4f9884f8ecad10, type: 2}
 --- !u!1001 &7866674240841761100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110,8 +97,7 @@ PrefabInstance:
       propertyPath: Damage
       value: 100
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7763104289377916508, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
 --- !u!1 &9131705152369091516 stripped
 GameObject:

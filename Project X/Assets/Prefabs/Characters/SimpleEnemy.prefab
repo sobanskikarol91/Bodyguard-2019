@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 1411421080463516410}
   - component: {fileID: 3514574158007475091}
   - component: {fileID: 1411421080463516411}
-  - component: {fileID: 9138853683149229620}
   - component: {fileID: 5307506971871059819}
   - component: {fileID: -4020952158638287947}
   - component: {fileID: 7033016939144099625}
   - component: {fileID: 7763104289377916508}
+  - component: {fileID: 5408456603123648044}
   m_Layer: 0
   m_Name: SimpleEnemy
   m_TagString: Untagged
@@ -144,20 +144,6 @@ MonoBehaviour:
   deathEffect: {fileID: 8871031139695382733, guid: 4c8d764922023764a893aadab4a01fa1,
     type: 3}
   godMode: 0
---- !u!114 &9138853683149229620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1411421080463516400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageObjects: 00000000
-  Damage: 0
 --- !u!114 &5307506971871059819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +197,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageObjects: 00000000
   Damage: 100
+--- !u!114 &5408456603123648044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421080463516400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcfa92f4ddd578c4e8ab3224380d483f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: {fileID: 11400000, guid: ed315c7fe11f0634ea4f9884f8ecad10, type: 2}
 --- !u!1 &8210579939764367727
 GameObject:
   m_ObjectHideFlags: 0
