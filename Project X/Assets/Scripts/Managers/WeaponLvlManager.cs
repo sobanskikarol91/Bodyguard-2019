@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-
-public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl
+public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 {
     [SerializeField] WeaponLvlSetting weaponSettings;
     private ShootingAbility playerShootingAbility;
@@ -17,5 +13,10 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl
     public void OnGainNextLvl(int lvl)
     {
         playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
+    }
+
+    public void Restart()
+    {
+        playerShootingAbility?.Set(weaponSettings.Weapons[0]);
     }
 }

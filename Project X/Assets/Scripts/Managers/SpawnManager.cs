@@ -14,9 +14,8 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     private void Start()
     {
-        currentLvl = enemySpawnSettings.Lvls[0];
+        Restart();
         player = GameManager.instance.Player;
-        ResetSpawnTime();
     }
 
     void Update()
@@ -66,6 +65,8 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     public void Restart()
     {
+        currentLvl = enemySpawnSettings.Lvls[0];
+        ResetSpawnTime();
         isSpawning = true;
     }
 
