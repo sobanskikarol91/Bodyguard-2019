@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: GameEnemySpawnSetings
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 1
+  - spawnTime: 2
     enemies:
     - percentage: 1
       prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
-    - percentage: 1
-      prefab: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
-        type: 3}
-  - spawnTime: 1
+  - spawnTime: 1.5
     enemies:
     - percentage: 0.8
       prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,

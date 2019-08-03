@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7033016939144099625}
   - component: {fileID: 5408456603123648044}
   - component: {fileID: -6352910111366798078}
+  - component: {fileID: 3144744730502950112}
   m_Layer: 0
   m_Name: SimpleEnemy
   m_TagString: Untagged
@@ -163,8 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5ed59f8da03d4689086b093d7e709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 40
   deathEffect: {fileID: 8871031139695382733, guid: 4c8d764922023764a893aadab4a01fa1,
+    type: 3}
+  damageEffect: {fileID: 8871031139695382733, guid: c0e736bc33ef91d479f65807d16ccc13,
     type: 3}
   godMode: 0
 --- !u!114 &5307506971871059819
@@ -246,6 +249,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrow: {fileID: 4531246651080874922, guid: d7cf8c627ef88a94680f68f46052d259, type: 3}
+--- !u!95 &3144744730502950112
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411421080463516400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b663c38a33d85bd40aee189281afd803, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8210579939764367727
 GameObject:
   m_ObjectHideFlags: 0
