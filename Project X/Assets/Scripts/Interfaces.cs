@@ -1,4 +1,6 @@
-﻿public interface IInput
+﻿using System;
+
+public interface IInput
 {
     InputHandler Input { get; set; }
 }
@@ -21,4 +23,9 @@ public interface IRestart
 public interface IDependsOnLvl
 {
     void OnGainNextLvl(int lvl);
+}
+
+public interface IDeath
+{
+    event Action Death;
 }
