@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class EnemyScreenArrow : MonoBehaviour
 {
     [SerializeField] Vector2 offsetFromBoundry = Vector2.one;
+
     private SpriteRenderer target;
     private SpriteRenderer[] sprites;
     private Bounds bounds;
@@ -21,19 +20,19 @@ public class EnemyScreenArrow : MonoBehaviour
 
     private void Update()
     {
-        // CheckVisible();
+        CheckVisible();
         SetPositionOnScreenBoundry();
     }
 
     private void GetReferences()
     {
-        target = GameManager.instance.Player.GetComponent<SpriteRenderer>();
         sprites = GetComponentsInChildren<SpriteRenderer>();
     }
 
     private void GetScreenBoundry()
     {
         bounds = Camera.main.GetBounds();
+        Debug.Log(bounds.min.x + " " + bounds.max.x);
         bounds = new Bounds(bounds.center, bounds.size - (Vector3)offsetFromBoundry);
     }
 
@@ -62,5 +61,10 @@ public class EnemyScreenArrow : MonoBehaviour
     private void HideSprites()
     {
         Array.ForEach(sprites, s => s.enabled = false);
+    }
+
+    public void SetTarget(Transform target)
+    {
+        this.target = target.GetComponent<SpriteRenderer>();
     }
 }

@@ -60,6 +60,14 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         spawnedObjects.Remove(returnCondition.gameObject);
     }
 
+    public void ReturnToPool(GameObject gameObject)
+    {
+        ReturnToPool returnCondition = gameObject.GetComponent<ReturnToPool>();
+
+        if (returnCondition)
+            ReturnToPool(returnCondition);
+    }
+
     private ObjectPool CreateNewPool(ReturnToPool returnCondition)
     {
         ObjectPool pool = new ObjectPool(returnCondition.gameObject, ObjectPoolsHolder);

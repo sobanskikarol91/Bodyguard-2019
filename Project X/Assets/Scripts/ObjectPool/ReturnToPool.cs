@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class ReturnToPool : MonoBehaviour
+public  class ReturnToPool : MonoBehaviour
 {
     public int Id;
 
