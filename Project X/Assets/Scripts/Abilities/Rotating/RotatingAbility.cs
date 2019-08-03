@@ -6,7 +6,7 @@ public class RotatingAbility : MonoBehaviour
     private RotateType typeInstance;
 
 
-    private void Awake()
+    private void Start()
     {
         typeInstance = Instantiate(type);
         typeInstance.Init(this);
