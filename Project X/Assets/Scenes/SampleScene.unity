@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: radius
-      value: 30
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
@@ -263,6 +263,10 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnOnlyOneEnemy
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1348189733, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}

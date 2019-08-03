@@ -32,7 +32,6 @@ public class EnemyScreenArrow : MonoBehaviour
     private void GetScreenBoundry()
     {
         bounds = Camera.main.GetBounds();
-        Debug.Log(bounds.min.x + " " + bounds.max.x);
         bounds = new Bounds(bounds.center, bounds.size - (Vector3)offsetFromBoundry);
     }
 

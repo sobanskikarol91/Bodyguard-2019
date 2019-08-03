@@ -15,10 +15,28 @@ MonoBehaviour:
   lvls:
   - spawnTime: 1
     enemies:
-    - {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
+    - percentage: 1
+      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 1
+      prefab: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
+        type: 3}
   - spawnTime: 1
     enemies:
-    - {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc, type: 3}
+    - percentage: 0.8
+      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 0.2
+      prefab: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
+        type: 3}
   - spawnTime: 1
     enemies:
-    - {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606, type: 3}
+    - percentage: 0.3
+      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 0.3
+      prefab: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
+        type: 3}
+    - percentage: 0.2
+      prefab: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
+        type: 3}

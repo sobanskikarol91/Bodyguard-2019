@@ -6,7 +6,6 @@ public  class ReturnToPool : MonoBehaviour
 
     protected void ReturnObjectToPool()
     {
-        Debug.Log("Return object to pool on collision: " + gameObject.name);
         ObjectPoolManager.instance.ReturnToPool(this);
     }
 }

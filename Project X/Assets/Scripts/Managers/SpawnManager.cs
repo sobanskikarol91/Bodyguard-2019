@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     private void ShowNewEnemy()
     {
-        Enemy random = GetRandomEnemy();
+        Enemy random = currentLvl.GetRandomEnemy();
         Transform enemy = ObjectPoolManager.instance.Get(random.gameObject).transform;
         enemy.position = GetRandomPosition();
     }
@@ -51,12 +51,6 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
     private void ResetSpawnTime()
     {
         timeLeftToSpawn = currentLvl.SpawTime;
-    }
-
-    Enemy GetRandomEnemy()
-    {
-        int nr = Random.Range(0, currentLvl.Enemies.Length);
-        return currentLvl.Enemies[nr];
     }
 
     public void StopSpawning()
