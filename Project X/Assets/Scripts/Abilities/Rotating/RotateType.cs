@@ -10,6 +10,7 @@ public abstract class RotateType : AbilityType<RotatingAbility>
 
     protected void SetNewRotation(float angle)
     {
-        ability.transform.rotation = Quaternion.Euler(0, 0, angle);
+        Quaternion rotation = Quaternion.AngleAxis(angle, ability.transform.forward);
+        ability.transform.rotation = Quaternion.Slerp(ability.transform.rotation, rotation, ability.Speed * Time.deltaTime);
     }
 }
