@@ -4,10 +4,10 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 {
     [SerializeField] float radius = 3f;
     [SerializeField] bool spawnOnlyOneEnemy;
-    [SerializeField] EnemySpawnSettings enemySpawnSettings;
+    [SerializeField] TimeObjectSpawnerSettings enemySpawnSettings;
 
     private Player player;
-    private LvlEnemySpawn currentLvl;
+    private TimeObjectSpawner currentLvl;
     private float timeLeftToSpawn;
     private bool isSpawning = true;
 
@@ -42,7 +42,7 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     private void ShowNewEnemy()
     {
-        Enemy random = currentLvl.GetRandomEnemy();
+        GameObject random = currentLvl.GetRandomObject();
         Transform enemy = ObjectPoolManager.instance.Get(random.gameObject).transform;
         enemy.position = GetRandomPosition();
     }

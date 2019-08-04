@@ -14,26 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lvls:
   - spawnTime: 2
-    enemies:
+    spawnObjects:
     - percentage: 1
-      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+      prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
   - spawnTime: 1.5
-    enemies:
-    - percentage: 0.8
-      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+    spawnObjects:
+    - percentage: 1
+      prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
-    - percentage: 0.2
-      prefab: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
+    - percentage: 1
+      prefab: {fileID: 9131705152369091516, guid: 41eeb4ce23d49e1448f904f35251bbdc,
         type: 3}
   - spawnTime: 1
-    enemies:
-    - percentage: 0.3
-      prefab: {fileID: 3514574158007475091, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+    spawnObjects:
+    - percentage: 0
+      prefab: {fileID: 3336418605839383363, guid: ebb7d20e6744cb34e8a7dc29eeca3850,
         type: 3}
-    - percentage: 0.3
-      prefab: {fileID: 6767305062648339167, guid: 41eeb4ce23d49e1448f904f35251bbdc,
+    - percentage: 0
+      prefab: {fileID: 9131705152369091516, guid: 41eeb4ce23d49e1448f904f35251bbdc,
         type: 3}
-    - percentage: 0.2
-      prefab: {fileID: 2018820340596691824, guid: aa697d3669e4e764c9fee4d019b02606,
+    - percentage: 0
+      prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
         type: 3}
