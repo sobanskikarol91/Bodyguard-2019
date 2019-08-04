@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
        
     public void GameOver()
     {
-        //Player.gameObject.SetActive(false);
         spawnManager.StopSpawning();
         uiManager.ShowGameOver();
     }
@@ -47,5 +46,6 @@ public class GameManager : MonoBehaviour
     {
         Array.ForEach(restartObjects, r => r.Restart());
         Player.gameObject.SetActive(true);
+        Player.transform.position = Vector3.zero;
     }
 }
