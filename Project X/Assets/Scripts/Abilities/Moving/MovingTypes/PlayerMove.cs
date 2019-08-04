@@ -14,6 +14,6 @@ public class PlayerMove : MoveType
 
     public override void Execute()
     {
-        transform.position += (Vector3)(settings.Speed * input.Moving.Direction * Time.deltaTime);
+        transform.position += (Vector3)(ability.Speed * input.Moving.Direction * Time.deltaTime);
     }
 }

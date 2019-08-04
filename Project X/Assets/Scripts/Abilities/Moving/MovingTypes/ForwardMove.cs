@@ -5,6 +5,6 @@ public class ForwardMove : MoveType
 {
     public override void Execute()
     {
-        transform.position += transform.right * Time.deltaTime * settings.Speed;
+        transform.position += transform.right * Time.deltaTime * ability.Speed;
     }
 }

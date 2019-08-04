@@ -4,14 +4,15 @@ public class MovingAbility : MonoBehaviour
 {
     [SerializeField] MoveType moveType;
 
-    public MoveSettings Settings { get => settings; }
-    [SerializeField] MoveSettings settings;
+    public float Speed { get => speed; }
+    [SerializeField] float speed = 10;
 
-     
+
     private MoveType moveTypeInstance;
 
-    private void Awake()
+    private void Start()
     {
+        Debug.Log(gameObject.name);
         moveTypeInstance = Instantiate(moveType);
         moveTypeInstance.Init(this);
     }
