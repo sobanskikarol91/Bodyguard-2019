@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74e5820ca0e3bf408f9de201deeb379, type: 3}
   m_Name: RotateToPlayer
   m_EditorClassIdentifier: 
-  ability: {fileID: 0}
-  player: {fileID: 0}
-  transform: {fileID: 0}
+  speed: 10
+  rotateTarget: 0

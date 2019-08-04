@@ -31,11 +31,12 @@ public abstract class RotateType : AbilityType<RotatingAbility>
 public abstract class MoveType : AbilityType<MovingAbility>
 {
     protected Transform transform;
-    [SerializeField] protected MoveSettings settings;
+    protected MoveSettings settings;
 
     public override void Init(MovingAbility ability)
     {
         base.Init(ability);
         transform = ability.transform;
+        settings = ability.Settings;
     }
 }

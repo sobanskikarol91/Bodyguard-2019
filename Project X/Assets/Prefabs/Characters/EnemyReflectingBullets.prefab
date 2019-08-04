@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: m_Name
-      value: EnemyReflectingShield Variant
+      value: EnemyReflectingBullets
       objectReference: {fileID: 0}
     - target: {fileID: 1411421080463516404, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 1411421080463516411, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
