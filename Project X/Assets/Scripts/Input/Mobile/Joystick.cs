@@ -63,6 +63,7 @@ public class Joystick : TwoAxisInput
     {
         FingerId = notUsedValue;
         joystick.Circle.gameObject.SetActive(false);
+        Direction = Vector2.zero;
 
         base.OnInputEndUsing();
     }
