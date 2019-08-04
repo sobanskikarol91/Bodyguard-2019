@@ -4,7 +4,8 @@ using System.Linq;
 public class ReflectingObjectsAbility : MonoBehaviour
 {
     [SerializeField] ObjectType[] Reflectingtypes;
-
+    [SerializeField] GameObject effect;
+    
     private Collision2D collision;
     private readonly Vector3 reverseDirection = new Vector3(0, 0, 180);
 
@@ -20,6 +21,7 @@ public class ReflectingObjectsAbility : MonoBehaviour
     private void Reflect()
     {
         collision.transform.Rotate(reverseDirection);
+        ObjectPoolManager.instance.Get(effect);
     }
 
     private bool IsInteractive()

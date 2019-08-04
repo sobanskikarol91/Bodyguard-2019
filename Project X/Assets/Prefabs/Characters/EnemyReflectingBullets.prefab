@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Reflectingtypes: 02000000
+  effect: {fileID: 4717991578498481425, guid: c2bffd05016b76242a94595eb55de8a0, type: 3}
 --- !u!50 &4979465820352412233
 Rigidbody2D:
   serializedVersion: 4
