@@ -177,7 +177,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452791550347159300}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -247,7 +247,8 @@ MonoBehaviour:
   health: 1
   deathEffect: {fileID: 8871031139695382733, guid: 4c8d764922023764a893aadab4a01fa1,
     type: 3}
-  godMode: 0
+  damageEffect: {fileID: 0}
+  godMode: 1
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
