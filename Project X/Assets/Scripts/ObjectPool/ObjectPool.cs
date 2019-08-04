@@ -38,13 +38,19 @@ public class ObjectPool
         ReturnToPool[] returnConditions = newObject.GetComponents<ReturnToPool>();
         newObject.transform.SetParent(poolHolder);
 
-        if (returnConditions == null)
-            Debug.LogError("No Return to Poll Conditions: " + newObject.name);
+        if (returnConditions.Length == 0)
+            AddPoolReference(newObject, ref returnConditions);
 
         Array.ForEach(returnConditions, r => r.Id = Id);
 
         ReturnToPool(newObject);
         spawnedObjectsAmount++;
+    }
+
+    private void AddPoolReference(GameObject newObject, ref ReturnToPool[] conditions)
+    {
+        conditions = new ReturnToPool[1];
+        conditions[0] = newObject.AddComponent<ReturnToPool>();
     }
 
     public void ReturnToPool(GameObject returnObject)
