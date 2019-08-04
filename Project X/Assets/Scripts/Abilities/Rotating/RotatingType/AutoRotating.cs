@@ -5,7 +5,7 @@ public class AutoRotating : RotateType
 {
     public override void Execute()
     {
-        float angle = ability.transform.rotation.eulerAngles.z + Time.deltaTime * speed;
+        float angle = ability.transform.rotation.eulerAngles.z + Time.deltaTime * ability.Speed;
         SetNewRotation(angle);
     }
 }
