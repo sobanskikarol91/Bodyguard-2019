@@ -4,8 +4,7 @@ using UnityEngine;
 [Serializable]
 public class MoveSettings
 {
-    public Vector2 Speed { get { return new Vector2(horizontalSpeed, verticalSpeed); } }
+    public float Speed { get { return speed; } }
 
-    [SerializeField] float horizontalSpeed = 10;
-    [SerializeField] float verticalSpeed = 10f;
+    [SerializeField] float speed = 10;
 }
