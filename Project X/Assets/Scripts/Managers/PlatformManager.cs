@@ -9,7 +9,7 @@ public class PlatformManager : ScriptableObject
 
     public PlayerInput GetPlayerInputDependsOnPlatform()
     {
-        return mobile;
+        return pc;
         if (IsPC())
             return pc;
         else if (IsMobile())

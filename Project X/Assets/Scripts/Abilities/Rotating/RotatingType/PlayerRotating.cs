@@ -13,8 +13,6 @@ public class PlayerRotating : RotateType
 
     public override void Execute()
     {
-        Debug.Log(input.Rotating.Direction);
-        //Vector2 direction = input.Rotating.Direction - (Vector2)ability.transform.position;
         Vector2 direction = input.Rotating.Direction;
         SetNewRotation(direction);
     }
