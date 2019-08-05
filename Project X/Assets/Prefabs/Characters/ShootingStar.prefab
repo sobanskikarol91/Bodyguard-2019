@@ -591,6 +591,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7033016939144099625, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+      propertyPath: moveType
+      value: 
+      objectReference: {fileID: 11400000, guid: ecd52ef7a82a0574b8d12baed046215b,
+        type: 2}
     - target: {fileID: 5408456603123648044, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: type
