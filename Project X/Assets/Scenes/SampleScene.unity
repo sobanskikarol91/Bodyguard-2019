@@ -145,7 +145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364617607}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c51a3f2fb5e03f945b9b8eaefc3442a3, type: 3}
   m_Name: 
@@ -268,7 +268,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemySpawnSettings
       value: 
-      objectReference: {fileID: 11400000, guid: 710946d4ea3aa1e478362d8b4499c4e0,
+      objectReference: {fileID: 11400000, guid: 3eeac0ca518e12e4ba4dfd41b96d8ce9,
         type: 2}
     - target: {fileID: 1348189733, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: m_Enabled

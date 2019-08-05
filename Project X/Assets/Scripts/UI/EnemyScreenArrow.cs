@@ -6,21 +6,22 @@ public class EnemyScreenArrow : MonoBehaviour
 {
     [SerializeField] Vector2 offsetFromBoundry = Vector2.one;
 
-    private SpriteRenderer target;
+    private SpriteRenderer enemy;
     private SpriteRenderer[] sprites;
     private Bounds bounds;
     private Bounds cameraBounds;
-
+    private new Camera camera;
 
     private void Start()
     {
+        camera = Camera.main;
         GetReferences();
-        GetScreenBoundry();
     }
 
     private void Update()
     {
         CheckVisible();
+        GetScreenBoundry();
         SetPositionOnScreenBoundry();
     }
 
@@ -31,13 +32,13 @@ public class EnemyScreenArrow : MonoBehaviour
 
     private void GetScreenBoundry()
     {
-        bounds = Camera.main.GetBounds();
+        bounds = camera.GetBounds();
         bounds = new Bounds(bounds.center, bounds.size - (Vector3)offsetFromBoundry);
     }
 
     private void SetPositionOnScreenBoundry()
     {
-        Vector3 clampedPosition = target.transform.position;
+        Vector3 clampedPosition = enemy.transform.position;
 
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, bounds.min.x, bounds.max.x );
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, bounds.min.y, bounds.max.y );
@@ -46,7 +47,7 @@ public class EnemyScreenArrow : MonoBehaviour
 
     private void CheckVisible()
     {
-        if (target.isVisible)
+        if (enemy.isVisible)
             HideSprites();
         else
             ShowSprites();
@@ -64,6 +65,6 @@ public class EnemyScreenArrow : MonoBehaviour
 
     public void SetTarget(Transform target)
     {
-        this.target = target.GetComponent<SpriteRenderer>();
+        enemy = target.GetComponent<SpriteRenderer>();
     }
 }
