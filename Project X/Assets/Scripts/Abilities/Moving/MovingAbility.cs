@@ -12,7 +12,6 @@ public class MovingAbility : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(gameObject.name);
         moveTypeInstance = Instantiate(moveType);
         moveTypeInstance.Init(this);
     }

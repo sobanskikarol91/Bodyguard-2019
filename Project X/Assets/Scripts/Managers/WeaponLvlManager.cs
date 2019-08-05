@@ -4,7 +4,7 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 {
     [SerializeField] WeaponLvlSetting weaponSettings;
     private ShootingAbility playerShootingAbility;
-    
+
     private void Start()
     {
         playerShootingAbility = GameManager.instance.Player.GetComponent<ShootingAbility>();
@@ -12,7 +12,8 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 
     public void OnGainNextLvl(int lvl)
     {
-        playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
+        if (lvl < weaponSettings.Weapons.Length)
+            playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
     }
 
     public void Restart()

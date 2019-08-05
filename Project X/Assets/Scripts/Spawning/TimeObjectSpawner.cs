@@ -14,7 +14,6 @@ public class TimeObjectSpawner
 
     private Dictionary<float, GameObject> objectsPercantage = new Dictionary<float, GameObject>();
 
-
     public GameObject GetRandomObject()
     {
         if (objectsPercantage.Count == 0)
