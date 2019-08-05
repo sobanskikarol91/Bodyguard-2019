@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 enum JoystickPosition { Left, Right }
 
@@ -10,8 +9,9 @@ public class Joystick : TwoAxisInput
 
     [SerializeField] VisualJoystick joystickPrefab;
     [SerializeField] JoystickPosition position;
+    [SerializeField] private float maxKnobOffset = 1f;
 
-    private Vector2 pressPos, currentFingerPos;
+    private Vector2 tapStartPos;
     private const int notUsedValue = -1;
     private VisualJoystick joystick;
     private Touch touch;
@@ -35,26 +35,29 @@ public class Joystick : TwoAxisInput
                 JoystickUsed();
         }
     }
-
-    private Vector3 GetWorldTouchPos()
-    {
-        return camera.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, Camera.main.transform.position.z));
-    }
       
     protected override void OnInputStartUsing()
     {
+        tapStartPos = touch.position;
         FingerId = touch.fingerId;
-        pressPos = GetWorldTouchPos();
-        joystick.Circle.transform.position = pressPos;
-        joystick.Circle.gameObject.SetActive(true);
-
         base.OnInputStartUsing();
+    }
+
+    private void UpdateJoystickPosition()
+    {
+        joystick.Circle.transform.position = (Vector2)camera.ScreenToWorldPoint(tapStartPos);
+        joystick.Circle.gameObject.SetActive(true);
+    }
+
+    private Vector2 GetTouchWorldPosition()
+    {
+        return camera.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
     }
 
     protected override void OnInputUsing()
     {
-        currentFingerPos = GetWorldTouchPos();
         UpdateJoystickPosition();
+        UpdateKnob();
 
         base.OnInputUsing();
     }
@@ -68,10 +71,15 @@ public class Joystick : TwoAxisInput
         base.OnInputEndUsing();
     }
 
-    private void UpdateJoystickPosition()
+    private void UpdateKnob()
     {
-        Direction = Vector2.ClampMagnitude(currentFingerPos - pressPos, 1f);
-        joystick.InnerCircle.position = pressPos + Direction;
+        Vector2 worldTouch = camera.ScreenToWorldPoint(touch.position);
+        Vector2 worldTouchStart = camera.ScreenToWorldPoint(tapStartPos);
+
+        Vector2 knobOffsetFromCenter = worldTouch - worldTouchStart;
+
+        Direction = Vector2.ClampMagnitude(knobOffsetFromCenter, maxKnobOffset);
+        joystick.Knob.localPosition =  Direction;
     }
 
     public bool IsNotUsed()

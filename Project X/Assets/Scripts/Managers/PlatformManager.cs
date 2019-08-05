@@ -9,20 +9,12 @@ public class PlatformManager : ScriptableObject
 
     public PlayerInput GetPlayerInputDependsOnPlatform()
     {
-        return pc;
         if (IsPC())
             return pc;
-        else if (IsMobile())
-            return mobile;
         else
             return mobile;
     }
 
-    private static bool IsMobile()
-    {
-        return Application.platform == RuntimePlatform.Android ||
-            Application.platform == RuntimePlatform.IPhonePlayer;
-    }
 
     private static bool IsPC()
     {

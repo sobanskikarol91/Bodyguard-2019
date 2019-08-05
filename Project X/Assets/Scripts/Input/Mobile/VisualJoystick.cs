@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
+﻿using UnityEngine;
 
 public class VisualJoystick : MonoBehaviour 
 {
     [SerializeField] Transform circle;
-    [SerializeField] Transform innerCircle;
+    [SerializeField] Transform knob;
 
     public Transform Circle { get { return circle; } }
-    public Transform InnerCircle { get { return innerCircle; }  }
+    public Transform Knob { get { return knob; }  }
 }

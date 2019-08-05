@@ -6,21 +6,20 @@ public class EnemyScreenArrow : MonoBehaviour
 {
     [SerializeField] Vector2 offsetFromBoundry = Vector2.one;
 
-    private SpriteRenderer enemy;
     private SpriteRenderer[] sprites;
     private Bounds bounds;
     private Bounds cameraBounds;
     private new Camera camera;
+    private Transform target;
 
-    private void Start()
+    private void Awake()
     {
-        camera = Camera.main;
         GetReferences();
+        camera = Camera.main;
     }
 
     private void Update()
     {
-        CheckVisible();
         GetScreenBoundry();
         SetPositionOnScreenBoundry();
     }
@@ -38,33 +37,25 @@ public class EnemyScreenArrow : MonoBehaviour
 
     private void SetPositionOnScreenBoundry()
     {
-        Vector3 clampedPosition = enemy.transform.position;
+        Vector3 clampedPosition = target.transform.position;
 
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, bounds.min.x, bounds.max.x );
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, bounds.min.y, bounds.max.y );
         transform.position = clampedPosition;
     }
 
-    private void CheckVisible()
-    {
-        if (enemy.isVisible)
-            HideSprites();
-        else
-            ShowSprites();
-    }
-
-    private void ShowSprites()
+    public void ShowSprites()
     {
         Array.ForEach(sprites, s => s.enabled = true);
     }
 
-    private void HideSprites()
+    public void HideSprites()
     {
         Array.ForEach(sprites, s => s.enabled = false);
     }
 
-    public void SetTarget(Transform target)
+    public void AssignTo(Transform transform)
     {
-        enemy = target.GetComponent<SpriteRenderer>();
+        target = transform;
     }
 }
