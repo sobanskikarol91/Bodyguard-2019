@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6748983074186029745}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   deathEffect: {fileID: 8871031139695382733, guid: 4c8d764922023764a893aadab4a01fa1,
     type: 3}
   damageEffect: {fileID: 0}
-  godMode: 0
+  godMode: 1
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0

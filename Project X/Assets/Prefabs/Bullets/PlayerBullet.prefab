@@ -90,14 +90,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2920203329106431753}
   - component: {fileID: 1060307636233408754}
-  - component: {fileID: 1278354691537093409}
   - component: {fileID: 7696240082753549402}
   - component: {fileID: 207260611433673405}
+  - component: {fileID: 1278354691537093409}
   - component: {fileID: 5846887723326059202}
   - component: {fileID: 7824824286691282310}
   - component: {fileID: -8491120688834446511}
   - component: {fileID: -1370085028540149878}
   - component: {fileID: 8939676334826996254}
+  - component: {fileID: -941585706026616970}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -169,20 +170,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1278354691537093409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4710505377383510129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageObjects: 01000000
-  Damage: 1
 --- !u!58 &7696240082753549402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -220,6 +207,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1278354691537093409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageObjects: 01000000
+  Damage: 1
 --- !u!82 &5846887723326059202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -369,3 +370,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 70438f738e6ad98418636f436f10090e, type: 2}
+  speed: 10
+--- !u!114 &-941585706026616970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7268a7a81709044af0d8ba6f351b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 1.5
