@@ -3,11 +3,10 @@
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/MultipleBullets")]
 public class MultipleBulletWeapon : Weapon
 {
-    [SerializeField, Tooltip("Angle between bullets")] int amount;
+    [SerializeField, Tooltip("How many bullet sholud create")] int amount;
     [SerializeField, Tooltip("Angle between bullets")] float angle;
 
-
-    public override void Shoot()
+    protected override GameObject CreateBullet()
     {
         GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet.gameObject, amount);
 
@@ -18,6 +17,8 @@ public class MultipleBulletWeapon : Weapon
             bullets[i].transform.rotation = Quaternion.Euler(rotation);
             bullets[i].transform.position = bulletSpawnPoint.position;
         }
+
+        return bullets[0];
     }
 
     float GetAngle(Transform player, int bulletNr)

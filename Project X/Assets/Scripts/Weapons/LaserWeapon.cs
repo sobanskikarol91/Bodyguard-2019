@@ -5,7 +5,7 @@ public class LaserWeapon : Weapon
 {
     [SerializeField] float beamLength;
 
-    public override void Shoot()
+    protected override GameObject CreateBullet()
     {
         LineRenderer line = ObjectPoolManager.instance.Get(Bullet.gameObject).GetComponent<LineRenderer>();
         line.positionCount = 2;
@@ -14,5 +14,6 @@ public class LaserWeapon : Weapon
 
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
         damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right, beamLength, damageObjects);
+        return line.gameObject;
     }
 }

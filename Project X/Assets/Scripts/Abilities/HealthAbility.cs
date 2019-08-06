@@ -6,8 +6,8 @@ public class HealthAbility : MonoBehaviour, IDeath
 {
     public event Action Death;
 
-    [SerializeField]  float health;
-    [SerializeField] GameObject deathEffect;
+    [SerializeField] float health;
+    [SerializeField] DeathEffect[] deathEffects;
     [SerializeField] GameObject damageEffect;
     [SerializeField] bool godMode;
 
@@ -35,26 +35,24 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     private void OnDamage()
     {
-        CreateEffect(damageEffect);
         animator.SetTrigger("isDamage");
     }
 
     private void OnDeath()
     {
-        CreateEffect(deathEffect);
+        CreateDeathEffects();
         isAlive = false;
         Death();
+    }
+
+    private void CreateDeathEffects()
+    {
+        Array.ForEach(deathEffects, d => d.CreateEffect(transform));
     }
 
     private void OnEnable()
     {
         isAlive = true;
         currentHealth = health;
-    }
-
-    void CreateEffect(GameObject prefab)
-    {
-        Transform effect = ObjectPoolManager.instance.Get(prefab).transform;
-        effect.position = transform.position;
     }
 }

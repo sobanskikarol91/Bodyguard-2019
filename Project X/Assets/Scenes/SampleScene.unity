@@ -231,6 +231,22 @@ PrefabInstance:
       propertyPath: scoreTxt
       value: 
       objectReference: {fileID: 114799602}
+    - target: {fileID: 525152487, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 525152487, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 525152487, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 525152489, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: speed
+      value: 0.023
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}
 --- !u!1 &2019648755 stripped
@@ -402,6 +418,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2067194794}
+    - target: {fileID: 4498991341823241558, guid: cceaa0ecf7701af4a84e6fc2d993ff68,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4498991342051048275, guid: cceaa0ecf7701af4a84e6fc2d993ff68,
         type: 3}
       propertyPath: m_Mesh
@@ -474,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 4498991342051048278, guid: cceaa0ecf7701af4a84e6fc2d993ff68,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.1000061
+      value: 0.099975586
       objectReference: {fileID: 0}
     - target: {fileID: 4498991342051048278, guid: cceaa0ecf7701af4a84e6fc2d993ff68,
         type: 3}
