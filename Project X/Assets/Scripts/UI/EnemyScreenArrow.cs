@@ -17,7 +17,7 @@ public class EnemyScreenArrow : MonoBehaviour
         GetReferences();
         camera = Camera.main;
     }
-
+    
     private void Update()
     {
         GetScreenBoundry();
