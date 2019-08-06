@@ -20,7 +20,6 @@ public class DoDamageOnCollision : Damagable
     private void HitResult(Collision2D collision)
     {
         HealthAbility health = hitObject.GetComponent<HealthAbility>();
-
         health?.DoDamage(Damage);
         ShowEffects(collision);
         OnDamage();
