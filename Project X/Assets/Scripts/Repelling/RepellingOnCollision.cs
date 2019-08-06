@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
-public class RepellingOnCollision : MonoBehaviour
+[RequireComponent(typeof(DoDamageOnCollision))]
+[CreateAssetMenu(fileName = "RepellingOnCollision", menuName = "CollisionEffects/Repelling")]
+public class RepellingOnCollision : CollisionEffect
 {
     [SerializeField] float force = 0.1f;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollision(Collision2D collision, Transform transform)
     {
-        if (collision.gameObject.tag == "Player")  return;
-
-        //Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+        Debug.Log("aa");
         Vector3 direction = (Vector3)collision.contacts[0].point - transform.position;
-        //rb.AddForce(direction * force, ForceMode2D.Impulse);
         collision.transform.position += direction * force;
     }
 }

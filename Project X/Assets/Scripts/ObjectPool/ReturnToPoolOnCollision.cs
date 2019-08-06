@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
-
-public class ReturnToPoolOnCollision : ReturnToPool
+﻿public class ReturnToPoolOnCollision : ReturnToPool
 {
-    private DamageOnCollision damageOnCollision;
-
+    private DoDamageOnCollision damageOnCollision;
 
     protected void Awake()
     {
-        damageOnCollision = GetComponent<DamageOnCollision>();
+        damageOnCollision = GetComponent<DoDamageOnCollision>();
     }
 
     private void OnEnable()

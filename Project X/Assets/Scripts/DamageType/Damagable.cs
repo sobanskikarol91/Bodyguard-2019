@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Damagable : MonoBehaviour
 {
-    [SerializeField] ObjectType[] damageObjects;
     [SerializeField] protected float Damage;
+    [SerializeField] ObjectType[] damageObjects;
 
     public event Action DoDamage = delegate { };
-
 
     protected bool IsHitTargetOnDamageObjectsCollection(InteractiveObject target)
     {
