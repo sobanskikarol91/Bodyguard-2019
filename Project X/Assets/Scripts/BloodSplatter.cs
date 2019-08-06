@@ -1,8 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "BloodSpawner", menuName = "Effects/BloodSpawner")]
-public class BloodSpawner : DeathEffect
+[CreateAssetMenu(fileName = "BloodSplatter", menuName = "Effects/BloodSplatter")]
+public class BloodSplatter : DeathEffect
 {
     [SerializeField] GameObject[] blood;
     [SerializeField] GameObject particle;
@@ -10,9 +9,9 @@ public class BloodSpawner : DeathEffect
     public override void CreateEffect(Transform transform)
     {
         GameObject prefab = ChooseRandom();
-        GameObject instance = ObjectPoolManager.instance.Get(prefab);
-        instance.transform.position = transform.position;
-        SetRandomRotation(transform);
+        Transform instance = ObjectPoolManager.instance.Get(prefab).transform;
+        instance.position = transform.position;
+        SetRandomRotation(instance);
         SetFlip(transform);
 
         GameObject particleInstance = ObjectPoolManager.instance.Get(particle);
@@ -21,17 +20,21 @@ public class BloodSpawner : DeathEffect
 
     private void SetFlip(Transform transform)
     {
-        
+        bool shouldFlip = (Random.value > .5f);
+
+        if (shouldFlip)
+            transform.localScale *= -1f;
     }
 
     void SetRandomRotation(Transform transform)
     {
-
+        float angle = Random.Range(0, 360);
+        transform.Rotate(new Vector3(0, 0, angle));
     }
 
     GameObject ChooseRandom()
     {
-        int nr = UnityEngine.Random.Range(0, blood.Length);
+        int nr = Random.Range(0, blood.Length);
         return blood[nr];
     }
 }
