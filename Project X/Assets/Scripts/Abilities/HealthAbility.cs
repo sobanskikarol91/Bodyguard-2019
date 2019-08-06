@@ -7,7 +7,7 @@ public class HealthAbility : MonoBehaviour, IDeath
     public event Action Death;
 
     [SerializeField] float health;
-    [SerializeField] DeathEffect[] deathEffects;
+    [SerializeField] GameObject deathEffects;
     [SerializeField] GameObject damageEffect;
     [SerializeField] bool godMode;
 
@@ -47,7 +47,8 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     private void CreateDeathEffects()
     {
-        Array.ForEach(deathEffects, d => d.CreateEffect(transform));
+        Transform instance = ObjectPoolManager.instance.Get(deathEffects).transform;
+        instance.position = transform.position;
     }
 
     private void OnEnable()

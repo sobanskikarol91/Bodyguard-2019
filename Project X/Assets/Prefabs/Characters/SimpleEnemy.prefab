@@ -186,8 +186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
-  deathEffects:
-  - {fileID: 11400000, guid: 52058737031d2b14895c660b591ae929, type: 2}
+  deathEffects: {fileID: 6829461801087784153, guid: ecdee2e9cb7f25245ade49de6f155e40,
+    type: 3}
   damageEffect: {fileID: 8871031139695382733, guid: c0e736bc33ef91d479f65807d16ccc13,
     type: 3}
   godMode: 0

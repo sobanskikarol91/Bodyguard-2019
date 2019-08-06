@@ -249,7 +249,7 @@ MonoBehaviour:
   health: 1
   deathEffects: []
   damageEffect: {fileID: 0}
-  godMode: 0
+  godMode: 1
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
