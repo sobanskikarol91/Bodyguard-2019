@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a94708c5c2771e4f981972e6eea345d, type: 3}
-  m_Name: GameEnemySpawnSetings
+  m_Name: EnemyLvlSpawn
   m_EditorClassIdentifier: 
   lvls:
   - spawnTime: 2
@@ -18,7 +18,7 @@ MonoBehaviour:
     - percentage: 1
       prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
-  - spawnTime: 1.5
+  - spawnTime: 2
     spawnObjects:
     - percentage: 1
       prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
@@ -26,18 +26,40 @@ MonoBehaviour:
     - percentage: 0.2
       prefab: {fileID: 9131705152369091516, guid: 41eeb4ce23d49e1448f904f35251bbdc,
         type: 3}
-  - spawnTime: 1
+  - spawnTime: 2
     spawnObjects:
     - percentage: 1
-      prefab: {fileID: 3336418605839383363, guid: ebb7d20e6744cb34e8a7dc29eeca3850,
+      prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
-    - percentage: 1
+    - percentage: 0.2
       prefab: {fileID: 9131705152369091516, guid: 41eeb4ce23d49e1448f904f35251bbdc,
         type: 3}
-    - percentage: 1
+    - percentage: 0.2
       prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
         type: 3}
-  - spawnTime: 1.4
+  - spawnTime: 2
+    spawnObjects:
+    - percentage: 1
+      prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 1
+      prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
+        type: 3}
+    - percentage: 0.1
+      prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
+        type: 3}
+  - spawnTime: 2
+    spawnObjects:
+    - percentage: 1
+      prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 1
+      prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
+        type: 3}
+    - percentage: 0.2
+      prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
+        type: 3}
+  - spawnTime: 2
     spawnObjects:
     - percentage: 1
       prefab: {fileID: 3336418605839383363, guid: ebb7d20e6744cb34e8a7dc29eeca3850,
@@ -45,6 +67,6 @@ MonoBehaviour:
     - percentage: 1
       prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
         type: 3}
-    - percentage: 0.2
+    - percentage: 0.1
       prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
         type: 3}

@@ -339,9 +339,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  deathEffects: {fileID: 0}
+  deathEffects: {fileID: 9176900897231822139, guid: ed016d86ca171e44cbddb5c703d20ffe,
+    type: 3}
   damageEffect: {fileID: 0}
-  godMode: 1
+  godMode: 0
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 7410b9279984f21439f8ff0236e1f729, type: 2}
-  weapon: {fileID: 11400000, guid: 4d2177a2b3f89594e8224ec032aef5c0, type: 2}
+  weapon: {fileID: 11400000, guid: 49790f748e9105047ba521be123e3166, type: 2}
   bulletSpawnPoint: {fileID: 1452791549944338994}
 --- !u!114 &384692416682989964
 MonoBehaviour:
