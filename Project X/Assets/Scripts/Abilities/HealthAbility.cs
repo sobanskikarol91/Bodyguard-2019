@@ -23,6 +23,7 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     public void DoDamage(float damage)
     {
+        Debug.Log("Damage: " + damage);
         if (godMode || !isAlive) return;
 
         currentHealth -= damage;

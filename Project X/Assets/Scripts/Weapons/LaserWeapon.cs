@@ -13,6 +13,7 @@ public class LaserWeapon : Weapon
         line.SetPosition(1, bulletSpawnPoint.position + bulletSpawnPoint.right * beamLength);
 
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
+        damageOnRaycastHit.ChangeDamage(damage);
         damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right, beamLength, damageObjects);
         return line.gameObject;
     }

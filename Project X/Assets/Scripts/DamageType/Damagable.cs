@@ -24,4 +24,9 @@ public class Damagable : MonoBehaviour
         this.damageObjects = damageObjects;
         Damage = damage;
     }
+
+    public void ChangeDamage(float damage)
+    {
+        Damage = damage;
+    }
 }
