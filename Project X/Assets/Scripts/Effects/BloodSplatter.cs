@@ -28,13 +28,13 @@ public class BloodSplatter : MonoBehaviour
 
     GameObject ChooseRandom()
     {
-        int nr = UnityEngine.Random.Range(0, blood.Length);
+        int nr = Random.Range(0, blood.Length);
         return blood[nr];
     }
 
     private void SetFlip(Transform transform)
     {
-        bool shouldFlip = (UnityEngine.Random.value > .5f);
+        bool shouldFlip = (Random.value > .5f);
 
         if (shouldFlip)
             transform.localScale *= -1f;
@@ -42,7 +42,7 @@ public class BloodSplatter : MonoBehaviour
 
     void SetRandomRotation(Transform transform)
     {
-        float angle = UnityEngine.Random.Range(0, 360);
+        float angle = Random.Range(0, 360);
         transform.Rotate(new Vector3(0, 0, angle));
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EZCameraShake;
+using System;
 using UnityEngine;
 
 
@@ -13,6 +14,7 @@ public abstract class Weapon : ScriptableObject
     [SerializeField] protected ObjectType[] damageObjects;
     [SerializeField] ShootingEffect[] effects;
 
+
     protected Transform bulletSpawnPoint;
 
     public virtual void Init(Transform bulletSpawnPoint)
@@ -22,14 +24,12 @@ public abstract class Weapon : ScriptableObject
 
     public void Shoot()
     {
-        Debug.Log("s");
         GameObject bullet = CreateBullet();
         ShowEffects(bullet);
     }
 
     private void ShowEffects(GameObject bullet)
     {
-        Debug.Log("effects");
         Array.ForEach(effects, e => e.CreateEffect(bullet.transform));
     }
 

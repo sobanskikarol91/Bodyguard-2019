@@ -18,3 +18,4 @@ MonoBehaviour:
   damageObjects: 01000000
   effects:
   - {fileID: 11400000, guid: 9a5d0cd4f8f12794c9ed62d11bc29dc5, type: 2}
+  - {fileID: 11400000, guid: dd20b82e27ce32c408eaf61766d65984, type: 2}
