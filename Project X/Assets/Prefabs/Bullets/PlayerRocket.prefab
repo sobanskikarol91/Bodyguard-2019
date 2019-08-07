@@ -15,13 +15,13 @@ PrefabInstance:
     - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: collisionEffects.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: collisionEffects.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 291d1f12794a01e4e9ad1315fdd82e3a,
+      objectReference: {fileID: 11400000, guid: 1a472eb7c4f6a654b957a24b12d9b4d2,
         type: 2}
     - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
@@ -32,7 +32,7 @@ PrefabInstance:
     - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: Damage
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}

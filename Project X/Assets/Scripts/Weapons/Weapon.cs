@@ -1,5 +1,4 @@
-﻿using EZCameraShake;
-using System;
+﻿using System;
 using UnityEngine;
 
 
@@ -10,7 +9,6 @@ public abstract class Weapon : ScriptableObject
 
     [SerializeField] Damagable bullet;
     [SerializeField] float refireRate = 0.1f;
-    [SerializeField] protected float damage;
     [SerializeField] protected ObjectType[] damageObjects;
     [SerializeField] ShootingEffect[] effects;
 

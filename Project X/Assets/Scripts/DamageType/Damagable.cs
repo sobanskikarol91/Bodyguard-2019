@@ -19,12 +19,6 @@ public class Damagable : MonoBehaviour
         DoDamage();
     }
 
-    public void Init(float damage, ObjectType[] damageObjects)
-    {
-        this.damageObjects = damageObjects;
-        Damage = damage;
-    }
-
     public void ChangeDamage(float damage)
     {
         Damage = damage;
