@@ -29,7 +29,7 @@ public abstract class Weapon : ScriptableObject
     private void ShowEffects(GameObject bullet)
     {
         Array.ForEach(effects, e => e.CreateEffect(bullet.transform));
-        if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bullet.transform.position);
+        if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bulletSpawnPoint.position);
     }
 
     protected abstract GameObject CreateBullet();
