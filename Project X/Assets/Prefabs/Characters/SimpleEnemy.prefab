@@ -185,10 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5ed59f8da03d4689086b093d7e709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 70
   deathEffects: {fileID: 6829461801087784153, guid: ecdee2e9cb7f25245ade49de6f155e40,
     type: 3}
-  damageEffect: {fileID: 8871031139695382733, guid: c0e736bc33ef91d479f65807d16ccc13,
+  damageEffect: {fileID: 1912046762901498730, guid: 85ebc92d07e4f8347bd8c421b26375c3,
     type: 3}
   godMode: 0
 --- !u!114 &7033016939144099625

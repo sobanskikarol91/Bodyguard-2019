@@ -35,19 +35,20 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     private void OnDamage()
     {
+        CreateEffect(damageEffect);
         animator.SetTrigger("isDamage");
     }
 
     private void OnDeath()
     {
-        CreateDeathEffects();
+        CreateEffect(deathEffects);
         isAlive = false;
         Death();
     }
 
-    private void CreateDeathEffects()
+    private void CreateEffect(GameObject prefab)
     {
-        Transform instance = ObjectPoolManager.instance.Get(deathEffects).transform;
+        Transform instance = ObjectPoolManager.instance.Get(prefab).transform;
         instance.position = transform.position;
     }
 
