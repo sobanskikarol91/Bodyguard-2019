@@ -11,7 +11,7 @@ public abstract class Weapon : ScriptableObject
     [SerializeField] float refireRate = 0.1f;
     [SerializeField] protected ObjectType[] damageObjects;
     [SerializeField] ShootingEffect[] effects;
-
+    [SerializeField] AudioClip shotSnd;
 
     protected Transform bulletSpawnPoint;
 
@@ -29,6 +29,7 @@ public abstract class Weapon : ScriptableObject
     private void ShowEffects(GameObject bullet)
     {
         Array.ForEach(effects, e => e.CreateEffect(bullet.transform));
+        if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bullet.transform.position);
     }
 
     protected abstract GameObject CreateBullet();

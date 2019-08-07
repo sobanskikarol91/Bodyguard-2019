@@ -3,9 +3,9 @@
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/MultipleBullets")]
 public class MultipleBulletWeapon : Weapon
 {
-    [SerializeField, Tooltip("How many bullet sholud create")] int amount;
+    [SerializeField, Tooltip("How many bullet should be create")] int amount;
     [SerializeField, Tooltip("Angle between bullets")] float angle;
-
+    
     protected override GameObject CreateBullet()
     {
         GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet.gameObject, amount);
