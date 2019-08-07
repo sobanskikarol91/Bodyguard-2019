@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa9ec6b4405753249b22510cca650952, type: 3}
-  m_Name: PlayerSimple
+  m_Name: PlayerBase
   m_EditorClassIdentifier: 
   bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
-  refireRate: 0.1
-  damage: 10
+  refireRate: 0.2
   damageObjects: 01000000
   effects:
   - {fileID: 11400000, guid: 9a5d0cd4f8f12794c9ed62d11bc29dc5, type: 2}
+  shotSnd: {fileID: 8300000, guid: 1cc83ddf503154c4bb7371dfc82b21bc, type: 3}
