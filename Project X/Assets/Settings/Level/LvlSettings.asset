@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LvlSettings
   m_EditorClassIdentifier: 
   lvls:
-  - 600
+  - 500
   - 1000
-  - 2000
-  - 3000
+  - 1700
+  - 2500
+  - 3200
   - 4000
-  - 5000
