@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 70438f738e6ad98418636f436f10090e, type: 2}
-  speed: 10
+  speed: 13
 --- !u!114 &1278354691537093409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 20
   damageObjects: 01000000
   collisionEffects:
   - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}

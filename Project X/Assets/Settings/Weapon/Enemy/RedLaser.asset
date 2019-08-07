@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8535946045795624035, guid: 0d36951fd827ca24889c7332b00f9a85, type: 3}
   refireRate: 1
-  damage: 10
   damageObjects: 00000000
   effects: []
+  shotSnd: {fileID: 8300000, guid: 721b3f3c8dcb1bb41aeb5554bd531d07, type: 3}
   beamLength: 2

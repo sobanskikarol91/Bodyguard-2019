@@ -23,11 +23,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30,
         type: 2}
-    - target: {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b,
+    - target: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e7fe6d0511b2ac4c8b5450de427264d, type: 3}
+      propertyPath: Damage
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2920203329106431753, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,6 +114,11 @@ PrefabInstance:
       propertyPath: force
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e7fe6d0511b2ac4c8b5450de427264d, type: 3}
     m_RemovedComponents:
     - {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}

@@ -274,4 +274,4 @@ MonoBehaviour:
   Damage: 10
   damageObjects: 01000000
   collisionEffects:
-  - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}
+  - {fileID: 11400000, guid: 291d1f12794a01e4e9ad1315fdd82e3a, type: 2}
