@@ -47,6 +47,9 @@ TagManager:
   - name: Foreground
     uniqueID: 2948461199
     locked: 0
+  - name: PFX
+    uniqueID: 3181432641
+    locked: 0
   - name: UIForeground
     uniqueID: 3117088379
     locked: 0

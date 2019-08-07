@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa9ec6b4405753249b22510cca650952, type: 3}
-  m_Name: GreenSimple
+  m_Name: PlayerMiniGun
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
-  refireRate: 0.1
-  damageObjects: 01000000
+  bullet: {fileID: 6560814718102546303, guid: e45d6d0cf2b9e83498a498da3963b38c, type: 3}
+  refireRate: 0.05
   damage: 10
+  damageObjects: 01000000
   effects:
   - {fileID: 11400000, guid: 9a5d0cd4f8f12794c9ed62d11bc29dc5, type: 2}
+  - {fileID: 11400000, guid: dd20b82e27ce32c408eaf61766d65984, type: 2}

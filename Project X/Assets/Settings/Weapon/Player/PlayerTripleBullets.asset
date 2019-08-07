@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826f350a81a50cb4cafd25fded587871, type: 3}
-  m_Name: LvlSettings
+  m_Script: {fileID: 11500000, guid: c77f7db3b435931409d8a057055cea31, type: 3}
+  m_Name: PlayerTripleBullets
   m_EditorClassIdentifier: 
-  lvls:
-  - 600
-  - 1000
-  - 2000
-  - 3000
+  bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
+  refireRate: 0.3
+  damage: 20
+  damageObjects: 01000000
+  effects: []
+  amount: 3
+  angle: 10

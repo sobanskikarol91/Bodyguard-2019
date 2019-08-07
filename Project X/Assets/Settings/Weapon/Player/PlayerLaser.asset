@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826f350a81a50cb4cafd25fded587871, type: 3}
-  m_Name: LvlSettings
+  m_Script: {fileID: 11500000, guid: 85a4abd6b91f3ed4c86588e2ee63c52c, type: 3}
+  m_Name: PlayerLaser
   m_EditorClassIdentifier: 
-  lvls:
-  - 600
-  - 1000
-  - 2000
-  - 3000
+  bullet: {fileID: 8535946045795624035, guid: 0ba72806562ff3049b038a39dc28b7a3, type: 3}
+  refireRate: 0.2
+  damage: 10
+  damageObjects: 01000000
+  effects: []
+  beamLength: 20

@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826f350a81a50cb4cafd25fded587871, type: 3}
-  m_Name: LvlSettings
+  m_Script: {fileID: 11500000, guid: 7a1a31f635fb49c418b1f9747386aab2, type: 3}
+  m_Name: Explosion
   m_EditorClassIdentifier: 
-  lvls:
-  - 600
-  - 1000
-  - 2000
-  - 3000
+  explosion: {fileID: 11790718572316861, guid: da7c0c2f917ebdc41923f4a47a109c7f, type: 3}

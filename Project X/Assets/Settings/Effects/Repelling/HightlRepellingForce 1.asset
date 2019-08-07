@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826f350a81a50cb4cafd25fded587871, type: 3}
-  m_Name: LvlSettings
+  m_Script: {fileID: 11500000, guid: 5f7268a7a81709044af0d8ba6f351b4c, type: 3}
+  m_Name: HightlRepellingForce 1
   m_EditorClassIdentifier: 
-  lvls:
-  - 600
-  - 1000
-  - 2000
-  - 3000
+  force: 2

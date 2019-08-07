@@ -23,7 +23,6 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     public void DoDamage(float damage)
     {
-        Debug.Log("Damage: " + damage);
         if (godMode || !isAlive) return;
 
         currentHealth -= damage;
@@ -36,13 +35,13 @@ public class HealthAbility : MonoBehaviour, IDeath
 
     private void OnDamage()
     {
-        CreateEffect(damageEffect);
+        if (damageEffect) CreateEffect(damageEffect);
         animator.SetTrigger("isDamage");
     }
 
     private void OnDeath()
     {
-        CreateEffect(deathEffects);
+        if (deathEffects) CreateEffect(deathEffects);
         isAlive = false;
         Death();
     }

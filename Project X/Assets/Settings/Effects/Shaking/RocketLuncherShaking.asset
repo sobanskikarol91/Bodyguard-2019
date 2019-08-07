@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c77f7db3b435931409d8a057055cea31, type: 3}
-  m_Name: GreenTripleBullets
+  m_Script: {fileID: 11500000, guid: f6c3b0b353bf82045953d81bb773482d, type: 3}
+  m_Name: RocketLuncherShaking
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1278354691537093409, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
-  refireRate: 0.3
-  damageObjects: 01000000
-  damage: 10
-  amount: 3
-  angle: 10
+  settings:
+    magnitude: 10
+    roughness: 3
+    fadeInTime: 0.3
+    fadeOutTime: 1

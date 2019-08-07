@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaef7ce3b0d6ea4cad276bdb95c517f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  Damage: 10
   damageObjects: 01000000
   collisionEffects:
   - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}
