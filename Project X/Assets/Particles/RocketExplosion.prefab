@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  timeToReturn: 1
+  timeToReturn: 0.7
 --- !u!199 &8148531026653997275
 ParticleSystemRenderer:
   serializedVersion: 6
