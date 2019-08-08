@@ -3,6 +3,7 @@
 public class ShootingAbility : MonoBehaviour
 {
     public Weapon Weapon { get; private set; }
+    public Transform BulletSpawnPoint { get => bulletSpawnPoint; }
 
     [SerializeField] ShootingType type;
     [SerializeField] Weapon weapon;
@@ -19,7 +20,7 @@ public class ShootingAbility : MonoBehaviour
     private void CreateWeapon(Weapon newWeapon)
     {
         Weapon = Instantiate(newWeapon);
-        Weapon.Init(bulletSpawnPoint);
+        Weapon.Init(this);
     }
 
     private void CreateShootingType()

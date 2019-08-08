@@ -1,7 +1,7 @@
 ﻿using EZCameraShake;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CameraShakeEffect", menuName = "Effects/CameraShake")]
+[CreateAssetMenu(fileName = "CameraShakeEffect", menuName = "Effect/CameraShake")]
 public class CameraShakeEffects : ShootingEffect
 {
     [SerializeField] CameraShakeSettings settings;

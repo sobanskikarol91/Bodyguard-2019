@@ -4,20 +4,26 @@ using UnityEngine;
 
 public abstract class Weapon : ScriptableObject
 {
-    public Damagable Bullet { get { return bullet; } }
-    public float RefireRate { get { return refireRate; } }
+    public Damagable Bullet { get => bullet; }
+    public float RefireRate { get => refireRate; }
 
     [SerializeField] Damagable bullet;
     [SerializeField] float refireRate = 0.1f;
     [SerializeField] protected ObjectType[] damageObjects;
-    [SerializeField] ShootingEffect[] effects;
     [SerializeField] AudioClip shotSnd;
 
-    protected Transform bulletSpawnPoint;
+    [Header("Effects")]
+    [SerializeField] ShootingEffect[] bulletEffects;
+    [SerializeField] ShootingEffect[] characterEffects;
 
-    public virtual void Init(Transform bulletSpawnPoint)
+
+    protected Transform bulletSpawnPoint;
+    protected ShootingAbility ability;
+
+    public virtual void Init(ShootingAbility ability)
     {
-        this.bulletSpawnPoint = bulletSpawnPoint;
+        this.ability = ability;
+        bulletSpawnPoint = ability.BulletSpawnPoint;
     }
 
     public void Shoot()
@@ -28,7 +34,9 @@ public abstract class Weapon : ScriptableObject
 
     private void ShowEffects(GameObject bullet)
     {
-        Array.ForEach(effects, e => e.CreateEffect(bullet.transform));
+        Array.ForEach(characterEffects, e => e.CreateEffect(ability.transform));
+        Array.ForEach(bulletEffects, e => e.CreateEffect(bullet.transform));
+
         if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bulletSpawnPoint.position);
     }
 

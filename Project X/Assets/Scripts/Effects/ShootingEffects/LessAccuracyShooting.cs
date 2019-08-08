@@ -6,10 +6,10 @@ public class LessAccuracyShooting : ShootingEffect
     [SerializeField] float rotationOffset = 3f;
     [SerializeField] float positionOffset = 0.1f;
 
-    public override void CreateEffect(Transform bullet)
+    public override void CreateEffect(Transform transform)
     {
-        ModifyRotation(bullet);
-        ModifyPosition(bullet);
+        ModifyRotation(transform);
+        ModifyPosition(transform);
     }
 
     private void ModifyPosition(Transform bullet)
