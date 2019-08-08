@@ -12,12 +12,6 @@ public abstract class ShootingType : AbilityType<ShootingAbility>
         base.Init(ability);
     }
 
-    public override void Execute()
-    {
-        DecreaseTimeToShoot();
-        TryShoot();
-    }
-
     protected void DecreaseTimeToShoot()
     {
         leftTimeToShot -= Time.deltaTime;

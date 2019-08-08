@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e936a8ab49b87aa4683adad2ece6dbae, type: 3}
   m_Name: AutoShooting
   m_EditorClassIdentifier: 
+  desireDistanceToPlayer: 11
