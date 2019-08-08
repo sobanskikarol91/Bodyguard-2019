@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85a4abd6b91f3ed4c86588e2ee63c52c, type: 3}
-  m_Name: RedLaser
+  m_Script: {fileID: 11500000, guid: fa9ec6b4405753249b22510cca650952, type: 3}
+  m_Name: EnemyPistol
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8535946045795624035, guid: 0d36951fd827ca24889c7332b00f9a85, type: 3}
-  refireRate: 1
+  bullet: {fileID: 9128766157284198419, guid: ebb7d20e6744cb34e8a7dc29eeca3850, type: 3}
+  refireRate: 2
   damageObjects: 00000000
   effects: []
-  shotSnd: {fileID: 8300000, guid: 721b3f3c8dcb1bb41aeb5554bd531d07, type: 3}
-  beamLength: 2
+  shotSnd: {fileID: 8300000, guid: 163d29b13904c184b8721f0fcb0d99e8, type: 3}
