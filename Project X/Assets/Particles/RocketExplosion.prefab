@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3632427847536598847}
   - component: {fileID: 8878240055871576174}
   - component: {fileID: 4987211142991029203}
+  - component: {fileID: -6285283046014854776}
   m_Layer: 0
   m_Name: RocketExplosion
   m_TagString: Untagged
@@ -5129,3 +5130,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &-6285283046014854776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11790718572316861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74aceca5dd3297c43b9a3969d1e636ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

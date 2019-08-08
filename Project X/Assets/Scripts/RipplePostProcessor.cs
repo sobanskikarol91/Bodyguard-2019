@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RipplePostProcessor : MonoBehaviour
 {
@@ -11,16 +10,15 @@ public class RipplePostProcessor : MonoBehaviour
 
     private float Amount = 0f;
 
+    public static RipplePostProcessor instance;
+
+    private void Awake()
+    {
+        instance = this;    
+    }
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Amount = MaxAmount;
-            Vector3 pos = Input.mousePosition;
-            RippleMaterial.SetFloat("_CenterX", pos.x);
-            RippleMaterial.SetFloat("_CenterY", pos.y);
-        }
-
         RippleMaterial.SetFloat("_Amount", Amount);
         Amount *= Friction;
     }
@@ -28,5 +26,13 @@ public class RipplePostProcessor : MonoBehaviour
     void OnRenderImage(RenderTexture src, RenderTexture dst)
     {
         Graphics.Blit(src, dst, RippleMaterial);
+    }
+
+    public void ShowEffect()
+    {
+        Amount = MaxAmount;
+        Vector3 pos = Input.mousePosition;
+        RippleMaterial.SetFloat("_CenterX", pos.x);
+        RippleMaterial.SetFloat("_CenterY", pos.y);
     }
 }
