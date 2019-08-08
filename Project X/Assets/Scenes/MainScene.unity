@@ -178,6 +178,21 @@ MonoBehaviour:
   DefaultRotInfluence: {x: 1, y: 1, z: 1}
   RestPositionOffset: {x: 0, y: 0, z: 0}
   RestRotationOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &1417331992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417331990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec198fe3816d9b42a813f7d5017d79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RippleMaterial: {fileID: 2100000, guid: 36bbf21a9b7d7b14aa91f7ab8069097a, type: 2}
+  MaxAmount: 10
+  Friction: 0.9
 --- !u!1001 &1647887038
 PrefabInstance:
   m_ObjectHideFlags: 0
