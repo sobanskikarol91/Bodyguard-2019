@@ -15,6 +15,8 @@ MonoBehaviour:
   bullet: {fileID: 6044605985587734655, guid: 23f2951444a308445b1d156acf6314d6, type: 3}
   refireRate: 0.8
   damageObjects: 01000000
-  effects:
-  - {fileID: 11400000, guid: 5c632eaf4de0ab545b011146a4267c5a, type: 2}
   shotSnd: {fileID: 8300000, guid: f2ae1310d1e9e804ab5a46615ab316f6, type: 3}
+  bulletEffects: []
+  characterEffects:
+  - {fileID: 11400000, guid: 6fba6fb01ca1f03489f237d637a28e82, type: 2}
+  - {fileID: 11400000, guid: 5c632eaf4de0ab545b011146a4267c5a, type: 2}

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2de33e1acd3e20e4f82c1879bfb1b550, type: 3}
-  m_Name: ShotgunRecoil
+  m_Name: HightGunRecoil
   m_EditorClassIdentifier: 
-  recoilForce: 10
+  recoilForce: 1
