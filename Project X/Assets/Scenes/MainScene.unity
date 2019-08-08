@@ -253,6 +253,10 @@ PrefabInstance:
       propertyPath: scoreTxt
       value: 
       objectReference: {fileID: 114799602}
+    - target: {fileID: 1348189733, guid: 5c77aa50051483543ad27db736884000, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}
 --- !u!1 &2019648755 stripped
