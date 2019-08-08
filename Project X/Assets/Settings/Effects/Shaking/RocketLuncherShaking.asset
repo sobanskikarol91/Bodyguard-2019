@@ -15,5 +15,5 @@ MonoBehaviour:
   settings:
     magnitude: 10
     roughness: 3
-    fadeInTime: 0.3
+    fadeInTime: 0
     fadeOutTime: 1

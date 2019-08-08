@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 525152485}
   - component: {fileID: 525152488}
   - component: {fileID: 525152489}
-  m_Layer: 0
-  m_Name: Background
+  - component: {fileID: 1647887040}
+  m_Layer: 8
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,11 +29,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525152483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5461905, y: -5.947992, z: 111.35234}
+  m_LocalPosition: {x: 0, y: 0, z: 8.2}
   m_LocalScale: {x: 43, y: 43, z: 1}
   m_Children: []
   m_Father: {fileID: 3956956917734439519}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &525152486
 MeshFilter:
@@ -104,7 +105,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac9e8e502d2cc84fa523adbaceec07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
+  speed: 0.0231
+--- !u!64 &1647887040
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525152483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &364617610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3956956917460744908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51a3f2fb5e03f945b9b8eaefc3442a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2043956201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,18 +166,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &364617610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3956956917460744908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c51a3f2fb5e03f945b9b8eaefc3442a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3956956917734439517
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,8 +201,8 @@ Transform:
   m_LocalPosition: {x: -1.6361905, y: 6.246104, z: -2.6523438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3956956917460744752}
   - {fileID: 525152487}
+  - {fileID: 3956956917460744752}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,12 +213,12 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3956956917734439517}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b470432d7ce59ed4db71697500c86e9e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -396,17 +411,17 @@ PrefabInstance:
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6361905
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.246104
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.3476562
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}
@@ -431,7 +446,7 @@ PrefabInstance:
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3457242522232530792, guid: 0a8adbe988216f345bb69a50b54da1a3,
         type: 3}

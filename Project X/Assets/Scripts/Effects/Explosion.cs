@@ -7,7 +7,6 @@ public class Explosion : CollisionEffect
 
     public override void OnCollision(Collision2D collision, Transform transform)
     {
-        Debug.Log("Explosion");
         GameObject instance = ObjectPoolManager.instance.Get(explosion);
         instance.transform.position = collision.transform.position;
     }
