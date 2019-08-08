@@ -13,7 +13,7 @@ public class RipplePostProcessor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Amount = MaxAmount;
             Vector3 pos = Input.mousePosition;
