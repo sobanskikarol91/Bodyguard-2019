@@ -12,7 +12,6 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 
     public void OnGainNextLvl(int lvl)
     {
-        Debug.Log("Gain lvl " + lvl);
         if (lvl < weaponSettings.Weapons.Length)
             playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
     }
