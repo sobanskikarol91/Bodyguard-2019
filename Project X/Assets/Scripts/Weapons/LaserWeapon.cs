@@ -20,7 +20,9 @@ public class LaserWeapon : Weapon
         line.transform.rotation = Quaternion.Euler(Vector3.zero);
 
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
-        damageOnRaycastHit?.CastRay(start, end, beamLength, damageObjects);
+
+
+        damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, end, beamLength, damageObjects);
         return line.gameObject;
     }
 }
