@@ -92,6 +92,46 @@ PrefabInstance:
       propertyPath: timeToReturn
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9157590780397622957, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: m_Name
+      value: RedTrailBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key0.g
+      value: 0.08940235
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.g
+      value: 0.77388763
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.g
+      value: 0.054955788
+      objectReference: {fileID: 0}
+    - target: {fileID: 2702001530506612807, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 255737724276374462, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: speed
