@@ -10,8 +10,6 @@ public class LaserWeapon : Weapon
         LineRenderer line = ObjectPoolManager.instance.Get(Bullet.gameObject).GetComponent<LineRenderer>();
         line.positionCount = 2;
 
-
-
         Vector3 start = Vector2.zero;
         Vector3 end = bulletSpawnPoint.right * beamLength;
         line.SetPosition(0, start);

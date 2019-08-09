@@ -17,4 +17,5 @@ MonoBehaviour:
   damageObjects: 01000000
   shotSnd: {fileID: 8300000, guid: 1cc83ddf503154c4bb7371dfc82b21bc, type: 3}
   bulletEffects: []
-  characterEffects: []
+  characterEffects:
+  - {fileID: 11400000, guid: bfcc14139ea3b454e873ad1da09ca9fb, type: 2}
