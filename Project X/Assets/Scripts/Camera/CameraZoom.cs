@@ -34,14 +34,12 @@ public class CameraZoom : MonoBehaviour
     {
         float startTime = Time.time;
         float startPosition = camera.orthographicSize;
-        Debug.Log("StartPos" + startPosition);
 
         while (true)
         {
             float percantage = (Time.time - startTime) / time;
             camera.orthographicSize = Mathf.Lerp(startPosition, destination, percantage);
 
-            Debug.Log(camera.orthographicSize);
             if (percantage >= 1)
                 break;
 

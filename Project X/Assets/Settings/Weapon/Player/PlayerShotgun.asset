@@ -20,5 +20,6 @@ MonoBehaviour:
   characterEffects:
   - {fileID: 11400000, guid: 5e3a8dab6fa4a9943876085d8e4d035d, type: 2}
   - {fileID: 11400000, guid: 980dc46810d203b45887f346b27faa61, type: 2}
+  - {fileID: 11400000, guid: ebe70c06fb199f443a16b0291e852f38, type: 2}
   amount: 20
   angle: 1.2

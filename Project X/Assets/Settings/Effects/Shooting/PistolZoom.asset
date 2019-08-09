@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb5a82a8c9f0bb4ebfecda818461779, type: 3}
-  m_Name: MiniGunCameraZoom
+  m_Name: PistolZoom
   m_EditorClassIdentifier: 
   depht: 0.1
-  time: 0.04
+  time: 0.2
