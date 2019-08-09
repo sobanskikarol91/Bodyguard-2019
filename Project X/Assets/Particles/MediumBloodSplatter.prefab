@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9068146784824775980}
   - component: {fileID: 2049521075043283699}
   m_Layer: 0
-  m_Name: BloodSplatter
+  m_Name: MediumBloodSplatter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0

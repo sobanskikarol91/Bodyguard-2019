@@ -9,11 +9,20 @@ public class LaserWeapon : Weapon
     {
         LineRenderer line = ObjectPoolManager.instance.Get(Bullet.gameObject).GetComponent<LineRenderer>();
         line.positionCount = 2;
-        line.SetPosition(0, bulletSpawnPoint.position);
-        line.SetPosition(1, bulletSpawnPoint.position + bulletSpawnPoint.right * beamLength);
-        
+
+
+
+        Vector3 start = Vector2.zero;
+        Vector3 end = bulletSpawnPoint.right * beamLength;
+        line.SetPosition(0, start);
+        line.SetPosition(1, end);
+
+        line.transform.SetParent(bulletSpawnPoint);
+        line.transform.localPosition = Vector2.zero;
+        line.transform.rotation = Quaternion.Euler(Vector3.zero);
+
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
-        damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right, beamLength, damageObjects);
+        damageOnRaycastHit?.CastRay(start, end, beamLength, damageObjects);
         return line.gameObject;
     }
 }

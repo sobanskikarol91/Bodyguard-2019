@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452791549944338997}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.49, y: -0.001, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 0.1647, y: 0.2364, z: 1}
   m_Children: []
   m_Father: {fileID: 1452791550347159298}
@@ -342,7 +342,7 @@ MonoBehaviour:
   deathEffects: {fileID: 9176900897231822139, guid: ed016d86ca171e44cbddb5c703d20ffe,
     type: 3}
   damageEffect: {fileID: 0}
-  godMode: 1
+  godMode: 0
 --- !u!114 &6543349747253418355
 MonoBehaviour:
   m_ObjectHideFlags: 0
