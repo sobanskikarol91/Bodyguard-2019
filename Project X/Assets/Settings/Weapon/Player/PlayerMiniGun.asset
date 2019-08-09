@@ -20,5 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a5d0cd4f8f12794c9ed62d11bc29dc5, type: 2}
   characterEffects:
   - {fileID: 11400000, guid: 6067483651d25ee4dbb8cb75f3c61fe0, type: 2}
-  - {fileID: 11400000, guid: c5e4b41ffe237124593227990352ce84, type: 2}
   - {fileID: 11400000, guid: dd20b82e27ce32c408eaf61766d65984, type: 2}
