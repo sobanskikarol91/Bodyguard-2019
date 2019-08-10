@@ -9,7 +9,7 @@ public static class MonoBevahiourExtension
         target.StartCoroutine(IELerp(origin, destination, duration, OnComplete, OnExecuting));
     }
 
-    static IEnumerator IELerp(float origin, float destination, float duration, Action OnComplete = null, Action<float> OnExecuting =null)
+    static IEnumerator IELerp(float origin, float destination, float duration, Action OnComplete = null, Action<float> OnExecuting = null)
     {
         float startTime = Time.time;
 
@@ -18,8 +18,8 @@ public static class MonoBevahiourExtension
             float percantage = (Time.time - startTime) / duration;
             origin = Mathf.Lerp(origin, destination, percantage);
 
-             OnExecuting?.Invoke(origin);
-            
+            OnExecuting?.Invoke(origin);
+            Debug.Log(origin + " " + percantage);
             if (percantage >= 1)
                 break;
 
@@ -27,5 +27,6 @@ public static class MonoBevahiourExtension
         }
 
         OnComplete?.Invoke();
+        Debug.Log("Lerp Complete" );
     }
 }
