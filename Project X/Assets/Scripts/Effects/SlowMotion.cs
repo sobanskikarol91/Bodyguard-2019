@@ -10,10 +10,10 @@ public class SlowMotion : MonoBehaviour
         instance = this;
     }
 
-    public void RunEffect(float factor, float duration)
+    public void RunEffect(float factor, float duration, Action OnComplete = null)
     {
         Time.timeScale = factor;
-        Action Oncomplete = () => Time.timeScale = 1;
-        this.StartLerp(1f, factor, duration * factor, Oncomplete);
+        OnComplete += () => Time.timeScale = 1;
+        this.StartLerp(1f, factor, duration * factor, OnComplete);
     }
 }

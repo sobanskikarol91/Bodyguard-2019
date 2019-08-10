@@ -43,7 +43,6 @@ public class HealthAbility : MonoBehaviour, IDeath
     private void OnDeath()
     {
         if (deathEffects) CreateEffect(deathEffects);
-        deathSlowMontion.CreateEffect(transform);
         isAlive = false;
         Death();
     }

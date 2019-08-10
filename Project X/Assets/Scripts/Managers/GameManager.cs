@@ -15,11 +15,22 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     private IRestart[] restartObjects;
 
+    private State gameOverState;
+
     private void Awake()
     {
         instance = this;
         GetReferences();
-        InvokeMethods();
+        SubscribeEvents();
+        InitObjects();
+    }
+
+    private void InitObjects()
+    {
+        Action actions = delegate { };
+        actions += spawnManager.StopSpawning;
+        actions += uiManager.ShowGameOver;
+        gameOverState = new GameOverState(actions);
     }
 
     private void GetReferences()
@@ -31,15 +42,14 @@ public class GameManager : MonoBehaviour
         Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
     }
 
-    private void InvokeMethods()
+    private void SubscribeEvents()
     {
         Player.GetComponent<HealthAbility>().Death += GameOver;
     }
-       
+
     public void GameOver()
     {
-        spawnManager.StopSpawning();
-        uiManager.ShowGameOver();
+        gameOverState.Start();
     }
 
     public void Restart()
