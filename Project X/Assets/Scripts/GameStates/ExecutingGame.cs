@@ -1,13 +1,10 @@
-﻿using System;
-
-public class ExecutingGame : IState
+﻿public class ExecutingGame : IState
 {
     private SpawnManager spawnManager;
 
-
-    public ExecutingGame (SpawnManager spawnManager)
+    public ExecutingGame ()
     {
-        this.spawnManager = spawnManager;
+        spawnManager = GameManager.instance.GetComponent<SpawnManager>();
     }
 
     public void Enter()

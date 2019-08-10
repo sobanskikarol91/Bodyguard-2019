@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,8 +10,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player playerPrefab;
     [SerializeField] PlatformManager platform;
 
-    private SpawnManager spawnManager;
-    private UIManager uiManager;
     private StateMachine stateMachine = new StateMachine();
     private IState gameOver, reset, executingGame;
 
@@ -32,32 +29,28 @@ public class GameManager : MonoBehaviour
 
     private void InitStates()
     {
-        Action actions = delegate { };
-        actions += uiManager.ShowGameOver;
-        gameOver = new GameOverState(actions);
+        gameOver = new GameOverState();
         reset = new ResetState(ChangeToExecutingGame);
-        executingGame = new ExecutingGame(spawnManager);
+        executingGame = new ExecutingGame();
     }
 
     private void GetReferences()
     {
-        spawnManager = GetComponent<SpawnManager>();
         ScoreManager = GetComponent<ScoreManager>();
-        uiManager = GetComponent<UIManager>();
         Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
     }
 
     private void SubscribeEvents()
     {
-        Player.GetComponent<HealthAbility>().Death += GameOver;
+        Player.GetComponent<HealthAbility>().Death += ChangeToGameOver;
     }
 
-    private void GameOver()
+    private void ChangeToGameOver()
     {
         stateMachine.ChangeState(gameOver);
     }
 
-    public void Reset()
+    public void ChangeToReset()
     {
         stateMachine.ChangeState(reset);
     }

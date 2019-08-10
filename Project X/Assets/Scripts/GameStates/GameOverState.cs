@@ -2,16 +2,15 @@
 
 public class GameOverState : IState
 {
-    Action ExitActions;
-
-    public GameOverState(Action ExitActions)
+    UIManager uiManager;
+    public GameOverState()
     {
-        this.ExitActions = ExitActions;
+        uiManager = GameManager.instance.GetComponent<UIManager>();
     }
 
     public void Enter()
     {
-        SlowMotion.instance.RunEffect(0.2f, 1, ExitActions);
+        SlowMotion.instance.RunEffect(0.2f, 1, uiManager.ShowGameOver);
     }
 
     public void Execute()
@@ -21,6 +20,6 @@ public class GameOverState : IState
 
     public void Exit()
     {
-      
+
     }
 }
