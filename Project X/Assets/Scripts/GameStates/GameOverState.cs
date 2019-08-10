@@ -9,8 +9,8 @@
 
     public void Enter()
     {
-        SlowMotion.instance.RunEffect(0.2f, 1f, uiManager.ShowGameOver);
-        CameraZoom.instance.ZoomOutAndIn(0.4f, 3f);
+        SlowMotion.instance.RunEffect(0.2f, 2.3f, uiManager.ShowGameOver);
+        CameraZoom.instance.ZoomOutAndIn(0.48f, 4f);
     }
 
     public void Execute() { }
