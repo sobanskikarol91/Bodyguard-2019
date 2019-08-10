@@ -19,6 +19,7 @@ public class CameraZoom : MonoBehaviour
         this.depth = depth;
         StopAllCoroutines();
         StartCoroutine(IEZoom());
+
     }
 
     IEnumerator IEZoom()

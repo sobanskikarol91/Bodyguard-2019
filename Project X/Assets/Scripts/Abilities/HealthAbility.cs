@@ -7,6 +7,7 @@ public class HealthAbility : MonoBehaviour, IDeath
     public event Action Death;
 
     [SerializeField] float health;
+    [SerializeField] Effect deathSlowMontion;
     [SerializeField] GameObject deathEffects;
     [SerializeField] GameObject damageEffect;
     [SerializeField] bool godMode;
@@ -42,6 +43,7 @@ public class HealthAbility : MonoBehaviour, IDeath
     private void OnDeath()
     {
         if (deathEffects) CreateEffect(deathEffects);
+        deathSlowMontion.CreateEffect(transform);
         isAlive = false;
         Death();
     }
