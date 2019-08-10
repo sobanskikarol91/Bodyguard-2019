@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09422cd525fe77448955e4ffedb2a562, type: 3}
   m_Name: PlayerMove
   m_EditorClassIdentifier: 
-  settings:
-    horizontalSpeed: 10
-    verticalSpeed: 10
+  footStep: {fileID: 8300000, guid: 6ae57b533d5a2fd45a71c23456fe09ad, type: 3}
+  footStepVolume: 0.6

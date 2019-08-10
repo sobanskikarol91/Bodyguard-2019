@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 742af39688bf2284290d635a12f79d9a, type: 2}
+  footStep: {fileID: 8300000, guid: 6ae57b533d5a2fd45a71c23456fe09ad, type: 3}
   speed: 10
 --- !u!114 &6451162215416072103
 MonoBehaviour:
