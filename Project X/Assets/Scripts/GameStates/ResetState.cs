@@ -5,11 +5,14 @@ public class ResetState : IState
 {
     private IRestart[] restartObjects;
     private Player player;
+    private Action ExitActions;
 
-    public ResetState()
+    public ResetState( Action ExitActions = null)
     {
         restartObjects = GameManager.instance.GetComponents<IRestart>();
         player = GameManager.instance.Player;
+
+        this.ExitActions = ExitActions;
     }
 
     public void Enter()
@@ -26,6 +29,6 @@ public class ResetState : IState
 
     public void Exit()
     {
-
+        ExitActions();
     }
 }

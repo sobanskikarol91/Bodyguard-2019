@@ -9,7 +9,6 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
     private Player player;
     private TimeObjectSpawner currentLvl;
     private float timeLeftToSpawn;
-    private bool isSpawning = true;
 
 
     private void Start()
@@ -18,13 +17,8 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
         player = GameManager.instance.Player;
     }
 
-    void Update()
-    {
-        if (isSpawning)
-            DecreaseSpawnTime();
-    }
 
-    private void DecreaseSpawnTime()
+    public void Execute()
     {
         timeLeftToSpawn -= Time.deltaTime;
 
@@ -52,11 +46,6 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
         timeLeftToSpawn = currentLvl.SpawTime;
     }
 
-    public void StopSpawning()
-    {
-        isSpawning = true;
-    }
-
     Vector2 GetRandomPosition()
     {
         Vector2 spawnPos = player.transform.position;
@@ -67,7 +56,6 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
     {
         currentLvl = enemySpawnSettings.Lvls[0];
         ResetSpawnTime();
-        isSpawning = true;
     }
 
     public void OnGainNextLvl(int lvl)

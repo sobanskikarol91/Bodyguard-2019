@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private SpawnManager spawnManager;
     private UIManager uiManager;
     private StateMachine stateMachine = new StateMachine();
-    private IState gameOver, reset;
+    private IState gameOver, reset, executingGame;
 
     private void Awake()
     {
@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
         GetReferences();
         SubscribeEvents();
         InitStates();
+        ChangeToExecutingGame();
     }
 
     private void Update()
@@ -32,10 +33,10 @@ public class GameManager : MonoBehaviour
     private void InitStates()
     {
         Action actions = delegate { };
-        actions += spawnManager.StopSpawning;
         actions += uiManager.ShowGameOver;
         gameOver = new GameOverState(actions);
-        reset = new ResetState();
+        reset = new ResetState(ChangeToExecutingGame);
+        executingGame = new ExecutingGame(spawnManager);
     }
 
     private void GetReferences()
@@ -59,5 +60,10 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         stateMachine.ChangeState(reset);
+    }
+
+    private void ChangeToExecutingGame()
+    {
+        stateMachine.ChangeState(executingGame);
     }
 }
