@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PistolZoom
   m_EditorClassIdentifier: 
   depht: 0.1
-  time: 0.2
+  time: 0.15
