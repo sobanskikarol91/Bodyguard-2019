@@ -2,6 +2,7 @@
 {
     private UIManager uiManager;
     private LightManager lightManager;
+    private float duration = 0.8f;
 
     public GameOverState()
     {
@@ -11,9 +12,9 @@
 
     public void Enter()
     {
-        SlowMotion.instance.RunEffect(0.2f, 2.3f, uiManager.ShowGameOver);
-        CameraZoom.instance.ZoomIn(0.48f, 4f);
-        lightManager.DecreaseSpotAngle(55f, 4.6f);
+        lightManager.DecreaseSpotAngle(55f, duration);
+        CameraZoom.instance.ZoomIn(duration, 2f);
+        SlowMotion.instance.RunEffect(0.2f, duration, uiManager.ShowGameOver);
     }
 
     public void Execute() { }

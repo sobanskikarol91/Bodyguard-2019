@@ -31,14 +31,14 @@ public class CameraZoom : MonoBehaviour
 
     public void ZoomIn(float time, float depth)
     {
-        this.time = time / 2;
+        this.time = time;
         this.depth = depth;
         StartCoroutine(IEZoomIn());
     }
 
     public void ZoomOut(float time, float depth)
     {
-        this.time = time / 2;
+        this.time = time;
         this.depth = depth;
         StartCoroutine(IEZoomOut());
     }
@@ -69,18 +69,7 @@ public class CameraZoom : MonoBehaviour
 
     IEnumerator StartZoom(float destination)
     {
-        float startTime = Time.time;
-        float startPosition = camera.orthographicSize;
-
-        while (true)
-        {
-            float percantage = (Time.time - startTime) / time;
-            camera.orthographicSize = Mathf.Lerp(startPosition, destination, percantage);
-
-            if (percantage >= 1)
-                break;
-
-            yield return null;
-        }
+        this.StartLerp(camera.orthographicSize, destination, time, null, (x) => camera.orthographicSize = x);
+        yield return new WaitForSeconds(time);
     }
 }

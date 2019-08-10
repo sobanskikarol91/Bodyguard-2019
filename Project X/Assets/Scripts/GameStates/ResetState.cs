@@ -22,8 +22,8 @@ public class ResetState : IState
         Array.ForEach(restartObjects, r => r.Restart());
         player.gameObject.SetActive(true);
         player.transform.position = Vector3.zero;
-        lightManager.ReturnSpotAngleToOrigin(4.6f);
-        CameraZoom.instance.ZoomOut(0.48f, 4f);
+        lightManager.ReturnSpotAngleToOrigin(0.5f);
+        CameraZoom.instance.ZoomOut(0.5f, 2f);
         EnterActions();
     }
 
