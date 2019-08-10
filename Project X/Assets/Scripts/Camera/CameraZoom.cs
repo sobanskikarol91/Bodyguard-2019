@@ -13,21 +13,37 @@ public class CameraZoom : MonoBehaviour
         camera = Camera.main;
     }
 
-    public void Zoom(float time, float depth)
+    public void ZoomInAndOut(float time, float depth)
     {
         this.time = time / 2;
         this.depth = depth;
         StopAllCoroutines();
-        StartCoroutine(IEZoom());
-
+        StartCoroutine(IEZoomInAndOut());
     }
 
-    IEnumerator IEZoom()
+    public void ZoomOutAndIn(float time, float depth)
+    {
+        this.time = time / 2;
+        this.depth = depth;
+        StopAllCoroutines();
+        StartCoroutine(IEZoomOutAndIn());
+    }
+
+    IEnumerator IEZoomInAndOut()
     {
         float destination = camera.orthographicSize + depth;
         yield return StartCoroutine(StartZoom(destination));
 
         destination = camera.orthographicSize - depth;
+        yield return StartCoroutine(StartZoom(destination));
+    }
+
+    IEnumerator IEZoomOutAndIn()
+    {
+        float destination = camera.orthographicSize - depth;
+        yield return StartCoroutine(StartZoom(destination));
+
+        destination = camera.orthographicSize + depth;
         yield return StartCoroutine(StartZoom(destination));
     }
 

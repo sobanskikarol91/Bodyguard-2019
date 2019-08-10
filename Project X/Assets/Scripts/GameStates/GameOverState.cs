@@ -1,8 +1,7 @@
-﻿using System;
-
-public class GameOverState : IState
+﻿public class GameOverState : IState
 {
-    UIManager uiManager;
+    private UIManager uiManager;
+
     public GameOverState()
     {
         uiManager = GameManager.instance.GetComponent<UIManager>();
@@ -10,16 +9,10 @@ public class GameOverState : IState
 
     public void Enter()
     {
-        SlowMotion.instance.RunEffect(0.2f, 1, uiManager.ShowGameOver);
+        SlowMotion.instance.RunEffect(0.2f, 1f, uiManager.ShowGameOver);
+        CameraZoom.instance.ZoomOutAndIn(0.4f, 1f);
     }
 
-    public void Execute()
-    {
-
-    }
-
-    public void Exit()
-    {
-
-    }
+    public void Execute() { }
+    public void Exit() { }
 }

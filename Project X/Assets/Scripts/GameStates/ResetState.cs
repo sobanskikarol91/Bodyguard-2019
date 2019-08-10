@@ -5,14 +5,14 @@ public class ResetState : IState
 {
     private IRestart[] restartObjects;
     private Player player;
-    private Action ExitActions;
+    private Action EnterActions;
 
     public ResetState(Action EnterActions = null)
     {
         restartObjects = GameManager.instance.GetComponents<IRestart>();
         player = GameManager.instance.Player;
 
-        this.ExitActions = EnterActions;
+        this.EnterActions = EnterActions;
     }
 
     public void Enter()
@@ -20,7 +20,7 @@ public class ResetState : IState
         Array.ForEach(restartObjects, r => r.Restart());
         player.gameObject.SetActive(true);
         player.transform.position = Vector3.zero;
-        ExitActions();
+        EnterActions();
     }
 
     public void Execute()

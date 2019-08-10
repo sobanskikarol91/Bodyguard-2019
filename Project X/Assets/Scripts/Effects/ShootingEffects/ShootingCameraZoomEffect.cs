@@ -8,6 +8,6 @@ public class ShootingCameraZoomEffect : ShootingEffect
 
     public override void CreateEffect(Transform transform)
     {
-        CameraZoom.instance.Zoom(time, depht);
+        CameraZoom.instance.ZoomInAndOut(time, depht);
     }
 }
