@@ -142,5 +142,25 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.b
       value: 0.1677456
       objectReference: {fileID: 0}
+    - target: {fileID: 2049521075043283699, guid: ecdee2e9cb7f25245ade49de6f155e40,
+        type: 3}
+      propertyPath: color.rgba
+      value: 65355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049521075043283699, guid: ecdee2e9cb7f25245ade49de6f155e40,
+        type: 3}
+      propertyPath: color.r
+      value: 0.13231826
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049521075043283699, guid: ecdee2e9cb7f25245ade49de6f155e40,
+        type: 3}
+      propertyPath: color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2049521075043283699, guid: ecdee2e9cb7f25245ade49de6f155e40,
+        type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecdee2e9cb7f25245ade49de6f155e40, type: 3}

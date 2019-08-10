@@ -107,7 +107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1452791549944338994
 Transform:
   m_ObjectHideFlags: 0
@@ -325,7 +325,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 742af39688bf2284290d635a12f79d9a, type: 2}
-  footStep: {fileID: 8300000, guid: 6ae57b533d5a2fd45a71c23456fe09ad, type: 3}
   speed: 10
 --- !u!114 &6451162215416072103
 MonoBehaviour:
@@ -340,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  deathSlowMontion: {fileID: 11400000, guid: 624dadca9c897a84f9d34627097f7380, type: 2}
+  deathSlowMontion: {fileID: 0}
   deathEffects: {fileID: 2422366967988521407, guid: ed016d86ca171e44cbddb5c703d20ffe,
     type: 3}
   damageEffect: {fileID: 0}

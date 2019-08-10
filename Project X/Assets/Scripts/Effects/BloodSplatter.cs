@@ -5,7 +5,7 @@ using UnityEngine;
 public class BloodSplatter : MonoBehaviour
 {
     [SerializeField] GameObject[] blood;
-
+    [SerializeField] Color color;
     private ParticleSystem particle;
     private List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 
@@ -19,7 +19,7 @@ public class BloodSplatter : MonoBehaviour
         GameObject prefab = ChooseRandom();
         Transform instance = ObjectPoolManager.instance.Get(prefab).transform;
         int numCollisionEvents = particle.GetCollisionEvents(other, collisionEvents);
-
+        instance.GetComponent<SpriteRenderer>().color = color;
         Vector3 position = collisionEvents[0].intersection;
         instance.position = position;
         SetRandomRotation(instance);

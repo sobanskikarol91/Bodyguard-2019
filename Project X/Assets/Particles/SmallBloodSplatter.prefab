@@ -97,5 +97,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: c2f1538ca1ad4b6439c0a004aa4208db, type: 3}
+    - target: {fileID: 2049521075043283699, guid: ecdee2e9cb7f25245ade49de6f155e40,
+        type: 3}
+      propertyPath: color.rgba
+      value: 255
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecdee2e9cb7f25245ade49de6f155e40, type: 3}

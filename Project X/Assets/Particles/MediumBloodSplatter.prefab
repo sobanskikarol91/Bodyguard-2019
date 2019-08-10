@@ -5165,3 +5165,4 @@ MonoBehaviour:
   - {fileID: 7026055890366636293, guid: a8cc262df6b305c4aa8db735c179f64e, type: 3}
   - {fileID: 7026055890366636293, guid: 56275f3d569902c4a82ad30b01e7128f, type: 3}
   - {fileID: 7026055890366636293, guid: e35ac0352fe87a342b5dd20abc767d47, type: 3}
+  color: {r: 1, g: 0, b: 0, a: 1}
