@@ -13,29 +13,33 @@ public class GameManager : MonoBehaviour
 
     private SpawnManager spawnManager;
     private UIManager uiManager;
-    private IRestart[] restartObjects;
-
-    private State gameOverState;
+    private StateMachine stateMachine = new StateMachine();
+    private IState gameOver, reset;
 
     private void Awake()
     {
         instance = this;
         GetReferences();
         SubscribeEvents();
-        InitObjects();
+        InitStates();
     }
 
-    private void InitObjects()
+    private void Update()
+    {
+        stateMachine.Execute();
+    }
+
+    private void InitStates()
     {
         Action actions = delegate { };
         actions += spawnManager.StopSpawning;
         actions += uiManager.ShowGameOver;
-        gameOverState = new GameOverState(actions);
+        gameOver = new GameOverState(actions);
+        reset = new ResetState();
     }
 
     private void GetReferences()
     {
-        restartObjects = GetComponents<IRestart>();
         spawnManager = GetComponent<SpawnManager>();
         ScoreManager = GetComponent<ScoreManager>();
         uiManager = GetComponent<UIManager>();
@@ -47,15 +51,13 @@ public class GameManager : MonoBehaviour
         Player.GetComponent<HealthAbility>().Death += GameOver;
     }
 
-    public void GameOver()
+    private void GameOver()
     {
-        gameOverState.Start();
+        stateMachine.ChangeState(gameOver);
     }
 
-    public void Restart()
+    public void Reset()
     {
-        Array.ForEach(restartObjects, r => r.Restart());
-        Player.gameObject.SetActive(true);
-        Player.transform.position = Vector3.zero;
+        stateMachine.ChangeState(reset);
     }
 }

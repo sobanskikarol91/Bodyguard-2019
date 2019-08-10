@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
 
-public class GameOverState : State 
+public class GameOverState : IState
 {
     Action ExitActions;
 
@@ -13,18 +9,18 @@ public class GameOverState : State
         this.ExitActions = ExitActions;
     }
 
-    public override void Start()
+    public void Enter()
     {
-        SlowMotion.instance.RunEffect(0.2f, 1, Exit);
+        SlowMotion.instance.RunEffect(0.2f, 1, ExitActions);
     }
 
-    public override void Execute()
+    public void Execute()
     {
-        
+
     }
 
-    public override void Exit()
+    public void Exit()
     {
-        ExitActions();
+      
     }
 }
