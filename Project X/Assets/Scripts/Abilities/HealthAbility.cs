@@ -7,7 +7,6 @@ public class HealthAbility : MonoBehaviour, IDeath
     public event Action Death;
 
     [SerializeField] float health;
-    [SerializeField] Effect deathSlowMontion;
     [SerializeField] GameObject deathEffects;
     [SerializeField] GameObject damageEffect;
     [SerializeField] bool godMode;
