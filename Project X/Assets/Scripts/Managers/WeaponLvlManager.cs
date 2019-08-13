@@ -7,7 +7,7 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 
     private void Start()
     {
-        playerShootingAbility = GameManager.instance.Player.GetComponent<ShootingAbility>();
+        playerShootingAbility = GameManager.instance.Player.GetComponentInChildren<ShootingAbility>();
     }
 
     public void OnGainNextLvl(int lvl)

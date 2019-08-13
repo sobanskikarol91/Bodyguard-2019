@@ -280,11 +280,11 @@ PrefabInstance:
     - target: {fileID: 3956956917460744911, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: orthographic size
-      value: 8
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1348189733, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
