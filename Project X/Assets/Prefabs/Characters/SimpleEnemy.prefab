@@ -205,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveType: {fileID: 11400000, guid: 70438f738e6ad98418636f436f10090e, type: 2}
-  speed: 4
+  speed: 3.7
 --- !u!114 &5408456603123648044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,12 +451,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5795585330447202626, guid: cc302e0d43f0788458529459103462ab,
+    - target: {fileID: 5795585329364994796, guid: cc302e0d43f0788458529459103462ab,
         type: 3}
       propertyPath: isAI
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5795585329364994796, guid: cc302e0d43f0788458529459103462ab,
+    - target: {fileID: 5795585330447202626, guid: cc302e0d43f0788458529459103462ab,
         type: 3}
       propertyPath: isAI
       value: 1
