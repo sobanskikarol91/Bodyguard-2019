@@ -7,17 +7,16 @@ public class MovingAbility : MonoBehaviour
     public float Speed { get => speed; }
     [SerializeField] float speed = 10;
 
-
-    private MoveType moveTypeInstance;
+    public MoveType MoveTypeInstance { get; private set; }
 
     private void Start()
     {
-        moveTypeInstance = Instantiate(moveType);
-        moveTypeInstance.Init(this);
+        MoveTypeInstance = Instantiate(moveType);
+        MoveTypeInstance.Init(this);
     }
 
     public void Update()
     {
-        moveTypeInstance.Execute();
+        MoveTypeInstance.Execute();
     }
 }

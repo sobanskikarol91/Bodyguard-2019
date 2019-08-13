@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "PlayerMove", menuName = "Moving/PlayerSimple")]
 public class PlayerMove : MoveType
@@ -11,6 +9,8 @@ public class PlayerMove : MoveType
     private PlayerInput input;
     private AudioSource audioSource;
 
+    public override Vector2 Direction => input.Moving.Direction;
+
     public override void Init(MovingAbility ability)
     {
         base.Init(ability);
@@ -20,11 +20,11 @@ public class PlayerMove : MoveType
 
     public override void Execute()
     {
-        transform.position += (Vector3)(ability.Speed * input.Moving.Direction * Time.deltaTime);
+        transform.position += (Vector3)(ability.Speed * Direction * Time.deltaTime);
 
-        if (!audioSource.isPlaying && input.Moving.Direction.magnitude != 0)
+        if (!audioSource.isPlaying && Direction.magnitude != 0)
             audioSource.Play();
-        else if (audioSource.isPlaying && input.Moving.Direction.magnitude == 0)
+        else if (audioSource.isPlaying && Direction.magnitude == 0)
             audioSource.Stop();
     }
 }
