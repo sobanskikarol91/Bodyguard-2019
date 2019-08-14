@@ -29,9 +29,15 @@ public class ShootingAbility : MonoBehaviour
 
     public void Set(Weapon newWeapon)
     {
+        RemovePreviousWeapon();
         Weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
         Weapon.transform.SetParent(weaponSpot);
-        Weapon.transform.rotation = Quaternion.identity;
+        Weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         Weapon.transform.localPosition = Vector3.zero;
+    }
+
+    private void RemovePreviousWeapon()
+    {
+        if (Weapon) ObjectPoolManager.instance.ReturnToPool(Weapon.gameObject);
     }
 }
