@@ -1,6 +1,6 @@
 ﻿public class Player : Character
 {
-   private PlayerInput input;
+    private PlayerInput input;
 
     protected void Awake()
     {

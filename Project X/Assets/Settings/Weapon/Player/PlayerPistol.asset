@@ -19,3 +19,4 @@ MonoBehaviour:
   bulletEffects: []
   characterEffects:
   - {fileID: 11400000, guid: bfcc14139ea3b454e873ad1da09ca9fb, type: 2}
+  - {fileID: 11400000, guid: 6067483651d25ee4dbb8cb75f3c61fe0, type: 2}

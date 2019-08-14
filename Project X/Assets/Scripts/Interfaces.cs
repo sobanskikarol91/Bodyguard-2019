@@ -29,3 +29,8 @@ public interface IDeath
 {
     event Action Death;
 }
+
+public interface IAttack
+{
+    void Attack();
+}

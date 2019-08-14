@@ -2,7 +2,7 @@
 using UnityEngine;
 
 
-public abstract class Weapon : ScriptableObject
+public abstract class WeaponSettings : ScriptableObject
 {
     public Damagable Bullet { get => bullet; }
     public float RefireRate { get => refireRate; }
@@ -18,12 +18,13 @@ public abstract class Weapon : ScriptableObject
 
 
     protected Transform bulletSpawnPoint;
-    protected ShootingAbility ability;
+    protected Weapon weapon;
 
-    public virtual void Init(ShootingAbility ability)
+
+    public virtual void Init(Weapon weapon)
     {
-        this.ability = ability;
-        bulletSpawnPoint = ability.BulletSpawnPoint;
+        this.weapon = weapon;
+        bulletSpawnPoint = weapon.BulletSpawnPoint;
     }
 
     public void Shoot()
@@ -34,7 +35,7 @@ public abstract class Weapon : ScriptableObject
 
     private void ShowEffects(GameObject bullet)
     {
-        Array.ForEach(characterEffects, e => e.CreateEffect(ability.transform));
+        Array.ForEach(characterEffects, e => e.CreateEffect(weapon.transform));
         Array.ForEach(bulletEffects, e => e.CreateEffect(bullet.transform));
 
         if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bulletSpawnPoint.position);

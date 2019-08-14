@@ -1,37 +1,16 @@
-﻿using System;
-using UnityEngine;
-
-public abstract class ShootingType : AbilityType<ShootingAbility>
+﻿public abstract class ShootingType : AbilityType<ShootingAbility>
 {
-    public event Action ReadyToShoot = delegate { };
-    protected float leftTimeToShot;
-
+    private Weapon weapon;
     
     public override void Init(ShootingAbility ability)
     {
         base.Init(ability);
-    }
-
-    protected void DecreaseTimeToShoot()
-    {
-        leftTimeToShot -= Time.deltaTime;
+        weapon = ability.Weapon;
     }
 
     protected void TryShoot()
     {
-        if (IsReadyToFire())
-            OnReadyToFire();
+            weapon.Attack();
     }
 
-    void OnReadyToFire()
-    {
-        ReadyToShoot();
-        leftTimeToShot = ability.Weapon.RefireRate;
-        ability.Weapon.Shoot();
-    }
-
-    private bool IsReadyToFire()
-    {
-        return leftTimeToShot <= 0;
-    }
 }

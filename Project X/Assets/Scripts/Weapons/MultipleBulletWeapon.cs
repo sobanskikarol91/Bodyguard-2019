@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/MultipleBullets")]
-public class MultipleBulletWeapon : Weapon
+public class MultipleBulletWeapon : WeaponSettings
 {
     [SerializeField, Tooltip("How many bullet should be create")] int amount;
     [SerializeField, Tooltip("Angle between bullets")] float angle;

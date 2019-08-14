@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Laser")]
-public class LaserWeapon : Weapon
+public class LaserWeapon : WeaponSettings
 {
     [SerializeField] float beamLength;
 

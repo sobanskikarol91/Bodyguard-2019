@@ -14,6 +14,6 @@ public class PlayerShooting : ShootingType
 
     public override void Execute()
     {
-        DecreaseTimeToShoot();
+
     }
 }

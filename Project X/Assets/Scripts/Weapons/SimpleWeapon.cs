@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Simple")]
-public class SimpleWeapon : Weapon
+public class SimpleWeapon : WeaponSettings
 {
     protected override GameObject CreateBullet()
     {

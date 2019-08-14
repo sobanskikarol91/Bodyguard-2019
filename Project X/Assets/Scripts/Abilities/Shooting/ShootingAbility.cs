@@ -3,24 +3,27 @@
 public class ShootingAbility : MonoBehaviour
 {
     public Weapon Weapon { get; private set; }
-    public Transform BulletSpawnPoint { get => bulletSpawnPoint; }
 
     [SerializeField] ShootingType type;
-    [SerializeField] Weapon weapon;
-    [SerializeField] Transform bulletSpawnPoint;
 
     private ShootingType typeInstance;
 
+
     private void Awake()
     {
-        CreateWeapon(weapon);
+        Weapon = GetComponentInChildren<Weapon>();
         CreateShootingType();
     }
 
-    private void CreateWeapon(Weapon newWeapon)
+    private void Update()
     {
-        Weapon = Instantiate(newWeapon);
-        Weapon.Init(this);
+        type.Execute();
+    }
+
+    private void CreateWeapon(WeaponSettings newWeapon)
+    {
+        //Weapon = Instantiate(newWeapon);
+        //Weapon.Init(this);
     }
 
     private void CreateShootingType()
@@ -29,12 +32,7 @@ public class ShootingAbility : MonoBehaviour
         typeInstance.Init(this);
     }
 
-    private void Update()
-    {
-        typeInstance.Execute();
-    }
-
-    public void Set(Weapon newWeapon)
+    public void Set(WeaponSettings newWeapon)
     {
         CreateWeapon(newWeapon);
     }
