@@ -3,6 +3,6 @@
 [CreateAssetMenu(fileName = "WeaponLvlSettings", menuName = "Level/Weapons")]
 public class WeaponLvlSetting : ScriptableObject
 {
-    public WeaponSettings[] Weapons { get => weapons; }
-    [SerializeField] WeaponSettings[] weapons;
+    public Weapon[] Weapons { get => weapons; }
+    [SerializeField] Weapon[] weapons;
 }

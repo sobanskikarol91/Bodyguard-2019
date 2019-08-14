@@ -5,6 +5,7 @@ public class ShootingAbility : MonoBehaviour
     public Weapon Weapon { get; private set; }
 
     [SerializeField] ShootingType type;
+    [SerializeField] Transform weaponSpot;
 
     private ShootingType typeInstance;
 
@@ -17,13 +18,7 @@ public class ShootingAbility : MonoBehaviour
 
     private void Update()
     {
-        type.Execute();
-    }
-
-    private void CreateWeapon(WeaponSettings newWeapon)
-    {
-        //Weapon = Instantiate(newWeapon);
-        //Weapon.Init(this);
+        typeInstance.Execute();
     }
 
     private void CreateShootingType()
@@ -32,8 +27,10 @@ public class ShootingAbility : MonoBehaviour
         typeInstance.Init(this);
     }
 
-    public void Set(WeaponSettings newWeapon)
+    public void Set(Weapon newWeapon)
     {
-        CreateWeapon(newWeapon);
+        Weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
+        Weapon.transform.SetParent(weaponSpot);
+        Weapon.transform.localPosition = Vector3.zero;
     }
 }
