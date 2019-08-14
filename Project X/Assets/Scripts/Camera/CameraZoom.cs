@@ -17,7 +17,6 @@ public class CameraZoom : MonoBehaviour
     {
         this.time = time / 2;
         this.depth = depth;
-        StopAllCoroutines();
         StartCoroutine(IEZoomInAndOut());
     }
 
@@ -25,7 +24,6 @@ public class CameraZoom : MonoBehaviour
     {
         this.time = time / 2;
         this.depth = depth;
-        StopAllCoroutines();
         StartCoroutine(IEZoomOutAndIn());
     }
 

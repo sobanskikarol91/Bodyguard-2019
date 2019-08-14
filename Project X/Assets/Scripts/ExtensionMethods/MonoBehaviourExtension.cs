@@ -39,7 +39,6 @@ public static class MonoBevahiourExtension
         float startTime = Time.time;
         Vector3 startValue = currentValue;
 
-        Debug.Log("Origin: " + currentValue + "Dest: " + destination + "Dur: " + duration);
         while (true)
         {
             float percantage = (Time.time - startTime) / duration;
@@ -62,7 +61,6 @@ public static class MonoBevahiourExtension
 
     static IEnumerator IEPingPongLerp(this MonoBehaviour target, Vector3 currentValue, Vector3 offset, float duration, Action OnComplete = null, Action<Vector3> OnExecuting = null)
     {
-        Debug.Log("ping-pong");
         Vector3 destination = currentValue - offset;
         float time = duration / 2;
         Func<IEnumerator> Ping = () => Lerp(currentValue, destination, time, OnComplete, OnExecuting);

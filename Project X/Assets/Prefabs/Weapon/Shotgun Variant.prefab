@@ -28,7 +28,7 @@ Transform:
   m_LocalPosition: {x: 0.1785, y: -0.05, z: 0}
   m_LocalScale: {x: 1.221, y: 0.117757075, z: 1}
   m_Children: []
-  m_Father: {fileID: 3077835094913286560}
+  m_Father: {fileID: 3453172050393418497}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6082937128547514043
@@ -197,6 +197,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -33.412003
       objectReference: {fileID: 0}
+    - target: {fileID: 6625358398353239511, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625358398353239511, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -224,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cc99eb47f87be40949d0ddb3423001, type: 3}
---- !u!4 &3077835094913286560 stripped
+--- !u!4 &3453172050393418497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 385773657878186508, guid: d2cc99eb47f87be40949d0ddb3423001,
     type: 3}

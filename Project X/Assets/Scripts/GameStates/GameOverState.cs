@@ -13,8 +13,13 @@
     public void Enter()
     {
         lightManager.DecreaseSpotAngle(55f, duration);
+        SlowMotion.instance.RunEffect(0.2f, duration, OnEndSlowMontion);
+    }
+
+    void OnEndSlowMontion()
+    {
         CameraZoom.instance.ZoomIn(duration, 2f);
-        SlowMotion.instance.RunEffect(0.2f, duration, uiManager.ShowGameOver);
+        uiManager.ShowGameOver();
     }
 
     public void Execute() { }
