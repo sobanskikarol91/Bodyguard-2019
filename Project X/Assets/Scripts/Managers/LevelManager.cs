@@ -4,14 +4,17 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour, IScore, IRestart
 {
     [SerializeField] LvlSettings settings;
+    [SerializeField] AudioClip gainLvlSnd;
 
     private int lvlNr = 0;
     private float expierience = 0;
     private IDependsOnLvl[] lvlDependencies;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         lvlDependencies = GetComponents<IDependsOnLvl>();
+        audioSource = AudioSourceFactory.GetAudioSource(transform, gainLvlSnd);
     }
 
     bool IsPlayerReachedNewLvl()
@@ -24,6 +27,7 @@ public class LevelManager : MonoBehaviour, IScore, IRestart
     {
         lvlNr++;
         Array.ForEach(lvlDependencies, l => l.OnGainNextLvl(lvlNr));
+        audioSource.Play();
     }
 
     bool IsLastLvl()
