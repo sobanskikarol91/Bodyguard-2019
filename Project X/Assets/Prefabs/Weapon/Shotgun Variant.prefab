@@ -147,6 +147,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 385773657878186508, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 8497, guid: d2cc99eb47f87be40949d0ddb3423001, type: 3}
       propertyPath: settings
       value: 
@@ -161,11 +166,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.95779234
-      objectReference: {fileID: 0}
-    - target: {fileID: 6050077644714962107, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -33.412003
       objectReference: {fileID: 0}
     - target: {fileID: 6050077644714962107, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
@@ -192,15 +192,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.41276515
       objectReference: {fileID: 0}
-    - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
+    - target: {fileID: 6050077644714962107, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0537
-      objectReference: {fileID: 0}
-    - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.117757075
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -33.412003
       objectReference: {fileID: 0}
     - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
@@ -209,28 +204,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0537
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4148022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824321444387361845, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.117757075
       objectReference: {fileID: 0}
     - target: {fileID: 2157714268798160790, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_Name
       value: Barrel up
-      objectReference: {fileID: 0}
-    - target: {fileID: 2475807904002675435, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2475807904002675435, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2475807904002675435, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2cc99eb47f87be40949d0ddb3423001, type: 3}

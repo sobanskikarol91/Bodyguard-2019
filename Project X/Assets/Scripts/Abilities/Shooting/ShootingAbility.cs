@@ -31,6 +31,7 @@ public class ShootingAbility : MonoBehaviour
     {
         Weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
         Weapon.transform.SetParent(weaponSpot);
+        Weapon.transform.rotation = Quaternion.identity;
         Weapon.transform.localPosition = Vector3.zero;
     }
 }
