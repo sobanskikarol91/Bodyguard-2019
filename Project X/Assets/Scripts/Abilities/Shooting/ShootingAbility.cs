@@ -10,8 +10,7 @@ public class ShootingAbility : MonoBehaviour
 
     private ShootingType typeInstance;
 
-
-    private void Awake()
+    private void OnEnable()
     {
         if (weapon) Set(Weapon.gameObject);
         CreateShootingType();
