@@ -248,7 +248,7 @@ MonoBehaviour:
   deathEffects: {fileID: 2422366967988521407, guid: ed016d86ca171e44cbddb5c703d20ffe,
     type: 3}
   damageEffect: {fileID: 0}
-  godMode: 1
+  godMode: 0
 --- !u!114 &384692416682989964
 MonoBehaviour:
   m_ObjectHideFlags: 0
