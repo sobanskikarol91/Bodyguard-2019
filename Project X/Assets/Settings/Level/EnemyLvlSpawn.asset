@@ -23,9 +23,6 @@ MonoBehaviour:
     - percentage: 1
       prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
-    - percentage: 0.2
-      prefab: {fileID: 9131705152369091516, guid: 41eeb4ce23d49e1448f904f35251bbdc,
-        type: 3}
   - spawnTime: 2
     spawnObjects:
     - percentage: 1
