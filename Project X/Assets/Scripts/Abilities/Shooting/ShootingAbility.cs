@@ -2,17 +2,18 @@
 
 public class ShootingAbility : MonoBehaviour
 {
-    public Weapon Weapon { get; private set; }
+    public Weapon Weapon => weapon;
 
     [SerializeField] ShootingType type;
     [SerializeField] Transform weaponSpot;
+    [SerializeField] Weapon weapon;
 
     private ShootingType typeInstance;
 
 
     private void Awake()
     {
-        Weapon = GetComponentInChildren<Weapon>();
+        if (weapon) Set(Weapon);
         CreateShootingType();
     }
 
@@ -30,10 +31,10 @@ public class ShootingAbility : MonoBehaviour
     public void Set(Weapon newWeapon)
     {
         RemovePreviousWeapon();
-        Weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
-        Weapon.transform.SetParent(weaponSpot);
-        Weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        Weapon.transform.localPosition = Vector3.zero;
+        weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
+        weapon.transform.SetParent(weaponSpot);
+        weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        weapon.transform.localPosition = Vector3.zero;
     }
 
     private void RemovePreviousWeapon()
