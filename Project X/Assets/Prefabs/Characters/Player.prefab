@@ -290,6 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 7410b9279984f21439f8ff0236e1f729, type: 2}
   weaponSpot: {fileID: 5686710968905766986}
+  weapon: {fileID: 0}
 --- !u!95 &8381470909812376722
 Animator:
   serializedVersion: 3

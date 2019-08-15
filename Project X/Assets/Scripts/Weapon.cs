@@ -7,15 +7,18 @@ public class Weapon : MonoBehaviour, IAttack
 
     public Transform BulletSpawnPoint => bulletSpawnPoint;
     public WeaponSettings Settings => settings;
+
+    private WeaponSettings settingsInstance;
     private Animator animator;
     private bool isReadyToAttack => leftTimeToShot <= 0;
-    protected float leftTimeToShot;
+    private float leftTimeToShot;
 
 
     private void Awake()
     {
+        settingsInstance = Instantiate(settings);
         animator = GetComponent<Animator>();
-        settings.Init(this);
+        settingsInstance.Init(this);
         ResetTimeLeft();
     }
 
@@ -40,6 +43,6 @@ public class Weapon : MonoBehaviour, IAttack
 
         animator.SetTrigger("attack");
         ResetTimeLeft();
-        settings.Shoot();
+        settingsInstance.Shoot();
     }
 }

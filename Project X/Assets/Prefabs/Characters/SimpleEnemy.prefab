@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  type: {fileID: 11400000, guid: 4acf21207e429a540bcf2a4548b0b2fc, type: 2}
+  type: {fileID: 11400000, guid: ed315c7fe11f0634ea4f9884f8ecad10, type: 2}
 --- !u!1 &6825881709318010927
 GameObject:
   m_ObjectHideFlags: 0
