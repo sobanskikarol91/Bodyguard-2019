@@ -34,11 +34,6 @@ PrefabInstance:
       propertyPath: Damage
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f2ae1310d1e9e804ab5a46615ab316f6, type: 3}
     - target: {fileID: 2920203329106431753, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,6 +94,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2920203329106431753, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6315224
+      objectReference: {fileID: 0}
     - target: {fileID: 1060307636233408754, guid: 2954aa3776f60f54ea57ee170340960b,
         type: 3}
       propertyPath: m_Color.r
@@ -114,5 +114,10 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5846887723326059202, guid: 2954aa3776f60f54ea57ee170340960b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f2ae1310d1e9e804ab5a46615ab316f6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2954aa3776f60f54ea57ee170340960b, type: 3}
