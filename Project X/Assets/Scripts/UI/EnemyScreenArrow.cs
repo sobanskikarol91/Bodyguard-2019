@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class EnemyScreenArrow : MonoBehaviour
 {
@@ -42,16 +40,6 @@ public class EnemyScreenArrow : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, bounds.min.x, bounds.max.x );
         clampedPosition.y = Mathf.Clamp(clampedPosition.y, bounds.min.y, bounds.max.y );
         transform.position = clampedPosition;
-    }
-
-    public void ShowSprites()
-    {
-        Array.ForEach(sprites, s => s.enabled = true);
-    }
-
-    public void HideSprites()
-    {
-        Array.ForEach(sprites, s => s.enabled = false);
     }
 
     public void AssignTo(Transform transform)

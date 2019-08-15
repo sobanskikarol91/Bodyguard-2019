@@ -10,8 +10,8 @@ public class EnemyScreenArrowAbility : MonoBehaviour
     private void OnEnable()
     {
         arrowInstance = ObjectPoolManager.instance.Get(arrow.gameObject).GetComponent<EnemyScreenArrow>();
+        arrowInstance.gameObject.SetActive(false);
         arrowInstance.AssignTo(transform);
-        arrowInstance.ShowSprites();
     }
 
     private void OnDisable()
@@ -21,11 +21,13 @@ public class EnemyScreenArrowAbility : MonoBehaviour
 
     private void OnBecameVisible()
     {
-        arrowInstance.HideSprites();
+        arrowInstance.gameObject.SetActive(true);
+        //arrowInstance.HideSprites();
     }
 
     private void OnBecameInvisible()
     {
-        arrowInstance.ShowSprites();
+        arrowInstance.gameObject.SetActive(false);
+        //arrowInstance.ShowSprites();
     }
 }
