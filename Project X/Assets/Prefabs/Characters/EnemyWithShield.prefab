@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006197476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.156, y: 0, z: 0}
-  m_LocalScale: {x: 0.2028, y: 0.1509, z: 1}
+  m_LocalPosition: {x: -0.223, y: 0, z: 0}
+  m_LocalScale: {x: 0.40053, y: 0.1509, z: 1}
   m_Children: []
   m_Father: {fileID: 1506889248}
   m_RootOrder: 1
@@ -107,12 +107,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506889247}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.741, y: 0, z: 0}
+  m_LocalPosition: {x: 0.876, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.09375, z: 1}
   m_Children:
   - {fileID: 1716030642}
   - {fileID: 1006197477}
-  m_Father: {fileID: 7175222489012721608}
+  m_Father: {fileID: 8072101074631783910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1506889250
@@ -139,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2231772, y: 0.87249905}
+  m_Size: {x: 0.2231772, y: 1.1870377}
   m_EdgeRadius: 0
 --- !u!114 &1506889249
 MonoBehaviour:
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 1716030641}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2028, y: 0.8545, z: 1}
+  m_LocalScale: {x: 0.2028, y: 1.1893785, z: 1}
   m_Children: []
   m_Father: {fileID: 1506889248}
   m_RootOrder: 0
@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: m_Name
-      value: EnemyReflectingBullets
+      value: EnemyWithShield
       objectReference: {fileID: 0}
     - target: {fileID: 1411421080463516404, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 5408456603123648044, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
       propertyPath: speed
-      value: 2.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5408456603123648044, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
         type: 3}
@@ -360,9 +360,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: ed315c7fe11f0634ea4f9884f8ecad10,
         type: 2}
+    - target: {fileID: 3044054752432092921, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5, type: 3}
---- !u!4 &7175222489012721608 stripped
+--- !u!4 &8072101074631783910 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1411421080463516404, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
     type: 3}
