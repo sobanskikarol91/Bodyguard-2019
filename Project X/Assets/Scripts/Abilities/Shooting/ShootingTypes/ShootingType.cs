@@ -7,6 +7,6 @@
 
     protected void TryShoot()
     {
-        ability.Weapon.Attack();
+        ability.CurrentWeapon.Attack();
     }
 }
