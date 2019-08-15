@@ -13,7 +13,7 @@ public class ShootingAbility : MonoBehaviour
 
     private void Awake()
     {
-        if (weapon) Set(Weapon);
+        if (weapon) Set(Weapon.gameObject);
         CreateShootingType();
     }
 
@@ -28,10 +28,13 @@ public class ShootingAbility : MonoBehaviour
         typeInstance.Init(this);
     }
 
-    public void Set(Weapon newWeapon)
+    public void Set(GameObject newWeapon)
     {
-        RemovePreviousWeapon();
-        weapon = ObjectPoolManager.instance.Get(newWeapon.gameObject).GetComponent<Weapon>();
+        if(weapon) RemovePreviousWeapon();
+        weapon = ObjectPoolManager.instance.Get(newWeapon).GetComponent<Weapon>();
+
+        if (!weapon)  return;
+
         weapon.transform.SetParent(weaponSpot);
         weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         weapon.transform.localPosition = Vector3.zero;

@@ -2,23 +2,23 @@
 
 public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
 {
-    [SerializeField] WeaponLvlSetting weaponSettings;
+    [SerializeField] GameWeaponsSettings weaponSettings;
     private ShootingAbility playerShootingAbility;
 
     private void Start()
     {
         playerShootingAbility = GameManager.instance.Player.GetComponentInChildren<ShootingAbility>();
-        playerShootingAbility.Set(weaponSettings.Weapons[0]);
+        Restart();
     }
 
     public void OnGainNextLvl(int lvl)
     {
         if (lvl < weaponSettings.Weapons.Length)
-            playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
+            playerShootingAbility?.Set(weaponSettings.Weapons[lvl].Model);
     }
 
     public void Restart()
     {
-        playerShootingAbility?.Set(weaponSettings.Weapons[0]);
+        playerShootingAbility?.Set(weaponSettings.Weapons[0].Model);
     }
 }
