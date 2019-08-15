@@ -177,6 +177,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 6467165f46ed5844e9f8e69144e5d71a,
         type: 2}
+    - target: {fileID: 2891438380051384428, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.315
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462423866264652226, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 47c796e0eba3d8e4891569d207db9832,
+        type: 2}
     - target: {fileID: 2984813356667207804, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_LocalPosition.x
