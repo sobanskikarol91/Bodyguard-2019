@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: WeaponLvlSettings
   m_EditorClassIdentifier: 
   weapons:
+  - {fileID: 11400000, guid: 2c7f4aff9cdbc674bb7e882f34cdfdec, type: 2}
   - {fileID: 11400000, guid: f08e9c683697c244bbbcd73c748a3e7f, type: 2}
   - {fileID: 11400000, guid: 93dc148cabe788c4280f4cf4b2216357, type: 2}
   - {fileID: 11400000, guid: e522a76a3a40ec1458543b67a71fd223, type: 2}
+  - {fileID: 11400000, guid: 270fe7bcfc7d3dc4995ab2f71e61aca5, type: 2}

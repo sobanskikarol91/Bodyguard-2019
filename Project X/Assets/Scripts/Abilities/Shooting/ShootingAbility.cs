@@ -32,8 +32,6 @@ public class ShootingAbility : MonoBehaviour
         if(CurrentWeapon) RemovePreviousWeapon();
         CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon).GetComponent<Weapon>();
 
-        if (!CurrentWeapon)  return;
-
         CurrentWeapon.transform.SetParent(weaponSpot);
         CurrentWeapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         CurrentWeapon.transform.localPosition = Vector3.zero;

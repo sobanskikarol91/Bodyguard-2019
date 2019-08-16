@@ -237,7 +237,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ca32eb220be33364cbaacfa5370e7702, type: 3}
     - target: {fileID: 1348189733, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 218850625, guid: 5c77aa50051483543ad27db736884000, type: 3}
       propertyPath: m_SpotAngle
@@ -247,12 +247,12 @@ PrefabInstance:
         type: 3}
       propertyPath: enemySpawnSettings
       value: 
-      objectReference: {fileID: 11400000, guid: 96553a53c3965f54e9f72e63d0aba5f4,
+      objectReference: {fileID: 11400000, guid: 3eeac0ca518e12e4ba4dfd41b96d8ce9,
         type: 2}
     - target: {fileID: 3956956917734439518, guid: 5c77aa50051483543ad27db736884000,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c77aa50051483543ad27db736884000, type: 3}
