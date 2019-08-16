@@ -38,7 +38,7 @@ public abstract class WeaponSettings : ScriptableObject
         Array.ForEach(characterEffects, e => e.CreateEffect(weapon.transform));
         Array.ForEach(bulletEffects, e => e.CreateEffect(bullet.transform));
 
-        if (shotSnd) AudioSource.PlayClipAtPoint(shotSnd, bulletSpawnPoint.position);
+        if (shotSnd) AudioSourceFactory.PlayClipAtPoint(shotSnd, bulletSpawnPoint);
     }
 
     protected abstract GameObject CreateBullet();
