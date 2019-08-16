@@ -6,6 +6,12 @@ public class DoDamageOnCollision : Damagable
     [SerializeField] CollisionEffect[] collisionEffects;
 
     private InteractiveObject hitObject;
+    private Collision2D bodyCollider;
+
+    private void Awake()
+    {
+        bodyCollider = GetComponent<Collision2D>();
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,6 +21,15 @@ public class DoDamageOnCollision : Damagable
 
         if (IsHitTargetOnDamageObjectsCollection(hitObject))
             HitResult(collision);
+    }
+
+    bool IsHitMainCollider(Collision2D collision)
+    {
+        foreach(ContactPoint2D c in collision.contacts)
+        {
+            Debug.Log(c.collider.name);
+        }
+        return false;
     }
 
     private void HitResult(Collision2D collision)
