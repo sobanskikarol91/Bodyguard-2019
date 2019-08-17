@@ -11,7 +11,7 @@ public class Damagable : MonoBehaviour
 
     protected bool IsHitTargetOnDamageObjectsCollection(InteractiveObject target)
     {
-        return damageObjects.Contains(target.Type);
+        return damageObjects.Contains(target.Type);;
     }
 
     protected void OnDamage()

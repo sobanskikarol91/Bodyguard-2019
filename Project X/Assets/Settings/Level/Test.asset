@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 2
+  - spawnTime: 0.2
     spawnObjects:
     - percentage: 1
       prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,

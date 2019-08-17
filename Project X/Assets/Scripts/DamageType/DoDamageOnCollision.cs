@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 public class DoDamageOnCollision : Damagable
@@ -6,30 +7,24 @@ public class DoDamageOnCollision : Damagable
     [SerializeField] CollisionEffect[] collisionEffects;
 
     private InteractiveObject hitObject;
-    private Collision2D bodyCollider;
+    private Collider2D bodyCollider;
 
     private void Awake()
     {
-        bodyCollider = GetComponent<Collision2D>();
+        bodyCollider = GetComponent<Collider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        hitObject = collision.gameObject.GetComponent<InteractiveObject>();
+        hitObject = GetInteractiveObject(collision);
 
-        if (hitObject == null) return;
-
-        if (IsHitTargetOnDamageObjectsCollection(hitObject))
+        if (hitObject && IsHitTargetOnDamageObjectsCollection(hitObject))
             HitResult(collision);
     }
 
-    bool IsHitMainCollider(Collision2D collision)
+    InteractiveObject GetInteractiveObject(Collision2D collision)
     {
-        foreach(ContactPoint2D c in collision.contacts)
-        {
-            Debug.Log(c.collider.name);
-        }
-        return false;
+        return collision.contacts[0].collider.GetComponent<InteractiveObject>();
     }
 
     private void HitResult(Collision2D collision)
