@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a94708c5c2771e4f981972e6eea345d, type: 3}
-  m_Name: Test
+  m_Name: TestSpawnEnemy
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 0.2
+  - spawnTime: 1
     spawnObjects:
     - percentage: 1
-      prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
+      prefab: {fileID: 4563363627327973907, guid: aa697d3669e4e764c9fee4d019b02606,
         type: 3}
   - spawnTime: 2
     spawnObjects:
