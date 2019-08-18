@@ -6,13 +6,13 @@ public class ShootingAbility : MonoBehaviour
 
     [SerializeField] ShootingType type;
     [SerializeField] Transform weaponSpot;
-    [SerializeField] Weapon defaultWeapon;
+    [SerializeField] LevelWeapon defaultWeapon;
 
     private ShootingType typeInstance;
 
     private void OnEnable()
     {
-        if (defaultWeapon) Set(defaultWeapon.gameObject);
+        if (defaultWeapon) Set(defaultWeapon);
         CreateShootingType();
     }
 
@@ -27,10 +27,10 @@ public class ShootingAbility : MonoBehaviour
         typeInstance.Init(this);
     }
 
-    public void Set(GameObject newWeapon)
+    public void Set(LevelWeapon newWeapon)
     {
         if(CurrentWeapon) RemovePreviousWeapon();
-        CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon).GetComponent<Weapon>();
+        CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon.Model).GetComponent<Weapon>();
 
         CurrentWeapon.transform.SetParent(weaponSpot, false);
 
