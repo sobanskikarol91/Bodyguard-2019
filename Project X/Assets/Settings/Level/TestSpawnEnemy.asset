@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TestSpawnEnemy
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 1
+  - spawnTime: 3
     spawnObjects:
     - percentage: 1
-      prefab: {fileID: 8640952889412982198, guid: 086ccd5d2c321e84eaa369e07048f918,
+      prefab: {fileID: 6893846608986942483, guid: 5ec748f82f465974988c39fe0c474beb,
         type: 3}
   - spawnTime: 2
     spawnObjects:
