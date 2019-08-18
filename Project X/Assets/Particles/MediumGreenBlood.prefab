@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 6829461801087784153, guid: ecdee2e9cb7f25245ade49de6f155e40,
         type: 3}
       propertyPath: m_Name
-      value: MediumPoisonSplatter
+      value: MediumGreenBlood
       objectReference: {fileID: 0}
     - target: {fileID: 6829461801087784158, guid: ecdee2e9cb7f25245ade49de6f155e40,
         type: 3}

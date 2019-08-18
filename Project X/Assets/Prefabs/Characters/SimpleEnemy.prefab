@@ -37,7 +37,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411421080463516400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8965584443285681534}
@@ -668,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 248377297630612992, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 248377297630612992, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
@@ -723,12 +723,12 @@ PrefabInstance:
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
@@ -768,6 +768,16 @@ PrefabInstance:
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: ColorModule.gradient.maxGradient.key2.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
+        type: 3}
+      propertyPath: NoiseModule.enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
