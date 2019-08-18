@@ -21,7 +21,7 @@ public class LaserWeapon : WeaponSettings
 
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
 
-        damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right * beamLength, beamLength, damageObjects);
+        damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right * beamLength, beamLength);
         return line.gameObject;
     }
 }

@@ -9,7 +9,6 @@ public abstract class WeaponSettings : ScriptableObject
 
     [SerializeField] Damagable bullet;
     [SerializeField] float refireRate = 0.1f;
-    [SerializeField] protected ObjectType[] damageObjects;
     [SerializeField] AudioClip shotSnd;
 
     [Header("Effects")]
