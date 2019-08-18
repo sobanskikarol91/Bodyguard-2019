@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31cba3e8f9bd1c34aac49ad233b213ba, type: 3}
-  m_Name: Minigun
+  m_Name: E_Pistol
   m_EditorClassIdentifier: 
-  model: {fileID: 910089763578616236, guid: 773f8292af861fb44b5990cfcb08fa66, type: 3}
+  model: {fileID: 1821524041072643226, guid: d2cc99eb47f87be40949d0ddb3423001, type: 3}
+  bullet: {fileID: 3336418605839383363, guid: ebb7d20e6744cb34e8a7dc29eeca3850, type: 3}
+  bulletEffects: []
+  characterEffects: []

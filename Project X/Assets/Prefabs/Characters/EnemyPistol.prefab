@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 5def577ea3c3a0b4aa43e158d69c8552, type: 2}
   weaponSpot: {fileID: 2749750433470916794}
-  defaultWeapon: {fileID: 11400000, guid: 2c7f4aff9cdbc674bb7e882f34cdfdec, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: c78e45a9578f149428a478b1adb13ab5, type: 2}
 --- !u!1 &8651479524692146366
 GameObject:
   m_ObjectHideFlags: 0

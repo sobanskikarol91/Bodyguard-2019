@@ -2,8 +2,6 @@
 
 public static class AudioSourceFactory
 {
-    private static readonly float pitchFactor = 5f;
-
     public static AudioSource GetAudioSource(Transform transform, AudioClip clip, float volume = 1f)
     {
         AudioSource audioSource = new GameObject("Audio: " + clip.name).AddComponent<AudioSource>();

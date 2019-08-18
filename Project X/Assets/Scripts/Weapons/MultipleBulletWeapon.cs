@@ -1,21 +1,20 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/MultipleBullets")]
-public class MultipleBulletWeapon : WeaponSettings
+public class MultipleBulletWeapon : Weapon
 {
     [SerializeField, Tooltip("How many bullet should be create")] int amount;
     [SerializeField, Tooltip("Angle between bullets")] float angle;
-    
-    protected override GameObject CreateBullet()
+
+    protected override GameObject Attack()
     {
         GameObject[] bullets = ObjectPoolManager.instance.Get(Bullet.gameObject, amount);
 
         for (int i = 0; i < amount; i++)
         {
-            float angleZ = GetAngle(bulletSpawnPoint, i);
+            float angleZ = GetAngle(BulletSpawnPoint, i);
             Vector3 rotation = new Vector3(0, 0, angleZ);
             bullets[i].transform.rotation = Quaternion.Euler(rotation);
-            bullets[i].transform.position = bulletSpawnPoint.position;
+            bullets[i].transform.position = BulletSpawnPoint.position;
         }
 
         return bullets[0];

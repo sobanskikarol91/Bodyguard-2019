@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31cba3e8f9bd1c34aac49ad233b213ba, type: 3}
-  m_Name: Pistol
+  m_Name: P_Shotgun
   m_EditorClassIdentifier: 
-  model: {fileID: 1821524041072643226, guid: d2cc99eb47f87be40949d0ddb3423001, type: 3}
+  model: {fileID: 3939378474459449142, guid: 2ce278dbd6fe8e842836cbd2d44faa0d, type: 3}
+  bullet: {fileID: 4710505377383510129, guid: b903f8e45742b4146bcddbbc18c3b83f, type: 3}

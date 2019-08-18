@@ -32,5 +32,5 @@ public interface IDeath
 
 public interface IAttack
 {
-    void Attack();
+    void TryAttack();
 }

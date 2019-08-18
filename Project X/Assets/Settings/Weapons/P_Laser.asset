@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31cba3e8f9bd1c34aac49ad233b213ba, type: 3}
-  m_Name: Laser
+  m_Name: P_Laser
   m_EditorClassIdentifier: 
   model: {fileID: 5367501077285509499, guid: 6d738ca01d5be3245b5d1928edf8a385, type: 3}
+  bullet: {fileID: 2683820113467408796, guid: 0ba72806562ff3049b038a39dc28b7a3, type: 3}

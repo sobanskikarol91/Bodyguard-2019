@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Laser")]
-public class LaserWeapon : WeaponSettings
+public class LaserWeapon : Weapon
 {
     [SerializeField] float beamLength;
 
-    protected override GameObject CreateBullet()
+    protected override GameObject Attack()
     {
         LineRenderer line = ObjectPoolManager.instance.Get(Bullet.gameObject).GetComponent<LineRenderer>();
         line.positionCount = 2;
 
-        line.transform.SetParent(bulletSpawnPoint);
+        line.transform.SetParent(BulletSpawnPoint);
         line.transform.localPosition = Vector2.zero;
         line.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
@@ -21,7 +20,7 @@ public class LaserWeapon : WeaponSettings
 
         DamageOnRaycastHit damageOnRaycastHit = line.GetComponent<DamageOnRaycastHit>();
 
-        damageOnRaycastHit?.CastRay(bulletSpawnPoint.position, bulletSpawnPoint.right * beamLength, beamLength);
+        damageOnRaycastHit?.CastRay(BulletSpawnPoint.position, BulletSpawnPoint.right * beamLength, beamLength);
         return line.gameObject;
     }
 }

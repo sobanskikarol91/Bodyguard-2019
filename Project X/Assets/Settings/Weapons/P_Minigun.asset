@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31cba3e8f9bd1c34aac49ad233b213ba, type: 3}
-  m_Name: RocketLuncher
+  m_Name: P_Minigun
   m_EditorClassIdentifier: 
-  model: {fileID: 2165327875631021406, guid: 020af15e74908dc4e823b4ed1698bb8e, type: 3}
+  model: {fileID: 910089763578616236, guid: 773f8292af861fb44b5990cfcb08fa66, type: 3}
+  bullet: {fileID: 859625982794863663, guid: e45d6d0cf2b9e83498a498da3963b38c, type: 3}

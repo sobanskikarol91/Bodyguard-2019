@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2984813356667207804}
   - component: {fileID: 1462423866264652226}
-  - component: {fileID: 8497}
+  - component: {fileID: 2230228032719294353}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Untagged
@@ -52,7 +52,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8497
+--- !u!114 &2230228032719294353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,10 +61,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1821524041072643226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c128c88e3eb29394a995b22d9fa0aa8d, type: 3}
+  m_Script: {fileID: 11500000, guid: fa9ec6b4405753249b22510cca650952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 49790f748e9105047ba521be123e3166, type: 2}
+  settings:
+    refireRate: 0.1
+    shotSnd: {fileID: 8300000, guid: 163d29b13904c184b8721f0fcb0d99e8, type: 3}
   bulletSpawnPoint: {fileID: 2891438380051384428}
 --- !u!1 &2038348271611079528
 GameObject:

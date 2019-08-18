@@ -29,11 +29,17 @@ public class ShootingAbility : MonoBehaviour
 
     public void Set(LevelWeapon newWeapon)
     {
-        if(CurrentWeapon) RemovePreviousWeapon();
+        //if (CurrentWeapon) RemovePreviousWeapon();
+        Debug.Log("set", gameObject);
         CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon.Model).GetComponent<Weapon>();
-
+        Damagable bullet = newWeapon.Bullet.GetComponent<Damagable>();
+        CurrentWeapon.SetBullet(bullet);
         CurrentWeapon.transform.SetParent(weaponSpot, false);
+    }
 
+    private void OnDisable()
+    {
+        RemovePreviousWeapon();
     }
 
     private void RemovePreviousWeapon()
