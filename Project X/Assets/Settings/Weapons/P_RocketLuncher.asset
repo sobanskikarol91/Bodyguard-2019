@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cba3e8f9bd1c34aac49ad233b213ba, type: 3}
   m_Name: P_RocketLuncher
   m_EditorClassIdentifier: 
-  model: {fileID: 2165327875631021406, guid: 020af15e74908dc4e823b4ed1698bb8e, type: 3}
+  model: {fileID: 525672445810897315, guid: 020af15e74908dc4e823b4ed1698bb8e, type: 3}
   bullet: {fileID: 4782648874805095374, guid: 23f2951444a308445b1d156acf6314d6, type: 3}
+  bulletEffects: []
+  characterEffects: []

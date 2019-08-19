@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    refireRate: 0.1
+    refireRate: 0.25
     shotSnd: {fileID: 8300000, guid: 163d29b13904c184b8721f0fcb0d99e8, type: 3}
   bulletSpawnPoint: {fileID: 2891438380051384428}
 --- !u!1 &2038348271611079528

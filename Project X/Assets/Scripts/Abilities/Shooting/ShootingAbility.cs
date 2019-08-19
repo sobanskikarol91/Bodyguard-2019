@@ -29,7 +29,8 @@ public class ShootingAbility : MonoBehaviour
 
     public void Set(LevelWeapon newWeapon)
     {
-        //if (CurrentWeapon) RemovePreviousWeapon();
+        if (CurrentWeapon) RemovePreviousWeapon();
+
         Debug.Log("set", gameObject);
         CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon.Model).GetComponent<Weapon>();
         Damagable bullet = newWeapon.Bullet.GetComponent<Damagable>();
