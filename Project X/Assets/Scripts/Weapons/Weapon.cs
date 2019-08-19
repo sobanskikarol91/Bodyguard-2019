@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour, IAttack
     private float leftTimeToShot;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         animator = GetComponent<Animator>();
         ResetTimeLeft();
@@ -41,7 +41,6 @@ public abstract class Weapon : MonoBehaviour, IAttack
 
         GameObject bullet = Attack();
         AudioSourceFactory.PlayClipAtPoint(settings.ShotSnd, bulletSpawnPoint);
-        //Attack();
         // ShowEffects();
         animator.SetTrigger("attack");
         ResetTimeLeft();

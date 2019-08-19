@@ -31,7 +31,6 @@ public class ShootingAbility : MonoBehaviour
     {
         if (CurrentWeapon) RemovePreviousWeapon();
 
-        Debug.Log("set", gameObject);
         CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon.Model).GetComponent<Weapon>();
         Damagable bullet = newWeapon.Bullet.GetComponent<Damagable>();
         CurrentWeapon.SetBullet(bullet);
@@ -45,6 +44,6 @@ public class ShootingAbility : MonoBehaviour
 
     private void RemovePreviousWeapon()
     {
-        if (CurrentWeapon) ObjectPoolManager.instance.ReturnToPool(CurrentWeapon.gameObject);
+        if (CurrentWeapon) CurrentWeapon.gameObject.SetActive(false);
     }
 }
