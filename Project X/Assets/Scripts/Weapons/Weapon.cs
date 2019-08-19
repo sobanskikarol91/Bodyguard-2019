@@ -10,9 +10,11 @@ public abstract class Weapon : MonoBehaviour, IAttack
     public Damagable Bullet { get; private set; }
 
     private Animator animator;
-    private bool isReadyToAttack => leftTimeToShot <= 0;
+    private bool IsReadyToAttack => leftTimeToShot <= 0;
     private float leftTimeToShot;
-
+    private ShootingEffect[] bulletEffects;
+    private ShootingEffect[] weaponEffects;
+    private GameObject createdBullet;
 
     private void OnEnable()
     {
@@ -37,24 +39,26 @@ public abstract class Weapon : MonoBehaviour, IAttack
 
     public void TryAttack()
     {
-        if (!isReadyToAttack) return;
+        if (!IsReadyToAttack) return;
 
-        GameObject bullet = Attack();
+        createdBullet = Attack();
         AudioSourceFactory.PlayClipAtPoint(settings.ShotSnd, bulletSpawnPoint);
-        // ShowEffects();
+        ShowEffects();
         animator.SetTrigger("attack");
         ResetTimeLeft();
     }
 
-    public void SetBullet(Damagable bullet)
+    public void Init(Damagable bullet, ShootingEffect[] bulletEffects, ShootingEffect[] weaponEffects )
     {
+        this.bulletEffects = bulletEffects;
+        this.weaponEffects = weaponEffects;
         Bullet = bullet;
     }
 
-    private void ShowEffects(GameObject bullet)
+    private void ShowEffects()
     {
-        //Array.ForEach(characterEffects, e => e.CreateEffect(weapon.transform));
-        //Array.ForEach(bulletEffects, e => e.CreateEffect(bullet.transform));
+        Array.ForEach(bulletEffects, e => e.CreateEffect(createdBullet.transform));
+        Array.ForEach(weaponEffects, e => e.CreateEffect(transform));
     }
 
     protected abstract GameObject Attack();

@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 910089763578616236, guid: 773f8292af861fb44b5990cfcb08fa66, type: 3}
   bullet: {fileID: 859625982794863663, guid: e45d6d0cf2b9e83498a498da3963b38c, type: 3}
+  bulletEffects:
+  - {fileID: 11400000, guid: 9a5d0cd4f8f12794c9ed62d11bc29dc5, type: 2}
+  weaponEffects:
+  - {fileID: 11400000, guid: c5e4b41ffe237124593227990352ce84, type: 2}

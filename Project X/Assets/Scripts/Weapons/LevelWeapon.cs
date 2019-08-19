@@ -3,13 +3,15 @@
 [CreateAssetMenu(fileName = "LevelWeapon", menuName = "Level/Weapon")]
 public class LevelWeapon : ScriptableObject
 {
-    public GameObject Model  => model;
+    public GameObject Model => model;
     [SerializeField] GameObject model;
 
     public GameObject Bullet => bullet;
     [SerializeField] GameObject bullet;
 
-    [Header("Effects")]
+    public ShootingEffect[] BulletEffects => bulletEffects;
     [SerializeField] ShootingEffect[] bulletEffects;
-    [SerializeField] ShootingEffect[] characterEffects;
+
+    public ShootingEffect[] WeaponEffects => weaponEffects;
+    [SerializeField] ShootingEffect[] weaponEffects;
 }

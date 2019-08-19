@@ -33,7 +33,7 @@ public class ShootingAbility : MonoBehaviour
 
         CurrentWeapon = ObjectPoolManager.instance.Get(newWeapon.Model).GetComponent<Weapon>();
         Damagable bullet = newWeapon.Bullet.GetComponent<Damagable>();
-        CurrentWeapon.SetBullet(bullet);
+        CurrentWeapon.Init(bullet, newWeapon.BulletEffects, newWeapon.WeaponEffects);
         CurrentWeapon.transform.SetParent(weaponSpot, false);
     }
 
