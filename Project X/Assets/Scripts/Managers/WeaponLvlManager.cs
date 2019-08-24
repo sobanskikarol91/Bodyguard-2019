@@ -8,7 +8,7 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
     private void Start()
     {
         playerShootingAbility = GameManager.instance.Player.GetComponentInChildren<ShootingAbility>();
-        Restart();
+        OnRestart();
     }
 
     public void OnGainNextLvl(int lvl)
@@ -17,7 +17,7 @@ public class WeaponLvlManager : MonoBehaviour, IDependsOnLvl, IRestart
             playerShootingAbility?.Set(weaponSettings.Weapons[lvl]);
     }
 
-    public void Restart()
+    public void OnRestart()
     {
         playerShootingAbility?.Set(weaponSettings.Weapons[0]);
     }

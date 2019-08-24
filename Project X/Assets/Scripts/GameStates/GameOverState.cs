@@ -2,18 +2,26 @@
 {
     private UIManager uiManager;
     private LightManager lightManager;
+    private SpawnManager spawnManager;
     private float duration = 0.8f;
 
     public GameOverState()
     {
+        spawnManager = GameManager.instance.GetComponent<SpawnManager>();
         uiManager = GameManager.instance.GetComponent<UIManager>();
         lightManager = GameManager.instance.GetComponent<LightManager>();
     }
 
     public void Enter()
     {
+        PlayEnemiesWinAnimation();
         lightManager.DecreaseSpotAngle(55f, duration);
         SlowMotion.instance.RunEffect(0.2f, duration, OnEndSlowMontion);
+    }
+
+    private void PlayEnemiesWinAnimation()
+    {
+        spawnManager.spawnedEnemies.ForEach(s => s.GetComponent<IGameOver>().OnGameOver());
     }
 
     void OnEndSlowMontion()

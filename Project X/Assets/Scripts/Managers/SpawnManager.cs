@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 {
     [SerializeField] float radius = 3f;
     [SerializeField] bool spawnOnlyOneEnemy;
     [SerializeField] TimeObjectSpawnerSettings enemySpawnSettings;
+    public List<Transform> spawnedEnemies { get; }  = new List<Transform>();
 
     private Player player;
     private TimeObjectSpawner currentLvl;
@@ -13,7 +16,7 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     private void Start()
     {
-        Restart();
+        OnRestart();
         player = GameManager.instance.Player;
     }
 
@@ -28,17 +31,28 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
 
     private void Spawn()
     {
-        ShowNewEnemy();
+        CreateObject();
         ResetSpawnTime();
 
         if (spawnOnlyOneEnemy) timeLeftToSpawn = 1000;
     }
 
-    private void ShowNewEnemy()
+
+    private void CreateObject()
     {
         GameObject random = currentLvl.GetRandomObject();
         Transform enemy = ObjectPoolManager.instance.Get(random.gameObject).transform;
         enemy.position = GetRandomPosition();
+
+        AddEnemyToList(enemy);
+    }
+
+    private void AddEnemyToList(Transform enemy)
+    {
+        if (spawnedEnemies.Contains(enemy))
+            return;
+        else
+            spawnedEnemies.Add(enemy);
     }
 
     private void ResetSpawnTime()
@@ -49,11 +63,12 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
     Vector2 GetRandomPosition()
     {
         Vector2 spawnPos = player.transform.position;
-        return spawnPos + Random.insideUnitCircle.normalized * radius;
+        return spawnPos + UnityEngine.Random.insideUnitCircle.normalized * radius;
     }
 
-    public void Restart()
+    public void OnRestart()
     {
+        spawnedEnemies.Clear();
         currentLvl = enemySpawnSettings.Lvls[0];
         ResetSpawnTime();
     }

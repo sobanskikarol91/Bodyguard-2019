@@ -76,7 +76,7 @@ public class ObjectPoolManager : MonoBehaviour, IRestart
         return pool;
     }
 
-    public void Restart()
+    public void OnRestart()
     {
         ReturnObjectsToPool();
     }

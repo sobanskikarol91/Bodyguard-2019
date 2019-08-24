@@ -17,7 +17,7 @@ public interface IScore
 
 public interface IRestart
 {
-    void Restart();
+    void OnRestart();
 }
 
 public interface IDependsOnLvl
@@ -33,4 +33,9 @@ public interface IDeath
 public interface IAttack
 {
     void TryAttack();
+}
+
+public interface IGameOver
+{
+    void OnGameOver();
 }

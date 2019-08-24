@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
         scoreTxt.text = "Score: " + score;
     }
 
-    public void Restart()
+    public void OnRestart()
     {
         score = 0;
         UpdateUIText();

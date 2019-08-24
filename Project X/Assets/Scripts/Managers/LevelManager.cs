@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour, IScore, IRestart
             IncreaseLvl();
     }
 
-    public void Restart()
+    public void OnRestart()
     {
         expierience = lvlNr = 0;
     }
