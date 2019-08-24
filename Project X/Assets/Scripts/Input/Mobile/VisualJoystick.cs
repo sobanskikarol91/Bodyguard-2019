@@ -7,4 +7,9 @@ public class VisualJoystick : MonoBehaviour
 
     public Transform Circle { get { return circle; } }
     public Transform Knob { get { return knob; }  }
+
+    public void Hide()
+    {
+        Circle.gameObject.SetActive(false);
+    }
 }

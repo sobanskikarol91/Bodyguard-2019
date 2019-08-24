@@ -13,7 +13,7 @@ public class Joystick : TwoAxisInput
 
     private Vector2 tapStartPos;
     private const int notUsedValue = -1;
-    private VisualJoystick joystick;
+    private VisualJoystick visualJoystick;
     private Touch touch;
     private Camera camera;
 
@@ -21,7 +21,8 @@ public class Joystick : TwoAxisInput
     public void Init()
     {
         camera = Camera.main;
-        joystick = Instantiate(joystickPrefab);
+        visualJoystick = Instantiate(joystickPrefab);
+        visualJoystick.Hide();
         FingerId = notUsedValue;
     }
 
@@ -45,8 +46,8 @@ public class Joystick : TwoAxisInput
 
     private void UpdateJoystickPosition()
     {
-        joystick.Circle.transform.position = (Vector2)camera.ScreenToWorldPoint(tapStartPos);
-        joystick.Circle.gameObject.SetActive(true);
+        visualJoystick.Circle.transform.position = (Vector2)camera.ScreenToWorldPoint(tapStartPos);
+        visualJoystick.Circle.gameObject.SetActive(true);
     }
 
     private Vector2 GetTouchWorldPosition()
@@ -65,7 +66,7 @@ public class Joystick : TwoAxisInput
     protected override void OnInputEndUsing()
     {
         FingerId = notUsedValue;
-        joystick.Circle.gameObject.SetActive(false);
+        visualJoystick.Hide();
         Direction = Vector2.zero;
 
         base.OnInputEndUsing();
@@ -79,7 +80,7 @@ public class Joystick : TwoAxisInput
         Vector2 knobOffsetFromCenter = worldTouch - worldTouchStart;
 
         Direction = Vector2.ClampMagnitude(knobOffsetFromCenter, maxKnobOffset);
-        joystick.Knob.localPosition =  Direction;
+        visualJoystick.Knob.localPosition =  Direction;
     }
 
     public bool IsNotUsed()
