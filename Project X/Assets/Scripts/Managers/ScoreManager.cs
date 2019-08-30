@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
 
     private void Awake()
     {
-        scorables = GetComponents<IScore>().Where(t => t != (IScore)this).ToArray();    
+        scorables = GetComponents<IScore>().Where(t => t != (IScore)this).ToArray();
     }
 
     public void UpdatedScore(float amount = 1)
@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
 
     private void UpdateUIText()
     {
-        scoreTxt.text = "Score: " + score;
+        scoreTxt.text = score.ToString();
     }
 
     public void OnRestart()

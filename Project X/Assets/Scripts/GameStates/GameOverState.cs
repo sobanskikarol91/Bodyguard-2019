@@ -3,7 +3,7 @@
     private UIManager uiManager;
     private LightManager lightManager;
     private SpawnManager spawnManager;
-    private float duration = 0.8f;
+    private float duration = 0.85f;
 
     public GameOverState()
     {
