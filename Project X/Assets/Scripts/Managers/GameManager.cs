@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
     public Player Player { get; private set; }
     public ScoreManager ScoreManager { get; private set; }
     public PlatformManager Platform { get => platform; }
+    public LevelManager LevelManager;
 
     [SerializeField] Player playerPrefab;
     [SerializeField] PlatformManager platform;
 
     private StateMachine stateMachine = new StateMachine();
     private IState gameOver, reset, executingGame;
+
 
     private void Awake()
     {
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void GetReferences()
     {
+        LevelManager = GetComponent<LevelManager>();
         ScoreManager = GetComponent<ScoreManager>();
         Player = ObjectPoolManager.instance.Get(playerPrefab.gameObject).GetComponent<Player>();
     }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour, IScore, IRestart
 {
+    public float NextLvlValue => settings.Lvls[lvlNr + 1];
+    public float PreviousLvlValue => settings.Lvls[lvlNr];
     [SerializeField] LvlSettings settings;
     [SerializeField] AudioClip gainLvlSnd;
 
@@ -19,8 +21,7 @@ public class LevelManager : MonoBehaviour, IScore, IRestart
 
     bool IsPlayerReachedNewLvl()
     {
-        Func<float> NextLvlExpierience = () => settings.Lvls[lvlNr + 1];
-        return expierience >= NextLvlExpierience();
+        return expierience >= NextLvlValue;
     }
 
     void IncreaseLvl()
