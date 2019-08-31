@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: EnemyLvlSpawn
   m_EditorClassIdentifier: 
   lvls:
-  - spawnTime: 2
+  - spawnTime: 0.4
     spawnObjects:
     - percentage: 1
       prefab: {fileID: 1411421080463516400, guid: 9487b42a1bc7daa4ea3b179dbefaa1d5,
+        type: 3}
+    - percentage: 0.1
+      prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
         type: 3}
   - spawnTime: 2
     spawnObjects:
@@ -34,7 +37,7 @@ MonoBehaviour:
     - percentage: 0.1
       prefab: {fileID: 8640952889412982198, guid: 086ccd5d2c321e84eaa369e07048f918,
         type: 3}
-    - percentage: 0.2
+    - percentage: 0.1
       prefab: {fileID: 7175222489012721612, guid: 02112224de9a57444af83dfc060633ff,
         type: 3}
   - spawnTime: 2

@@ -37,7 +37,6 @@ public class SpawnManager : MonoBehaviour, IRestart, IDependsOnLvl
         if (spawnOnlyOneEnemy) timeLeftToSpawn = 1000;
     }
 
-
     private void CreateObject()
     {
         GameObject random = currentLvl.GetRandomObject();

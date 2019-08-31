@@ -20,7 +20,8 @@ public class TimeObjectSpawner
             CreateDictionary();
 
         float percantage = UnityEngine.Random.value;
-        return GetObjectFromDictionary(percantage);
+        GameObject randomObject = GetObjectFromDictionary(percantage);
+        return randomObject;
     }
 
     void CreateDictionary()
@@ -45,14 +46,13 @@ public class TimeObjectSpawner
 
         GameObject result = null;
 
-        for (int i = 0; i < objectsPercantage.Count - 1; i++)
+        for (int i = 0; i < objectsPercantage.Count; i++)
         {
-            if (percantage >= objectsPercantage.ElementAt(i).Key && percantage <= objectsPercantage.ElementAt(i + 1).Key)
+            if (percantage <= objectsPercantage.ElementAt(i).Key)
                 return objectsPercantage.ElementAt(i).Value;
-            else if (i == objectsPercantage.Count - 2)
-                return objectsPercantage.ElementAt(i + 1).Value;
         }
 
+        Debug.LogError("Can't find object to spawn!");
         return result;
     }
 }
