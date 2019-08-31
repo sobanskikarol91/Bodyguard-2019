@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShootingAbility : MonoBehaviour
+public class ShootingAbility : Ability
 {
     public Weapon CurrentWeapon { get; private set; }
 

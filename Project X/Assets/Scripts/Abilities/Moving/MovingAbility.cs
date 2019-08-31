@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MovingAbility : MonoBehaviour
+public class MovingAbility : Ability
 {
     [SerializeField] MoveType moveType;
 
