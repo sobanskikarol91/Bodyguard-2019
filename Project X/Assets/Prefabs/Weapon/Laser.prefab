@@ -176,7 +176,7 @@ MonoBehaviour:
     refireRate: 0.1
     shotSnd: {fileID: 8300000, guid: 721b3f3c8dcb1bb41aeb5554bd531d07, type: 3}
   bulletSpawnPoint: {fileID: 8870429213807467917}
-  shotSparks: {fileID: 8043433874896683985, guid: 0029c8514c63fb046833f529e159e888,
+  shotSparks: {fileID: 4290413283170138778, guid: 2f958feb92dc8424b965055ff432ce75,
     type: 3}
   beamLength: 17
 --- !u!1001 &5997224310251001313
@@ -191,6 +191,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Laser
       objectReference: {fileID: 0}
+    - target: {fileID: 1462423866264652226, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 47c796e0eba3d8e4891569d207db9832,
+        type: 2}
     - target: {fileID: 2984813356667207804, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -246,12 +252,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1462423866264652226, guid: d2cc99eb47f87be40949d0ddb3423001,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: 47c796e0eba3d8e4891569d207db9832,
-        type: 2}
     - target: {fileID: 2891438380051384428, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_LocalPosition.x
