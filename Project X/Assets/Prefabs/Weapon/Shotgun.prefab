@@ -16,6 +16,8 @@ MonoBehaviour:
     refireRate: 1
     shotSnd: {fileID: 8300000, guid: 583340f772be32545866c984895e4655, type: 3}
   bulletSpawnPoint: {fileID: 561914540839994304}
+  shotSparks: {fileID: 4290413283170138778, guid: 2f958feb92dc8424b965055ff432ce75,
+    type: 3}
   amount: 7
   angle: 2
 --- !u!1 &6406712848116933860
