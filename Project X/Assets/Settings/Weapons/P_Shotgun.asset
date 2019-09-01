@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: P_Shotgun
   m_EditorClassIdentifier: 
   model: {fileID: 3939378474459449142, guid: 2ce278dbd6fe8e842836cbd2d44faa0d, type: 3}
-  bullet: {fileID: 4710505377383510129, guid: b903f8e45742b4146bcddbbc18c3b83f, type: 3}
+  bullet: {fileID: 5021543673073559530, guid: 18737d09a55e6e64c880dda0fb51c0f7, type: 3}
+  bulletEffects: []
+  weaponEffects: []
