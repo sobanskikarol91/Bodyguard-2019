@@ -20,7 +20,7 @@ public abstract class Weapon : MonoBehaviour, IAttack
     private void OnEnable()
     {
         animator = GetComponent<Animator>();
-        ResetTimeLeft();
+        leftTimeToShot = 0;
     }
 
     private void ResetTimeLeft()
