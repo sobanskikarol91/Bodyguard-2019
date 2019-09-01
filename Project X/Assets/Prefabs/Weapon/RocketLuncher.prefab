@@ -77,6 +77,12 @@ PrefabInstance:
       propertyPath: settings.shotSnd
       value: 
       objectReference: {fileID: 8300000, guid: f2ae1310d1e9e804ab5a46615ab316f6, type: 3}
+    - target: {fileID: 2230228032719294353, guid: d2cc99eb47f87be40949d0ddb3423001,
+        type: 3}
+      propertyPath: shotSparks
+      value: 
+      objectReference: {fileID: 4290413283170138778, guid: 2f958feb92dc8424b965055ff432ce75,
+        type: 3}
     - target: {fileID: 2891438380051384428, guid: d2cc99eb47f87be40949d0ddb3423001,
         type: 3}
       propertyPath: m_LocalPosition.x
