@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: -8491120688834446511}
   - component: {fileID: 8939676334826996254}
   - component: {fileID: 1278354691537093409}
+  - component: {fileID: 3629219570716682639}
+  - component: {fileID: -4169978019410156462}
   m_Layer: 0
   m_Name: PlayerPistolBullet
   m_TagString: Untagged
@@ -150,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de76a0f0852722546b232af7e93f1ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 0
 --- !u!114 &-8491120688834446511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +196,36 @@ MonoBehaviour:
   damageObjects: 01000000
   collisionEffects:
   - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}
+--- !u!114 &3629219570716682639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ee2f35fc7c70c4b877ca03d4ca0600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+--- !u!114 &-4169978019410156462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710505377383510129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d5ed59f8da03d4689086b093d7e709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  deathEffects: {fileID: 8043433874896683985, guid: 0029c8514c63fb046833f529e159e888,
+    type: 3}
+  damageEffect: {fileID: 0}
+  godMode: 0
 --- !u!1001 &4759205132436413491
 PrefabInstance:
   m_ObjectHideFlags: 0

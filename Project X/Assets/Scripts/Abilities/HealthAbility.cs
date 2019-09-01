@@ -21,7 +21,7 @@ public class HealthAbility : MonoBehaviour, IDeath
         animator = GetComponent<Animator>();
     }
 
-    public void DoDamage(float damage)
+    public void DoDamage(float damage = 1)
     {
         if (godMode || !isAlive) return;
 
@@ -31,6 +31,12 @@ public class HealthAbility : MonoBehaviour, IDeath
             OnDeath();
         else
             OnDamage();
+    }
+
+    public void KillImmediately()
+    {
+        currentHealth = 0;
+        DoDamage();
     }
 
     private void OnDamage()

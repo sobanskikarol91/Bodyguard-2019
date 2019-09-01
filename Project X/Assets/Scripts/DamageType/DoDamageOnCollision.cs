@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Linq;
 using UnityEngine;
 
 public class DoDamageOnCollision : Damagable
 {
     [SerializeField] CollisionEffect[] collisionEffects;
-
     private InteractiveObject hitObject;
     private Collider2D bodyCollider;
+    
 
     private void Awake()
     {
