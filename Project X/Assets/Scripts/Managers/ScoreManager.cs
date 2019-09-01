@@ -10,10 +10,12 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
 
     private float score = 0;
     private IScore[] scorables;
+    private LevelManager levelManager;
 
     private void Awake()
     {
         scorables = GetComponents<IScore>().Where(t => t != (IScore)this).ToArray();
+        levelManager = GameManager.instance.LevelManager;
     }
 
     public void UpdatedScore(float amount = 1)
@@ -26,10 +28,12 @@ public class ScoreManager : MonoBehaviour, IScore, IRestart
 
     private void UpdateCircleBar()
     {
-        float previousLvl = GameManager.instance.LevelManager.PreviousLvlValue;
-        float nextLvl = GameManager.instance.LevelManager.NextLvlValue - previousLvl;
+        if (levelManager.IsLastLvl()) return;
 
+        float previousLvl = levelManager.PreviousLvlValue;
+        float nextLvl = levelManager.NextLvlValue - previousLvl;
         float scoreInLvl = score - previousLvl;
+
         circleBar.UpdateCircle(scoreInLvl, nextLvl);
     }
 

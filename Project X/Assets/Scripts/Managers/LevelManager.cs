@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour, IScore, IRestart
         audioSource.Play();
     }
 
-    bool IsLastLvl()
+    public bool IsLastLvl()
     {
         return lvlNr == settings.MaxLvl - 1;
     }
