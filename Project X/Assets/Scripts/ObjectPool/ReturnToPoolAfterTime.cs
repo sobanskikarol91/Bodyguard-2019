@@ -4,6 +4,7 @@ public class ReturnToPoolAfterTime : ReturnToPool
 {
     [SerializeField] float timeToReturn = 1f;
 
+    public float TimeToReturn => timeToReturn;
     private float timeLeft;
 
 
