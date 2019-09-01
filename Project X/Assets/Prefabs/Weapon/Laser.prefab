@@ -173,9 +173,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings:
-    refireRate: 0.5
+    refireRate: 0.1
     shotSnd: {fileID: 8300000, guid: 721b3f3c8dcb1bb41aeb5554bd531d07, type: 3}
   bulletSpawnPoint: {fileID: 8870429213807467917}
+  shotSparks: {fileID: 8043433874896683985, guid: 0029c8514c63fb046833f529e159e888,
+    type: 3}
   beamLength: 17
 --- !u!1001 &5997224310251001313
 PrefabInstance:
