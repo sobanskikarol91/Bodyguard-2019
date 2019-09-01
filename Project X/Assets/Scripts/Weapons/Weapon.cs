@@ -5,6 +5,7 @@ public abstract class Weapon : MonoBehaviour, IAttack
 {
     [SerializeField] WeaponSettings settings;
     [SerializeField] Transform bulletSpawnPoint;
+    [SerializeField] GameObject shotSparks;
 
     public Transform BulletSpawnPoint => bulletSpawnPoint;
     public Damagable Bullet { get; private set; }
@@ -48,7 +49,7 @@ public abstract class Weapon : MonoBehaviour, IAttack
         ResetTimeLeft();
     }
 
-    public void Init(Damagable bullet, ShootingEffect[] bulletEffects, ShootingEffect[] weaponEffects )
+    public void Init(Damagable bullet, ShootingEffect[] bulletEffects, ShootingEffect[] weaponEffects)
     {
         this.bulletEffects = bulletEffects;
         this.weaponEffects = weaponEffects;
@@ -57,8 +58,15 @@ public abstract class Weapon : MonoBehaviour, IAttack
 
     private void ShowEffects()
     {
+        CreateSparks();
         Array.ForEach(bulletEffects, e => e.CreateEffect(createdBullet.transform));
         Array.ForEach(weaponEffects, e => e.CreateEffect(transform));
+    }
+
+    private void CreateSparks()
+    {
+        GameObject sparks = ObjectPoolManager.instance.Get(shotSparks);
+        sparks.transform.SetParent(bulletSpawnPoint, false);
     }
 
     protected abstract GameObject Attack();
