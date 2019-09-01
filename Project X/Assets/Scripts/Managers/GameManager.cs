@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public Player Player { get; private set; }
     public ScoreManager ScoreManager { get; private set; }
     public PlatformManager Platform { get => platform; }
-    public LevelManager LevelManager;
+    [HideInInspector] public LevelManager LevelManager;
 
     [SerializeField] Player playerPrefab;
     [SerializeField] PlatformManager platform;
