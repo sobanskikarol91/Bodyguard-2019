@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: P_RocketLuncher
   m_EditorClassIdentifier: 
   model: {fileID: 525672445810897315, guid: 020af15e74908dc4e823b4ed1698bb8e, type: 3}
-  bullet: {fileID: 4782648874805095374, guid: 23f2951444a308445b1d156acf6314d6, type: 3}
+  bullet: {fileID: 216298543448529711, guid: 23f2951444a308445b1d156acf6314d6, type: 3}
   bulletEffects: []
-  characterEffects: []
+  weaponEffects: []

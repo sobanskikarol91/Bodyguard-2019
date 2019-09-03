@@ -663,7 +663,7 @@ PrefabInstance:
     - target: {fileID: 6627784443969177022, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: m_Name
-      value: GreenTrail
+      value: Trail
       objectReference: {fileID: 0}
     - target: {fileID: 248377297630612992, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
@@ -728,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
@@ -773,7 +773,7 @@ PrefabInstance:
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
       propertyPath: simulationSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 113613146940375892, guid: bfccbb3eccd5b66499bcd3e6e3cc4ceb,
         type: 3}
