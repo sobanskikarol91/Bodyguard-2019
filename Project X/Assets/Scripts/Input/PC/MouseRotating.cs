@@ -6,10 +6,6 @@ public class MouseRotating : TwoAxisInput
     private Camera camera;
     private Transform player;
 
-    private void OnEnable()
-    {
-        camera = Camera.main;
-    }
 
     public override void Execute()
     {
@@ -22,5 +18,6 @@ public class MouseRotating : TwoAxisInput
     private void GetPlayerReference()
     {
         player = GameManager.instance.Player.transform;
+        camera = Camera.main;
     }
 }
