@@ -14,4 +14,9 @@ public class UIManager : MonoBehaviour
     {
         gameOver.SetActive(false);
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
