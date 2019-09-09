@@ -16,7 +16,7 @@ public class Enemy : Character, IGameOver, IRestart
     public void OnGameOver()
     {
         Array.ForEach(abilites, a => a.enabled = false);
-        animator.SetTrigger("gameOver");
+       // animator.SetTrigger("gameOver");
     }
 
     public void OnRestart()
