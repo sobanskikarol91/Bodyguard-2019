@@ -9,28 +9,18 @@ public class SlowDown : Status
 
     public override string Name => "Slow down";
 
-    private Character character;
     private MovingAbility movement;
 
-
-    private void AddStatusToObject()
-    {
-        character.
-    }
-
-    private void TryToSlowDownObject()
-    {
-        movement = character.GetComponent<MovingAbility>();
-
-        if (movement)
-            SlowDownObject();
-    }
-
-    private void SlowDownObject()
+    public override Coroutine CreateStatus()
     {
         float originSpeed = movement.Speed;
         movement.Speed *= percentage;
         Action ReturnOrginSpeed = () => movement.Speed = originSpeed;
-        MonoBevahiourExtension.StartLerp(movement, 0, time, 0, ReturnOrginSpeed, null);
+        return MonoBevahiourExtension.StartLerp(movement, 0, time, 0, ReturnOrginSpeed, null);
+    }
+
+    protected override bool AreRequirementToAddStatusMet()
+    {
+        return movement = character.GetComponent<MovingAbility>();
     }
 }

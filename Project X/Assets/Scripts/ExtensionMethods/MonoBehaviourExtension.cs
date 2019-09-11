@@ -4,9 +4,9 @@ using UnityEngine;
 
 public static class MonoBevahiourExtension
 {
-    public static void StartLerp(this MonoBehaviour target, float origin, float destination, float duration, Action OnComplete = null, Action<float> OnExecuting = null)
+    public static Coroutine StartLerp(this MonoBehaviour target, float origin, float destination, float duration, Action OnComplete = null, Action<float> OnExecuting = null)
     {
-        target.StartCoroutine(Lerp(origin, destination, duration, OnComplete, OnExecuting));
+       return target.StartCoroutine(Lerp(origin, destination, duration, OnComplete, OnExecuting));
     }
 
     static IEnumerator Lerp(float currentValue, float destination, float duration, Action OnComplete = null, Action<float> OnExecuting = null)

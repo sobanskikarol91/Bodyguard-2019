@@ -16,7 +16,7 @@ public class StatusManager
 
     private void ResetStatus(string name)
     {
-        throw new NotImplementedException();
+
     }
 
     bool IsObjectAlreadyHasThisStatus(string name)
