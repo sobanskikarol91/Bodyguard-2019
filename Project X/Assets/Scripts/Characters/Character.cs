@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public abstract class Character : InteractiveObject
 {
-    List<Status> statuses = new List<Status>();
+    public StatusManager Status { get; protected set; } = new StatusManager
 }

@@ -7,9 +7,16 @@ public class SlowDown : Status
     [Tooltip("Percentage of origin speed value")]
     [SerializeField, Range(0, 1)] float percentage = 0.8f;
 
+    public override string Name => "Slow down";
+
     private Character character;
     private MovingAbility movement;
 
+
+    private void AddStatusToObject()
+    {
+        character.
+    }
 
     private void TryToSlowDownObject()
     {
@@ -23,7 +30,7 @@ public class SlowDown : Status
     {
         float originSpeed = movement.Speed;
         movement.Speed *= percentage;
-        Action ReturnOrginSpeed= () => movement.Speed = originSpeed;
+        Action ReturnOrginSpeed = () => movement.Speed = originSpeed;
         MonoBevahiourExtension.StartLerp(movement, 0, time, 0, ReturnOrginSpeed, null);
     }
 }
