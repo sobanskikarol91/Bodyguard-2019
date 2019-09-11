@@ -2,12 +2,12 @@
 
 public class MovingAbility : Ability
 {
-    [SerializeField] MoveType moveType;
-
-    public float Speed { get => speed; }
+    public float Speed { get => speed; set => speed = value; }
     [SerializeField] float speed = 10;
 
     public MoveType MoveTypeInstance { get; private set; }
+    [SerializeField] MoveType moveType;
+
 
     private void Start()
     {
