@@ -2,6 +2,7 @@
 using UnityEngine;
 
 
+[CreateAssetMenu(fileName = "SlowDown", menuName = "Effect/SlowDown")]
 public class SlowDown : Status
 {
     [Tooltip("Percentage of origin speed value")]
@@ -13,14 +14,18 @@ public class SlowDown : Status
 
     public override Coroutine CreateStatus()
     {
-        float originSpeed = movement.Speed;
         movement.Speed *= percentage;
-        Action ReturnOrginSpeed = () => movement.Speed = originSpeed;
-        return MonoBevahiourExtension.StartLerp(movement, 0, time, 0, ReturnOrginSpeed, null);
+        return MonoBevahiourExtension.StartLerp(interactibleObject, 0, time, time, ReturnOrginSpeed, null);
     }
 
     protected override bool AreRequirementToAddStatusMet()
     {
-        return movement = character.GetComponent<MovingAbility>();
+        return movement = interactibleObject.GetComponent<MovingAbility>();
+    }
+
+    void ReturnOrginSpeed()
+    {
+        movement.Speed = movement.OriginSpeed;
+        interactibleObject.Status.RemoveStatusFromList(Name);
     }
 }

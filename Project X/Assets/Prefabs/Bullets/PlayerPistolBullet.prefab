@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726aa527267542143820730661ea0c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: {fileID: 11400000, guid: 70438f738e6ad98418636f436f10090e, type: 2}
   speed: 13
+  moveType: {fileID: 11400000, guid: 70438f738e6ad98418636f436f10090e, type: 2}
 --- !u!114 &1278354691537093409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +196,7 @@ MonoBehaviour:
   damageObjects: 01000000
   collisionEffects:
   - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}
+  - {fileID: 11400000, guid: 37c798fde86106c4fae2dca465e5fdc1, type: 2}
 --- !u!114 &3629219570716682639
 MonoBehaviour:
   m_ObjectHideFlags: 0

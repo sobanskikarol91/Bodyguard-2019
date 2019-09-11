@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d5ed59f8da03d4689086b093d7e709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 300
   deathEffects: {fileID: 6829461801087784153, guid: ecdee2e9cb7f25245ade49de6f155e40,
     type: 3}
   damageEffect: {fileID: 1912046762901498730, guid: 85ebc92d07e4f8347bd8c421b26375c3,
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726aa527267542143820730661ea0c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveType: {fileID: 11400000, guid: ecd52ef7a82a0574b8d12baed046215b, type: 2}
   speed: 3.7
+  moveType: {fileID: 11400000, guid: ecd52ef7a82a0574b8d12baed046215b, type: 2}
 --- !u!114 &5307506971871059819
 MonoBehaviour:
   m_ObjectHideFlags: 0

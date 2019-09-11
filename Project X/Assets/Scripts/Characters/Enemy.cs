@@ -6,8 +6,9 @@ public class Enemy : Character, IGameOver, IRestart
     private Animator animator;
     private Ability[] abilites;
 
-    protected void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         abilites = GetComponentsInChildren<Ability>();
         animator = GetComponent<Animator>();
         Type = ObjectType.Enemy;

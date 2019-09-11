@@ -8,9 +8,11 @@ public class MovingAbility : Ability
     public MoveType MoveTypeInstance { get; private set; }
     [SerializeField] MoveType moveType;
 
+    public float OriginSpeed { get; private set; }
 
     private void Start()
     {
+        OriginSpeed = speed;
         MoveTypeInstance = Instantiate(moveType);
         MoveTypeInstance.Init(this);
     }
@@ -18,5 +20,10 @@ public class MovingAbility : Ability
     public void Update()
     {
         MoveTypeInstance.Execute();
+    }
+
+    private void OnEnable()
+    {
+        speed = OriginSpeed;
     }
 }

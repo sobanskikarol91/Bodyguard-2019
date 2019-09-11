@@ -1,24 +1,24 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class Status
+public abstract class Status : CollisionEffect
 {
     [SerializeField] protected float time;
     public abstract string Name { get; }
-    protected Character character;
+    protected InteractiveObject interactibleObject;
 
-    public void TryAddStatusToObject(Character character)
+
+    public override void OnCollision(Collision2D collision, Transform transform)
     {
-        this.character = character;
+        interactibleObject = collision.gameObject.GetComponent<InteractiveObject>();
 
-        if (AreRequirementToAddStatusMet())
+        if (interactibleObject && AreRequirementToAddStatusMet())
             AddStatus();
     }
 
     private void AddStatus()
     {
         Coroutine corutine = CreateStatus();
-        character.Status.TryToAddStatus(Name, corutine);
+        interactibleObject.Status.TryToAddStatus(Name, corutine);
     }
 
     public abstract Coroutine CreateStatus();
