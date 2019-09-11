@@ -18,7 +18,7 @@ public abstract class Status
     private void AddStatus()
     {
         Coroutine corutine = CreateStatus();
-        character.Status.AddStatus(Name, corutine);
+        character.Status.TryToAddStatus(Name, corutine);
     }
 
     public abstract Coroutine CreateStatus();
