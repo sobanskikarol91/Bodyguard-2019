@@ -10,7 +10,7 @@ public class MovingAbility : Ability
 
     public float OriginSpeed { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
         OriginSpeed = speed;
         MoveTypeInstance = Instantiate(moveType);

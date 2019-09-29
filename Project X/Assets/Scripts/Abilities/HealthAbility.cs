@@ -10,15 +10,14 @@ public class HealthAbility : MonoBehaviour, IDeath
     [SerializeField] GameObject deathEffects;
     [SerializeField] GameObject damageEffect;
     [SerializeField] bool godMode;
-
+    
     private float currentHealth;
     private bool isAlive = true;
-    private Animator animator;
+
 
     private void Awake()
     {
         currentHealth = health;
-        animator = GetComponent<Animator>();
     }
 
     public void DoDamage(float damage = 1)
@@ -42,7 +41,6 @@ public class HealthAbility : MonoBehaviour, IDeath
     private void OnDamage()
     {
         if (damageEffect) CreateEffect(damageEffect);
-        animator.SetTrigger("isDamage");
     }
 
     private void OnDeath()
