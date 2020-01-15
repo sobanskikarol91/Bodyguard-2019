@@ -196,7 +196,6 @@ MonoBehaviour:
   damageObjects: 01000000
   collisionEffects:
   - {fileID: 11400000, guid: 8a98d2ec210566544856ed885b84ad30, type: 2}
-  - {fileID: 11400000, guid: 37c798fde86106c4fae2dca465e5fdc1, type: 2}
 --- !u!114 &3629219570716682639
 MonoBehaviour:
   m_ObjectHideFlags: 0
